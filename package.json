@@ -1,0 +1,28 @@
+{
+  "name": "gmudoc",
+  "version": "0.0.1",
+  "description": "Jsdoc for gmu project",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/liaoxuezhi/gmudoc.git"
+  },
+  "keywords": [
+    "jsdoc"
+  ],
+  "author": "liaoxuezhi",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/liaoxuezhi/gmudoc/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-nodeunit": "~0.2.0"
+  }
+}
