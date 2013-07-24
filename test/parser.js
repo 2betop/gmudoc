@@ -2,14 +2,13 @@
     'use strict';
 
     var fs = require( 'fs' ),
-        parseComment = require( '../lib/comment.js' ).parseComment,
-        content = fs.readFileSync( 'test/samples/sample1.js', 'utf-8' ),
-        comments = content.match( /\/\*\*[\s\S]+?\*\//g );
+        Parser = require( '../lib/parser.js' ),
+        parser = new Parser(),
+        comments = parser.parseComments( 'test/samples/sample1.js' );
             
 
     exports.testParseComment1 = function( test ) {
-        var comment = comments[ 0 ],
-            ret = parseComment( comment );
+        var ret = comments[ 0 ];
 
         test.equal( ret.length, 2 );
         test.equal( ret[ 0 ].key, 'desc' );
@@ -21,8 +20,7 @@
     };
 
     exports.testParseComment2 = function( test ) {
-        var comment = comments[ 1 ],
-            ret = parseComment( comment );
+        var ret = comments[ 1 ];
 
         test.equal( ret.length, 3 );
         test.equal( ret[ 0 ].key, 'desc' );
@@ -36,8 +34,7 @@
     };
 
     exports.testParseComment3 = function( test ) {
-        var comment = comments[ 2 ],
-            ret = parseComment( comment );
+        var ret = comments[ 2 ];
 
         test.equal( ret.length, 4 );
         test.equal( ret[2].key, 'constructor' );
@@ -47,8 +44,7 @@
     };
 
     exports.testParseComment4 = function( test ) {
-        var comment = comments[ 3 ],
-            ret = parseComment( comment );
+        var ret = comments[ 3 ];
 
         test.equal( ret.length, 3 );
         
