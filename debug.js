@@ -1,14 +1,15 @@
 (function() {
     'use strict';
 
-    debugger;
+    var Doc = require('./lib/doc.js');
 
-    var Doc = require('./doc.js');
-
-    var doc = new Doc({
-        files: ['test/samples/sample2.js']
+    var ins = new Doc({
+        cwd: '../gmu/src',
+        files: ['core/*.js']
     });
 
-    doc.run();
+    ins.run();
+    
+    debugger;
 
 })();
