@@ -1,0 +1,15 @@
+<div class="module">
+    <dl>
+        <dt><%= name %></dt>
+        <dd><%= description %></dd>
+    </dl>
+    <div class="member-list">
+        <ul>
+            <%for ( var key in classes ) {%>
+                <li class="member-item-cls">
+                    <%= classes[ key ].name %>
+                </li>
+            <%}%>
+        </ul>
+    </div>
+</div>

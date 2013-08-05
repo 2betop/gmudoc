@@ -1,0 +1,58 @@
+<div class="member">
+    <dl>
+       <dt><%- ViewHelper.parseSignature( locals ) %></dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li><%= description %></li>
+                    <%if (locals.warning) {%>
+                    <li class="warning"><%= warning %></li>
+                    <%}%>
+                    <%if (locals.remind) {%>
+                    <li class="remind"><%= remind %></li>
+                    <%}%>
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            <%if ( locals.params ) {%>
+            <fileset>
+                <legend>参数列表</legend>
+                <ol>
+                    <%for (var i=0, param; param=params[i]; i++) {%>
+                    <li>
+                        <dl>
+                            <dt><%= param.name %></dt>
+                            <dd><span><%= param.type.join(", ") %></span><span><%= param.description %></span></dd>
+                        </dl>
+                    </li>
+                    <%}%>
+                </ol>
+            </fileset>
+            <%}%>
+            <!-- 返回值 -->
+            <%if (locals.returns) {%>
+            <fileset>
+                <legend>返回值</legend>
+                <ul>
+                    <%for ( var i=0, res; res = returns[i]; i++ ) {%>
+                    <li><a class="return-value-type" href="<%- res.type %>"><%- res.type %></a><span class="return-value-desc"><%- res.description %></span></li>
+                    <%}%>
+                </ul>
+            </fileset>
+            <%}%>
+            <!-- 示例 -->
+            <%if ( locals.example ) {%>
+                <fileset>
+                    <legend>示例</legend>
+                    <div class="example">
+                        <%- ViewHelper.markdownToHtml( example ) %>
+                    </div>
+                </fileset>
+            <%}%>
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API文档</title>
+        <meta charset="UTF-8">
+        <script src="/gmudoc/lib/highlight/google-code-prettify/src/prettify.js"></script>
+        <script src="/gmudoc/lib/highlight/google-code-prettify/src/lang-css.js"></script>
+        <link rel="stylesheet" href="/gmudoc/lib/highlight/google-code-prettify/styles/desert.css" type="text/css">
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+    </head>
+    <body>
+        <div class="page">
+            
+                <div class="module">
+                    <div class="module">
+    <dl>
+        <dt>UE</dt>
+        <dd>UEditor公用空间，UEditor所有的功能都挂载在该空间下</dd>
+    </dl>
+    <div class="member-list">
+        <ul>
+            
+                <li class="member-item-cls">
+                    Editor
+                </li>
+            
+        </ul>
+    </div>
+</div>
+                </div>
+                <div class="module-member">
+                    
+                        <div class="cls">
+    <dl>
+        <dt>Editor</dt>
+        <dd>UEditor的核心类，为用户提供与编辑器交互的接口。</dd>
+    </dl>
+    <div class="member-list">
+
+        <!-- 事件 start -->
+        
+        <fileset>
+            <legend>事件</legend>
+            <ul>
+                
+                    <li><div class="member">
+    <dl>
+       <dt>ready</dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li></li>
+                    
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <fileset>
+                <legend>参数列表</legend>
+                <ol>
+                    
+                    <li>
+                        <dl>
+                            <dt>editor</dt>
+                            <dd><span>UE.Editor</span><span>当前所监听的编辑器对象的引用</span></dd>
+                        </dl>
+                    </li>
+                    
+                </ol>
+            </fileset>
+            
+            <!-- 示例 -->
+            
+                <fileset>
+                    <legend>示例</legend>
+                    <div class="example">
+                        <pre class="prettyprint linenums lang-javascript">
+editor.addListener( 'ready', function( editor ) {
+    editor.execCommand( 'focus' );
+} );
+</pre>
+                    </div>
+                </fileset>
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+                    <li><div class="member">
+    <dl>
+       <dt>selectionchange</dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li></li>
+                    
+                    <li class="warning">该事件的触发非常频繁，不建议在该事件的处理过程中做重量级的处理</li>
+                    
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <fileset>
+                <legend>参数列表</legend>
+                <ol>
+                    
+                    <li>
+                        <dl>
+                            <dt>editor</dt>
+                            <dd><span>UE.Editor</span><span>当前所监听的编辑器对象的引用</span></dd>
+                        </dl>
+                    </li>
+                    
+                </ol>
+            </fileset>
+            
+            <!-- 示例 -->
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+            </ul>
+        </fileset>
+        
+        <!-- 事件 end -->
+
+        <!-- 属性 start -->
+        
+        <!-- 属性 end -->
+
+        <!-- 方法 start -->
+        
+        <fileset>
+            <legend>方法</legend>
+            <ul>
+                
+                    <li><div class="member">
+    <dl>
+       <dt><a name="UE.Editor:ready">
+    
+    
+        
+            
+        
+    
+    ready(<a href="#Function">Function</a><span class="member-name">&nbsp;&nbsp;fn</span>)
+</a></dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li></li>
+                    
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <fileset>
+                <legend>参数列表</legend>
+                <ol>
+                    
+                    <li>
+                        <dl>
+                            <dt>fn</dt>
+                            <dd><span>Function</span><span>编辑器ready之后所执行的回调, 如果在注册事件之前编辑器已经ready，将会</span></dd>
+                        </dl>
+                    </li>
+                    
+                </ol>
+            </fileset>
+            
+            <!-- 返回值 -->
+            
+            <!-- 示例 -->
+            
+                <fileset>
+                    <legend>示例</legend>
+                    <div class="example">
+                        <pre class="prettyprint linenums lang-javascript">
+editor.addListener( 'ready', function( editor ) {
+    editor.setContent('初始化完毕');
+} );
+</pre>
+                    </div>
+                </fileset>
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+                    <li><div class="member">
+    <dl>
+       <dt><a name="UE.Editor:setOpt">
+    
+    
+        
+            
+        
+            
+        
+    
+    setOpt(<a href="#String">String</a><span class="member-name">&nbsp;&nbsp;key</span>, <a href="#*">*</a><span class="member-name">&nbsp;&nbsp;val</span>)
+</a></dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li></li>
+                    
+                    <li class="warning">该方法仅供编辑器构造函数调用，其他任何方法不能调用。</li>
+                    
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <fileset>
+                <legend>参数列表</legend>
+                <ol>
+                    
+                    <li>
+                        <dl>
+                            <dt>key</dt>
+                            <dd><span>String</span><span>编辑器的可接受的选项名称</span></dd>
+                        </dl>
+                    </li>
+                    
+                    <li>
+                        <dl>
+                            <dt>val</dt>
+                            <dd><span>*</span><span>该选项可接受的值</span></dd>
+                        </dl>
+                    </li>
+                    
+                </ol>
+            </fileset>
+            
+            <!-- 返回值 -->
+            
+            <!-- 示例 -->
+            
+                <fileset>
+                    <legend>示例</legend>
+                    <div class="example">
+                        <pre class="prettyprint linenums lang-javascript">
+editor.setOpt( 'initContent', '欢迎使用编辑器' );
+</pre>
+                    </div>
+                </fileset>
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+                    <li><div class="member">
+    <dl>
+       <dt><a name="UE.Editor:setOpt">
+    
+    
+        
+            
+        
+    
+    setOpt(<a href="#PlainObject">PlainObject</a><span class="member-name">&nbsp;&nbsp;settings</span>)
+</a></dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li></li>
+                    
+                    <li class="warning">该方法仅供编辑器构造函数调用，其他任何方法不能调用。</li>
+                    
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <fileset>
+                <legend>参数列表</legend>
+                <ol>
+                    
+                    <li>
+                        <dl>
+                            <dt>settings</dt>
+                            <dd><span>PlainObject</span><span>编辑器的可接受的选项的key-value集合</span></dd>
+                        </dl>
+                    </li>
+                    
+                </ol>
+            </fileset>
+            
+            <!-- 返回值 -->
+            
+            <!-- 示例 -->
+            
+                <fileset>
+                    <legend>示例</legend>
+                    <div class="example">
+                        <pre class="prettyprint linenums lang-javascript">
+editor.setOpt( {
+    'initContent': '欢迎使用编辑器'
+} );
+</pre>
+                    </div>
+                </fileset>
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+                    <li><div class="member">
+    <dl>
+       <dt><a name="UE.Editor:destroy">
+    
+    
+    destroy()
+</a></dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li></li>
+                    
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <!-- 返回值 -->
+            
+            <!-- 示例 -->
+            
+                <fileset>
+                    <legend>示例</legend>
+                    <div class="example">
+                        <pre class="prettyprint linenums lang-javascript">
+editor.destroy();
+</pre>
+                    </div>
+                </fileset>
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+                    <li><div class="member">
+    <dl>
+       <dt><a name="UE.Editor:getContent">
+    
+    
+    getContent()
+</a></dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li></li>
+                    
+                    <li class="warning">该方法获取到的是经过编辑器内置的过滤规则进行过滤后得到的内容</li>
+                    
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <!-- 返回值 -->
+            
+            <fileset>
+                <legend>返回值</legend>
+                <ul>
+                    
+                    <li><a class="return-value-type" href="String">String</a><span class="return-value-desc">编辑器的内容字符串, 如果编辑器的内容为空， 则返回空字符串</span></li>
+                    
+                </ul>
+            </fileset>
+            
+            <!-- 示例 -->
+            
+                <fileset>
+                    <legend>示例</legend>
+                    <div class="example">
+                        <pre class="prettyprint linenums lang-javascript">
+var content = editor.getContent();
+</pre>
+                    </div>
+                </fileset>
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+                    <li><div class="member">
+    <dl>
+       <dt><a name="UE.Editor:getContent">
+    
+    
+        
+            
+        
+    
+    getContent(<a href="#Function">Function</a><span class="member-name">&nbsp;&nbsp;fn</span>)
+</a></dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li></li>
+                    
+                    <li class="warning">该方法获取到的是经过编辑器内置的过滤规则进行过滤后得到的内容</li>
+                    
+                    
+                    <li class="remind">该方法在处理包含有初始化内容的时候能起到很好的作用。</li>
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <fileset>
+                <legend>参数列表</legend>
+                <ol>
+                    
+                    <li>
+                        <dl>
+                            <dt>fn</dt>
+                            <dd><span>Function</span><span>自定的判空规则， 要求该方法返回一个boolean类型的值，</span></dd>
+                        </dl>
+                    </li>
+                    
+                </ol>
+            </fileset>
+            
+            <!-- 返回值 -->
+            
+            <fileset>
+                <legend>返回值</legend>
+                <ul>
+                    
+                    <li><a class="return-value-type" href="String">String</a><span class="return-value-desc">编辑器的内容字符串</span></li>
+                    
+                </ul>
+            </fileset>
+            
+            <!-- 示例 -->
+            
+                <fileset>
+                    <legend>示例</legend>
+                    <div class="example">
+                        <pre class="prettyprint linenums lang-javascript">
+// editor 是一个编辑器的实例
+var content = editor.getContent( function ( editor ) {
+     return editor.body.innerHTML === '欢迎使用UEditor';
+} );
+</pre>
+                    </div>
+                </fileset>
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+            </ul>
+        </fileset>
+        
+        <!-- 方法 end -->
+
+    </div>
+</div>
+                    
+                </div>
+            
+        </div>
+    </body>
+</html>

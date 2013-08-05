@@ -1,0 +1,48 @@
+<div class="cls">
+    <dl>
+        <dt><%= name %></dt>
+        <dd><%= description %></dd>
+    </dl>
+    <div class="member-list">
+
+        <!-- 事件 start -->
+        <%if (members.event && members.event.length) {%>
+        <fileset>
+            <legend>事件</legend>
+            <ul>
+                <%for ( var i=0, evt; evt = members.event[i]; i++ ) {%>
+                    <li><%- evt %></li>
+                <%}%>
+            </ul>
+        </fileset>
+        <%}%>
+        <!-- 事件 end -->
+
+        <!-- 属性 start -->
+        <%if (members.property && members.property.length) {%>
+        <fileset>
+            <legend>属性</legend>
+            <ul>
+                <%for ( var i=0, prop; prop = members.property[i]; i++ ) {%>
+                    <li><%- prop %></li>
+                <%}%>
+            </ul>
+        </fileset>
+        <%}%>
+        <!-- 属性 end -->
+
+        <!-- 方法 start -->
+        <%if (members.method && members.method.length) {%>
+        <fileset>
+            <legend>方法</legend>
+            <ul>
+                <%for ( var i=0, fn; fn = members.method[i]; i++ ) {%>
+                    <li><%- fn %></li>
+                <%}%>
+            </ul>
+        </fileset>
+        <%}%>
+        <!-- 方法 end -->
+
+    </div>
+</div>
