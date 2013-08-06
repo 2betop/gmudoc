@@ -22,24 +22,25 @@
                     "name": "Editor",
                     "file": "./Editor.js",
                     "module": "UE",
-                    "items": {
-                        "ready": {
-                            "see": "UE.Editor.event:ready",
-                            "example": "```javascript\neditor.addListener( 'ready', function( editor ) {\n    editor.setContent('初始化完毕');\n} );\n```",
+                    "items": [
+                        {
+                            "description": "编辑器准备就绪后会触发该事件",
+                            "example": "```javascript\neditor.addListener( 'ready', function( editor ) {\n    editor.execCommand( 'focus' );\n} );\n```",
                             "params": [
                                 {
                                     "type": [
-                                        "Function"
+                                        "UE.Editor"
                                     ],
-                                    "description": "编辑器ready之后所执行的回调, 如果在注册事件之前编辑器已经ready，将会",
-                                    "name": "fn"
+                                    "description": "当前所监听的编辑器对象的引用",
+                                    "name": "editor"
                                 }
                             ],
-                            "itemtype": "method",
-                            "description": "",
-                            "name": "ready"
+                            "itemtype": "event",
+                            "name": "ready",
+                            "class": "Editor",
+                            "module": "UE"
                         },
-                        "selectionchange": {
+                        {
                             "description": "每当编辑器内部选区发生改变后， 将触发该事件",
                             "warning": "该事件的触发非常频繁，不建议在该事件的处理过程中做重量级的处理",
                             "params": [
@@ -52,9 +53,55 @@
                                 }
                             ],
                             "itemtype": "event",
-                            "name": "selectionchange"
+                            "name": "selectionchange",
+                            "module": "UE",
+                            "class": "Editor"
                         },
-                        "setOpt": {
+                        {
+                            "description": "编辑器对外提供的监听ready事件的接口， 通过调用该方法，达到的效果与监听ready事件是一致的",
+                            "see": "UE.Editor.event:ready",
+                            "example": "```javascript\neditor.ready( function( editor ) {\n    editor.setContent('初始化完毕');\n} );\n```",
+                            "params": [
+                                {
+                                    "type": [
+                                        "Function"
+                                    ],
+                                    "description": "编辑器ready之后所执行的回调, 如果在注册事件之前编辑器已经ready，将会",
+                                    "name": "fn"
+                                }
+                            ],
+                            "itemtype": "method",
+                            "name": "ready",
+                            "module": "UE",
+                            "class": "Editor"
+                        },
+                        {
+                            "description": "以attributeName - attributeValue的方式设置编辑器的配置项，以覆盖编辑器的默认选项值",
+                            "private": "",
+                            "warning": "该方法仅供编辑器构造函数调用，其他任何方法不能调用。",
+                            "example": "```javascript\neditor.setOpt( 'initContent', '欢迎使用编辑器' );\n```",
+                            "params": [
+                                {
+                                    "type": [
+                                        "String"
+                                    ],
+                                    "description": "编辑器的可接受的选项名称",
+                                    "name": "key"
+                                },
+                                {
+                                    "type": [
+                                        "*"
+                                    ],
+                                    "description": "该选项可接受的值",
+                                    "name": "val"
+                                }
+                            ],
+                            "itemtype": "method",
+                            "name": "setOpt",
+                            "module": "UE",
+                            "class": "Editor"
+                        },
+                        {
                             "description": "以key-value集合的方式设置编辑器的配置项，以覆盖编辑器的默认选项值",
                             "private": "",
                             "warning": "该方法仅供编辑器构造函数调用，其他任何方法不能调用。",
@@ -69,15 +116,36 @@
                                 }
                             ],
                             "itemtype": "method",
-                            "name": "setOpt"
+                            "name": "setOpt",
+                            "module": "UE",
+                            "class": "Editor"
                         },
-                        "destroy": {
+                        {
                             "description": "销毁编辑器实例对象",
                             "example": "```javascript\neditor.destroy();\n```",
                             "itemtype": "method",
-                            "name": "destroy"
+                            "name": "destroy",
+                            "module": "UE",
+                            "class": "Editor"
                         },
-                        "getContent": {
+                        {
+                            "description": "获取编辑器的内容",
+                            "warning": "该方法获取到的是经过编辑器内置的过滤规则进行过滤后得到的内容",
+                            "example": "```javascript\nvar content = editor.getContent();\n```",
+                            "returns": [
+                                {
+                                    "description": "编辑器的内容字符串, 如果编辑器的内容为空， 则返回空字符串",
+                                    "type": [
+                                        "String"
+                                    ]
+                                }
+                            ],
+                            "itemtype": "method",
+                            "name": "getContent",
+                            "module": "UE",
+                            "class": "Editor"
+                        },
+                        {
                             "description": "获取编辑器的内容。 可以通过参数定义编辑器内置的判空规则",
                             "remind": "该方法在处理包含有初始化内容的时候能起到很好的作用。",
                             "warning": "该方法获取到的是经过编辑器内置的过滤规则进行过滤后得到的内容",
@@ -100,9 +168,11 @@
                                 }
                             ],
                             "itemtype": "method",
-                            "name": "getContent"
+                            "name": "getContent",
+                            "module": "UE",
+                            "class": "Editor"
                         }
-                    },
+                    ],
                     "plugins": [],
                     "extensions": [],
                     "plugin_for": [],
@@ -112,7 +182,7 @@
                     "itemtype": "class"
                 }
             },
-            "items": {},
+            "items": [],
             "file": "./Editor.js",
             "description": "UEditor公用空间，UEditor所有的功能都挂载在该空间下",
             "module": "UE",

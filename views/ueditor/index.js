@@ -228,19 +228,35 @@
         },
 
         //解析method签名
-        parseSignature: function ( data ) {
+        parseSignature: function ( data, isLink ) {
 
             var fullpath = [
                     data.module,
                     data['class']
                 ],
-                anchor = fullpath.join( "." ) + ":" + data.name;
+                anchor = this.getPath( data ),
+                isLink = !!isLink;
 
-            return _innerHelper.render( 'signature.ejs', {
-                anchor: anchor,
-                name: data.name,
-                params: data.params
-            } );
+
+            //链接
+            if ( isLink ) {
+
+                return _innerHelper.render( 'member/signature.link.ejs', {
+                    anchor: anchor,
+                    name: data.name,
+                    params: data.params
+                } );
+
+            //锚点
+            } else {
+
+                return _innerHelper.render( 'member/signature.anchor.ejs', {
+                    anchor: anchor,
+                    name: data.name,
+                    params: data.params
+                } );
+
+            }
 
         },
 
@@ -257,11 +273,34 @@
 
                     return data.module + "." + data.name;
 
+                case ITEM_TYPE.METHOD:
+
+                    return this.getMethodPath( data );
+
                 default:
 
                     return data.module + "." + data.class + ":" + data.name;
 
             }
+
+        },
+
+        getMethodPath: function ( data ) {
+
+            var start = data.module + "." + data.class + ":" + data.name,
+                paramStr = [];
+
+            if ( data.params ) {
+
+                data.params.forEach( function ( param ) {
+                    paramStr.push( param.type[0] );
+                } );
+
+            }
+
+            paramStr = "(" + paramStr.join( "," ) + ")";
+
+            return start + paramStr;
 
         },
 

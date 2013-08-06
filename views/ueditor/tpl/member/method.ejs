@@ -1,23 +1,21 @@
-<div class="member">
+<div class="method">
     <dl>
-       <dt><%- ViewHelper.parseSignature( locals ) %></dt>
+       <dt><%- ViewHelper.parseSignature( _self ) %></dt>
        <dd>
-            <fileset>
-                <legend>描述</legend>
-                <ul>
-                    <li><%= description %></li>
-                    <%if (locals.warning) {%>
-                    <li class="warning"><%= warning %></li>
-                    <%}%>
-                    <%if (locals.remind) {%>
-                    <li class="remind"><%= remind %></li>
-                    <%}%>
-                </ul>
-            </fileset>
+            <ul>
+                <li><%= description %></li>
+                <%if (_self.warning) {%>
+                <li class="warning"><%= warning %></li>
+                <%}%>
+                <%if (_self.remind) {%>
+                <li class="remind"><%= remind %></li>
+                <%}%>
+            </ul>
+
             <!-- 参数列表 -->
-            <%if ( locals.params ) {%>
+            <%if ( _self.params ) {%>
             <fileset>
-                <legend>参数列表</legend>
+                <legend>参数</legend>
                 <ol>
                     <%for (var i=0, param; param=params[i]; i++) {%>
                     <li>
@@ -30,8 +28,10 @@
                 </ol>
             </fileset>
             <%}%>
+
+
             <!-- 返回值 -->
-            <%if (locals.returns) {%>
+            <%if (_self.returns) {%>
             <fileset>
                 <legend>返回值</legend>
                 <ul>
@@ -41,8 +41,10 @@
                 </ul>
             </fileset>
             <%}%>
+
+
             <!-- 示例 -->
-            <%if ( locals.example ) {%>
+            <%if ( _self.example ) {%>
                 <fileset>
                     <legend>示例</legend>
                     <div class="example">
@@ -50,6 +52,8 @@
                     </div>
                 </fileset>
             <%}%>
+
+
        </dd>
     </dl>
     <div>

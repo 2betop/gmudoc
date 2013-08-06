@@ -1,23 +1,24 @@
 <div class="member">
     <dl>
-       <dt><%= name %></dt>
+       <dt><a name="<%- ViewHelper.getPath( _self ) %>"><%- name %></a></dt>
        <dd>
             <fileset>
                 <legend>描述</legend>
                 <ul>
                     <li><%= description %></li>
-                    <%if (locals.warning) {%>
+                    <%if (_self.warning) {%>
                     <li class="warning"><%= warning %></li>
                     <%}%>
-                    <%if (locals.remind) {%>
+                    <%if (_self.remind) {%>
                     <li class="remind"><%= remind %></li>
                     <%}%>
                 </ul>
             </fileset>
-            <!-- 参数列表 -->
-            <%if ( locals.params ) {%>
+
+            <!-- 事件监听器参数列表 start -->
+            <%if ( _self.params ) {%>
             <fileset>
-                <legend>参数列表</legend>
+                <legend>回调函数参数列表</legend>
                 <ol>
                     <%for (var i=0, param; param=params[i]; i++) {%>
                     <li>
@@ -30,8 +31,10 @@
                 </ol>
             </fileset>
             <%}%>
+            <!-- 事件监听器参数列表 end -->
+
             <!-- 示例 -->
-            <%if ( locals.example ) {%>
+            <%if ( _self.example ) {%>
                 <fileset>
                     <legend>示例</legend>
                     <div class="example">
