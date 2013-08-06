@@ -1,90 +1,118 @@
 <div class="cls">
     <dl>
         <%var _fullpath = ViewHelper.getPath( _self );%>
-        <dt><a name="<%= _fullpath %>"><%= name %></a></dt>
+        <dt><h4><a name="<%- _fullpath %>" class="anchor"><%- _fullpath %></a></h4></dt>
         <dd><%= description %></dd>
     </dl>
 
-    <!-- 预览列表 start -->
-    <div class="preview-list">
-        <%var _members = ViewHelper.getMembers( _self );%>
+    <div class="member-wrap">
 
-        <fileset>
-            <legend>事件列表</legend>
-            <ul>
-                <%for ( var i=0, member; member = _members[i]; i++ ) {%>
-                    <%if ( member.itemtype==='event' ) {%>
-                    <li>
-                        <dl>
-                            <dt><a href="#<%- ViewHelper.getPath( member ) %>"><%- member.name %></a></dt>
-                            <dd><%- member.description %></dd>
-                        </dl>
-                    </li>
+        <!-- 预览列表 start -->
+        <div class="preview-list">
+            <%var _members = ViewHelper.getMembers( _self );%>
+
+            <fileset>
+                <legend><h5>事件列表</h5></legend>
+                <div class="table-wrap">
+                    <table class="table list-table">
+                        <thead>
+                            <tr>
+                                <th>事件名</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%for ( var i=0, member; member = _members[i]; i++ ) {%>
+                                <%if ( member.itemtype==='event' ) {%>
+                                    <tr>
+                                        <td>
+                                            <a href="#<%- ViewHelper.getPath( member ) %>"><%- member.name %></a>
+                                        </td>
+                                        <td class="list-table-desc">
+                                            <%- member.description %>
+                                        </td>
+                                    </tr>
+                                <%}%>
+                            <%}%>
+                        </tbody>
+                    </table>
+                </div>
+            </fileset>
+
+            <fileset>
+                <legend><h5>方法列表</h5></legend>
+                <div class="table-wrap">
+                    <table class="table list-table">
+                        <thead>
+                            <tr>
+                                <th>方法签名</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%for ( var i=0, member; member = _members[i]; i++ ) {%>
+                                <%if ( member.itemtype==='method' ) {%>
+                                    <tr>
+                                        <td>
+                                            <%- ViewHelper.parseSignature( member, true ) %>
+                                        </td>
+                                        <td class="list-table-desc">
+                                            <%- member.description %>
+                                        </td>
+                                    </tr>
+                                <%}%>
+                            <%}%>
+                        </tbody>
+                    </table>
+                </div>
+            </fileset>
+
+        </div>
+        <!-- 预览列表 end -->
+
+
+        <div class="member-list">
+
+            <!-- 事件 start -->
+            <%if (members.event && members.event.length) {%>
+            <fileset class="member-desc">
+                <legend><h5>事件</h5></legend>
+                <ul>
+                    <%for ( var i=0, evt; evt = members.event[i]; i++ ) {%>
+                        <li><%- evt %></li>
                     <%}%>
-                <%}%>
-            </ul>
-        </fileset>
+                </ul>
+            </fileset>
+            <%}%>
+            <!-- 事件 end -->
 
-        <fileset>
-            <legend>方法列表</legend>
-            <ul>
-                <%for ( var i=0, member; member = _members[i]; i++ ) {%>
-                    <%if ( member.itemtype==='method' ) {%>
-                    <li>
-                        <dl>
-                            <dt><%- ViewHelper.parseSignature( member, true ) %></dt>
-                            <dd><%- member.description %></dd>
-                        </dl>
-                    </li>
+            <!-- 属性 start -->
+            <%if (members.property && members.property.length) {%>
+            <fileset class="member-desc">
+                <legend><h5>属性</h5></legend>
+                <ul>
+                    <%for ( var i=0, prop; prop = members.property[i]; i++ ) {%>
+                        <li><%- prop %></li>
                     <%}%>
-                <%}%>
-            </ul>
-        </fileset>
+                </ul>
+            </fileset>
+            <%}%>
+            <!-- 属性 end -->
 
-    </div>
-    <!-- 预览列表 end -->
+            <!-- 方法 start -->
+            <%if (members.method && members.method.length) {%>
+            <fileset class="member-desc">
+                <legend><h5>方法</h5></legend>
+                <ul>
+                    <%for ( var i=0, fn; fn = members.method[i]; i++ ) {%>
+                        <li><%- fn %></li>
+                    <%}%>
+                </ul>
+            </fileset>
+            <%}%>
+            <!-- 方法 end -->
 
-
-    <div class="member-list">
-
-        <!-- 事件 start -->
-        <%if (members.event && members.event.length) {%>
-        <fileset class="member-desc">
-            <legend>事件</legend>
-            <ul>
-                <%for ( var i=0, evt; evt = members.event[i]; i++ ) {%>
-                    <li><%- evt %></li>
-                <%}%>
-            </ul>
-        </fileset>
-        <%}%>
-        <!-- 事件 end -->
-
-        <!-- 属性 start -->
-        <%if (members.property && members.property.length) {%>
-        <fileset class="member-desc">
-            <legend>属性</legend>
-            <ul>
-                <%for ( var i=0, prop; prop = members.property[i]; i++ ) {%>
-                    <li><%- prop %></li>
-                <%}%>
-            </ul>
-        </fileset>
-        <%}%>
-        <!-- 属性 end -->
-
-        <!-- 方法 start -->
-        <%if (members.method && members.method.length) {%>
-        <fileset class="member-desc">
-            <legend>方法</legend>
-            <ul>
-                <%for ( var i=0, fn; fn = members.method[i]; i++ ) {%>
-                    <li><%- fn %></li>
-                <%}%>
-            </ul>
-        </fileset>
-        <%}%>
-        <!-- 方法 end -->
+        </div>
 
     </div>
 </div>

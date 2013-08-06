@@ -1,50 +1,66 @@
-<div class="member">
-    <dl>
-       <dt><a name="<%- ViewHelper.getPath( _self ) %>"><%- name %></a></dt>
+<div class="member-item member-event">
+    <dl class="member-item-dl">
+       <dt><a name="<%- ViewHelper.getPath( _self ) %>" class="anchor"><%- name %></a></dt>
        <dd>
-            <fileset>
-                <legend>描述</legend>
-                <ul>
-                    <li><%= description %></li>
-                    <%if (_self.warning) {%>
-                    <li class="warning"><%= warning %></li>
-                    <%}%>
-                    <%if (_self.remind) {%>
-                    <li class="remind"><%= remind %></li>
-                    <%}%>
-                </ul>
-            </fileset>
-
-            <!-- 事件监听器参数列表 start -->
-            <%if ( _self.params ) {%>
-            <fileset>
-                <legend>回调函数参数列表</legend>
-                <ol>
-                    <%for (var i=0, param; param=params[i]; i++) {%>
-                    <li>
-                        <dl>
-                            <dt><%= param.name %></dt>
-                            <dd><span><%= param.type.join(", ") %></span><span><%= param.description %></span></dd>
-                        </dl>
-                    </li>
-                    <%}%>
-                </ol>
-            </fileset>
-            <%}%>
-            <!-- 事件监听器参数列表 end -->
-
-            <!-- 示例 -->
-            <%if ( _self.example ) {%>
-                <fileset>
-                    <legend>示例</legend>
-                    <div class="example">
-                        <%- ViewHelper.markdownToHtml( example ) %>
-                    </div>
-                </fileset>
-            <%}%>
+            <ul>
+                <li><%= description %></li>
+                <%if (_self.warning) {%>
+                <li class="warning"><%= warning %></li>
+                <%}%>
+                <%if (_self.remind) {%>
+                <li class="remind"><%= remind %></li>
+                <%}%>
+            </ul>
        </dd>
     </dl>
-    <div>
+
+    <!-- 说明补充 start -->
+    <div class="member-supplementary">
+
+        <!-- 事件监听器参数列表 start -->
+        <%if ( _self.params ) {%>
+        <fileset>
+            <legend>回调函数参数列表</legend>
+            <div class="table-wrap">
+                <table class="table list-table">
+                    <thead>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <%for (var i=0, param; param=params[i]; i++) {%>
+                    <tr>
+                        <td>
+                            <%= param.name %>
+                        </td>
+                        <td>
+                            <a href="#<%- param.type[0] %>"><%- param.type[0] %></a>
+                        </td>
+                        <td>
+                            <%= param.type.join(", ") %></span><span><%= param.description %>
+                        </td>
+                    </tr>
+                    <%}%>
+                    </tbody>
+                </table>
+            </div>
+        </fileset>
+        <%}%>
+        <!-- 事件监听器参数列表 end -->
+
+        <!-- 示例 start -->
+        <%if ( _self.example ) {%>
+            <fileset>
+                <legend>示例</legend>
+                <div class="example">
+                    <%- ViewHelper.markdownToHtml( example ) %>
+                </div>
+            </fileset>
+        <%}%>
+        <!-- 示例 end -->
 
     </div>
 </div>

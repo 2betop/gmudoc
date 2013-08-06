@@ -1,3 +1,100 @@
+
+
+/* global */
+.module-wrap dl {
+    margin: 0;
+}
+
+.module-wrap fileset {
+    display: block;
+}
+
+.module-wrap dt {
+    font-weight: normal;
+}
+
+.module-wrap dd {
+    text-indent: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.module-wrap ul, .module-wrap ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 2em;
+}
+
+.module-wrap .anchor {
+    color: #000000;
+}
+
+.module-wrap .anchor:HOVER {
+    text-decoration: none;
+}
+
+.module-wrap legend {
+    border: none;
+    font-size: 14px;
+    margin: 1em 0;
+}
+
+
+/* module */
+.module .member-list {
+    padding-left: 2em;
+    margin: 1em 0;
+}
+
+.module .member-list ul {
+    list-style: disc;
+}
+
+.module .member-list .member-item dt, .module .member-list .member-item dd {
+    display: inline-block;
+}
+
+
+/* module-member */
+.module-member {
+    margin: 150px 0;
+}
+
+.module-member .member-wrap {
+    margin: 50px 0;
+    padding-left: 2em;
+}
+
+.module-member .member-list, .module-member .preview-list {
+    margin: 50px 0;
+}
+
+
+.module-member .preview-list dt, .module-member .preview-list dd {
+    display: inline-block;
+}
+
+.module-member .preview-list .list-table-desc {
+}
+
+.module-member  .member-list .member-item {
+    margin-bottom: 50px;
+}
+
+
+/* 成员详情部分 */
+.module-member .member-item .member-item-dl dd {
+    text-indent: 0;
+}
+
+.module-member .table-wrap {
+    padding-left: 2em;
+}
+
+
 /*代码高亮外部格式*/
 .example table.highlighttable {
     border-spacing: 0;
@@ -31,5 +128,3 @@
     border: 1px solid #cccccc;
 }
 
-
-/* METHOD api 处理 */

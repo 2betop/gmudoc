@@ -1,6 +1,6 @@
 <div class="module">
     <dl>
-        <dt><%= name %></dt>
+        <dt><h3><%= name %></h3></dt>
         <dd><%= description %></dd>
     </dl>
     <div class="member-list">
@@ -9,7 +9,7 @@
             <ul>
                 <%for ( var key in classes ) {%>
                     <%var member = classes[ key ];%>
-                    <li class="member-item-cls">
+                    <li class="member-item member-item-cls">
                         <dl>
                             <dt><a href="#<%= ViewHelper.getPath( member ) %>"><%= member.name %></a></dt>
                             <dd><%= member.description %></dd>

@@ -3,9 +3,9 @@
     <head>
         <title>API文档</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/bootstrap.css">
         <script src="/gmudoc/lib/highlight/google-code-prettify/src/prettify.js"></script>
         <script src="/gmudoc/lib/highlight/google-code-prettify/src/lang-css.js"></script>
-        <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/bootstrap.css">
         <link rel="stylesheet" href="/gmudoc/lib/highlight/google-code-prettify/styles/desert.css" type="text/css">
         <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/pygments.css" type="text/css">
         <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/page.css" type="text/css">
@@ -16,12 +16,12 @@
         </script>
     </head>
     <body>
-        <div class="page">
+        <div class="page row">
             
-                <div class="module-wrap">
+                <div class="module-wrap col-lg-10 col-lg-offset-1">
                     <div class="module">
     <dl>
-        <dt>UE</dt>
+        <dt><h3>UE</h3></dt>
         <dd>UEditor公用空间，UEditor所有的功能都挂载在该空间下</dd>
     </dl>
     <div class="member-list">
@@ -30,7 +30,7 @@
             <ul>
                 
                     
-                    <li class="member-item-cls">
+                    <li class="member-item member-item-cls">
                         <dl>
                             <dt><a href="#UE.Editor">Editor</a></dt>
                             <dd>UEditor的核心类，为用户提供与编辑器交互的接口。</dd>
@@ -46,63 +46,87 @@
                             <div class="cls">
     <dl>
         
-        <dt><a name="UE.Editor">Editor</a></dt>
+        <dt><h4><a name="UE.Editor" class="anchor">UE.Editor</a></h4></dt>
         <dd>UEditor的核心类，为用户提供与编辑器交互的接口。</dd>
     </dl>
 
-    <!-- 预览列表 start -->
-    <div class="preview-list">
-        
+    <div class="member-wrap">
 
-        <fileset>
-            <legend>事件列表</legend>
-            <ul>
-                
-                    
-                    <li>
-                        <dl>
-                            <dt><a href="#UE.Editor:ready">ready</a></dt>
-                            <dd>编辑器准备就绪后会触发该事件</dd>
-                        </dl>
-                    </li>
-                    
-                
-                    
-                    <li>
-                        <dl>
-                            <dt><a href="#UE.Editor:selectionchange">selectionchange</a></dt>
-                            <dd>每当编辑器内部选区发生改变后， 将触发该事件</dd>
-                        </dl>
-                    </li>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-            </ul>
-        </fileset>
+        <!-- 预览列表 start -->
+        <div class="preview-list">
+            
 
-        <fileset>
-            <legend>方法列表</legend>
-            <ul>
-                
-                    
-                
-                    
-                
-                    
-                    <li>
-                        <dl>
-                            <dt><a href="#UE.Editor:ready(Function)">
+            <fileset>
+                <legend><h5>事件列表</h5></legend>
+                <div class="table-wrap">
+                    <table class="table list-table">
+                        <thead>
+                            <tr>
+                                <th>事件名</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="#UE.Editor:ready">ready</a>
+                                        </td>
+                                        <td class="list-table-desc">
+                                            编辑器准备就绪后会触发该事件
+                                        </td>
+                                    </tr>
+                                
+                            
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="#UE.Editor:selectionchange">selectionchange</a>
+                                        </td>
+                                        <td class="list-table-desc">
+                                            每当编辑器内部选区发生改变后， 将触发该事件
+                                        </td>
+                                    </tr>
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </fileset>
+
+            <fileset>
+                <legend><h5>方法列表</h5></legend>
+                <div class="table-wrap">
+                    <table class="table list-table">
+                        <thead>
+                            <tr>
+                                <th>方法签名</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                
+                            
+                                
+                            
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="#UE.Editor:ready(Function)">
     
     
         
@@ -112,16 +136,18 @@
     ready
 (Function&nbsp;&nbsp;fn)
 </a>
-</dt>
-                            <dd>编辑器对外提供的监听ready事件的接口， 通过调用该方法，达到的效果与监听ready事件是一致的</dd>
-                        </dl>
-                    </li>
-                    
-                
-                    
-                    <li>
-                        <dl>
-                            <dt><a href="#UE.Editor:setOpt(String,*)">
+
+                                        </td>
+                                        <td class="list-table-desc">
+                                            编辑器对外提供的监听ready事件的接口， 通过调用该方法，达到的效果与监听ready事件是一致的
+                                        </td>
+                                    </tr>
+                                
+                            
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="#UE.Editor:setOpt(String,*)">
     
     
         
@@ -133,16 +159,18 @@
     setOpt
 (String&nbsp;&nbsp;key, *&nbsp;&nbsp;val)
 </a>
-</dt>
-                            <dd>以attributeName - attributeValue的方式设置编辑器的配置项，以覆盖编辑器的默认选项值</dd>
-                        </dl>
-                    </li>
-                    
-                
-                    
-                    <li>
-                        <dl>
-                            <dt><a href="#UE.Editor:setOpt(PlainObject)">
+
+                                        </td>
+                                        <td class="list-table-desc">
+                                            以attributeName - attributeValue的方式设置编辑器的配置项，以覆盖编辑器的默认选项值
+                                        </td>
+                                    </tr>
+                                
+                            
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="#UE.Editor:setOpt(PlainObject)">
     
     
         
@@ -152,46 +180,52 @@
     setOpt
 (PlainObject&nbsp;&nbsp;settings)
 </a>
-</dt>
-                            <dd>以key-value集合的方式设置编辑器的配置项，以覆盖编辑器的默认选项值</dd>
-                        </dl>
-                    </li>
-                    
-                
-                    
-                    <li>
-                        <dl>
-                            <dt><a href="#UE.Editor:destroy()">
+
+                                        </td>
+                                        <td class="list-table-desc">
+                                            以key-value集合的方式设置编辑器的配置项，以覆盖编辑器的默认选项值
+                                        </td>
+                                    </tr>
+                                
+                            
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="#UE.Editor:destroy()">
     
     
     destroy
 ()
 </a>
-</dt>
-                            <dd>销毁编辑器实例对象</dd>
-                        </dl>
-                    </li>
-                    
-                
-                    
-                    <li>
-                        <dl>
-                            <dt><a href="#UE.Editor:getContent()">
+
+                                        </td>
+                                        <td class="list-table-desc">
+                                            销毁编辑器实例对象
+                                        </td>
+                                    </tr>
+                                
+                            
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="#UE.Editor:getContent()">
     
     
     getContent
 ()
 </a>
-</dt>
-                            <dd>获取编辑器的内容</dd>
-                        </dl>
-                    </li>
-                    
-                
-                    
-                    <li>
-                        <dl>
-                            <dt><a href="#UE.Editor:getContent(Function)">
+
+                                        </td>
+                                        <td class="list-table-desc">
+                                            获取编辑器的内容
+                                        </td>
+                                    </tr>
+                                
+                            
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="#UE.Editor:getContent(Function)">
     
     
         
@@ -201,140 +235,176 @@
     getContent
 (Function&nbsp;&nbsp;fn)
 </a>
-</dt>
-                            <dd>获取编辑器的内容。 可以通过参数定义编辑器内置的判空规则</dd>
-                        </dl>
-                    </li>
+
+                                        </td>
+                                        <td class="list-table-desc">
+                                            获取编辑器的内容。 可以通过参数定义编辑器内置的判空规则
+                                        </td>
+                                    </tr>
+                                
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </fileset>
+
+        </div>
+        <!-- 预览列表 end -->
+
+
+        <div class="member-list">
+
+            <!-- 事件 start -->
+            
+            <fileset class="member-desc">
+                <legend><h5>事件</h5></legend>
+                <ul>
                     
+                        <li><div class="member-item member-event">
+    <dl class="member-item-dl">
+       <dt><a name="UE.Editor:ready" class="anchor">ready</a></dt>
+       <dd>
+            <ul>
+                <li>编辑器准备就绪后会触发该事件</li>
+                
                 
             </ul>
-        </fileset>
+       </dd>
+    </dl>
 
-    </div>
-    <!-- 预览列表 end -->
+    <!-- 说明补充 start -->
+    <div class="member-supplementary">
 
-
-    <div class="member-list">
-
-        <!-- 事件 start -->
+        <!-- 事件监听器参数列表 start -->
         
-        <fileset class="member-desc">
-            <legend>事件</legend>
-            <ul>
-                
-                    <li><div class="member">
-    <dl>
-       <dt><a name="UE.Editor:ready">ready</a></dt>
-       <dd>
-            <fileset>
-                <legend>描述</legend>
-                <ul>
-                    <li>编辑器准备就绪后会触发该事件</li>
+        <fileset>
+            <legend>回调函数参数列表</legend>
+            <div class="table-wrap">
+                <table class="table list-table">
+                    <thead>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     
+                    <tr>
+                        <td>
+                            editor
+                        </td>
+                        <td>
+                            <a href="#UE.Editor">UE.Editor</a>
+                        </td>
+                        <td>
+                            UE.Editor</span><span>当前所监听的编辑器对象的引用
+                        </td>
+                    </tr>
                     
-                </ul>
-            </fileset>
+                    </tbody>
+                </table>
+            </div>
+        </fileset>
+        
+        <!-- 事件监听器参数列表 end -->
 
-            <!-- 事件监听器参数列表 start -->
-            
+        <!-- 示例 start -->
+        
             <fileset>
-                <legend>回调函数参数列表</legend>
-                <ol>
-                    
-                    <li>
-                        <dl>
-                            <dt>editor</dt>
-                            <dd><span>UE.Editor</span><span>当前所监听的编辑器对象的引用</span></dd>
-                        </dl>
-                    </li>
-                    
-                </ol>
-            </fileset>
-            
-            <!-- 事件监听器参数列表 end -->
-
-            <!-- 示例 -->
-            
-                <fileset>
-                    <legend>示例</legend>
-                    <div class="example">
-                        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+                <legend>示例</legend>
+                <div class="example">
+                    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span> <span class="s1">&#39;ready&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">editor</span> <span class="p">)</span> <span class="p">{</span>
     <span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span> <span class="s1">&#39;focus&#39;</span> <span class="p">);</span>
 <span class="p">}</span> <span class="p">);</span>
 </pre></div>
 </td></tr></table>
-                    </div>
-                </fileset>
-            
-       </dd>
-    </dl>
-    <div>
+                </div>
+            </fileset>
+        
+        <!-- 示例 end -->
 
     </div>
 </div></li>
-                
-                    <li><div class="member">
-    <dl>
-       <dt><a name="UE.Editor:selectionchange">selectionchange</a></dt>
+                    
+                        <li><div class="member-item member-event">
+    <dl class="member-item-dl">
+       <dt><a name="UE.Editor:selectionchange" class="anchor">selectionchange</a></dt>
        <dd>
-            <fileset>
-                <legend>描述</legend>
-                <ul>
-                    <li>每当编辑器内部选区发生改变后， 将触发该事件</li>
+            <ul>
+                <li>每当编辑器内部选区发生改变后， 将触发该事件</li>
+                
+                <li class="warning">该事件的触发非常频繁，不建议在该事件的处理过程中做重量级的处理</li>
+                
+                
+            </ul>
+       </dd>
+    </dl>
+
+    <!-- 说明补充 start -->
+    <div class="member-supplementary">
+
+        <!-- 事件监听器参数列表 start -->
+        
+        <fileset>
+            <legend>回调函数参数列表</legend>
+            <div class="table-wrap">
+                <table class="table list-table">
+                    <thead>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     
-                    <li class="warning">该事件的触发非常频繁，不建议在该事件的处理过程中做重量级的处理</li>
+                    <tr>
+                        <td>
+                            editor
+                        </td>
+                        <td>
+                            <a href="#UE.Editor">UE.Editor</a>
+                        </td>
+                        <td>
+                            UE.Editor</span><span>当前所监听的编辑器对象的引用
+                        </td>
+                    </tr>
                     
+                    </tbody>
+                </table>
+            </div>
+        </fileset>
+        
+        <!-- 事件监听器参数列表 end -->
+
+        <!-- 示例 start -->
+        
+        <!-- 示例 end -->
+
+    </div>
+</div></li>
                     
                 </ul>
             </fileset>
-
-            <!-- 事件监听器参数列表 start -->
             
-            <fileset>
-                <legend>回调函数参数列表</legend>
-                <ol>
+            <!-- 事件 end -->
+
+            <!-- 属性 start -->
+            
+            <!-- 属性 end -->
+
+            <!-- 方法 start -->
+            
+            <fileset class="member-desc">
+                <legend><h5>方法</h5></legend>
+                <ul>
                     
-                    <li>
-                        <dl>
-                            <dt>editor</dt>
-                            <dd><span>UE.Editor</span><span>当前所监听的编辑器对象的引用</span></dd>
-                        </dl>
-                    </li>
-                    
-                </ol>
-            </fileset>
-            
-            <!-- 事件监听器参数列表 end -->
-
-            <!-- 示例 -->
-            
-       </dd>
-    </dl>
-    <div>
-
-    </div>
-</div></li>
-                
-            </ul>
-        </fileset>
-        
-        <!-- 事件 end -->
-
-        <!-- 属性 start -->
-        
-        <!-- 属性 end -->
-
-        <!-- 方法 start -->
-        
-        <fileset class="member-desc">
-            <legend>方法</legend>
-            <ul>
-                
-                    <li><div class="method">
-    <dl>
-       <dt><a name="UE.Editor:ready(Function)">
+                        <li><div class="method">
+    <dl class="member-item-dl">
+       <dt><a name="UE.Editor:ready(Function)" class="anchor">
     
     
         
@@ -396,10 +466,10 @@
 
     </div>
 </div></li>
-                
-                    <li><div class="method">
-    <dl>
-       <dt><a name="UE.Editor:setOpt(String,*)">
+                    
+                        <li><div class="method">
+    <dl class="member-item-dl">
+       <dt><a name="UE.Editor:setOpt(String,*)" class="anchor">
     
     
         
@@ -468,10 +538,10 @@
 
     </div>
 </div></li>
-                
-                    <li><div class="method">
-    <dl>
-       <dt><a name="UE.Editor:setOpt(PlainObject)">
+                    
+                        <li><div class="method">
+    <dl class="member-item-dl">
+       <dt><a name="UE.Editor:setOpt(PlainObject)" class="anchor">
     
     
         
@@ -535,10 +605,10 @@
 
     </div>
 </div></li>
-                
-                    <li><div class="method">
-    <dl>
-       <dt><a name="UE.Editor:destroy()">
+                    
+                        <li><div class="method">
+    <dl class="member-item-dl">
+       <dt><a name="UE.Editor:destroy()" class="anchor">
     
     
     destroy
@@ -578,10 +648,10 @@
 
     </div>
 </div></li>
-                
-                    <li><div class="method">
-    <dl>
-       <dt><a name="UE.Editor:getContent()">
+                    
+                        <li><div class="method">
+    <dl class="member-item-dl">
+       <dt><a name="UE.Editor:getContent()" class="anchor">
     
     
     getContent
@@ -632,10 +702,10 @@
 
     </div>
 </div></li>
-                
-                    <li><div class="method">
-    <dl>
-       <dt><a name="UE.Editor:getContent(Function)">
+                    
+                        <li><div class="method">
+    <dl class="member-item-dl">
+       <dt><a name="UE.Editor:getContent(Function)" class="anchor">
     
     
         
@@ -712,11 +782,13 @@
 
     </div>
 </div></li>
-                
-            </ul>
-        </fileset>
-        
-        <!-- 方法 end -->
+                    
+                </ul>
+            </fileset>
+            
+            <!-- 方法 end -->
+
+        </div>
 
     </div>
 </div>
