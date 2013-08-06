@@ -4,12 +4,19 @@
         <dd><%= description %></dd>
     </dl>
     <div class="member-list">
-        <ul>
-            <%for ( var key in classes ) {%>
-                <li class="member-item-cls">
-                    <%= classes[ key ].name %>
-                </li>
-            <%}%>
-        </ul>
+        <fileset>
+            <legend>成员列表</legend>
+            <ul>
+                <%for ( var key in classes ) {%>
+                    <%var member = classes[ key ];%>
+                    <li class="member-item-cls">
+                        <dl>
+                            <dt><a href="#<%= ViewHelper.getPath( member ) %>"><%= member.name %></a></dt>
+                            <dd><%= member.description %></dd>
+                        </dl>
+                    </li>
+                <%}%>
+            </ul>
+        </fileset>
     </div>
 </div>

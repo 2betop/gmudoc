@@ -1,8 +1,22 @@
 <div class="cls">
     <dl>
-        <dt><%= name %></dt>
+        <%var _fullpath = ViewHelper.getPath( _self );%>
+        <dt><a name="<%= _fullpath %>"><%= _fullpath %></a></dt>
         <dd><%= description %></dd>
     </dl>
+    <div class="preview-list">
+        <%var _members = ViewHelper.getMembers( _self );%>
+        <fileset>
+            <legend>方法列表</legend>
+            <ul>
+                <%for ( var i=0, member; member = _members[i]; i++ ) {%>
+                    <%if ( member.itemtype==='method' ) {%>
+                    <li><a href="#<%- ViewHelper.getPath( member ) %>"><%- member.name %></a></li>
+                    <%}%>
+                <%}%>
+            </ul>
+        </fileset>
+    </div>
     <div class="member-list">
 
         <!-- 事件 start -->

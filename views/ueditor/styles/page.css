@@ -1,0 +1,32 @@
+/*代码高亮外部格式*/
+.example table.highlighttable {
+    border-spacing: 0;
+    border-collapse: collapse;
+    background: #f5f5f5;
+    width: 100%;
+}
+
+.example table.highlighttable {
+    border: 1px solid #cccccc;
+}
+
+.example .highlighttable pre {
+    border: 0;
+    background: transparent;
+    font-size: 12px;
+    line-height: 2;
+    margin: 0;
+}
+
+.example .highlighttable .linenos {
+    width: 40px;
+    text-align: right;
+}
+
+.example .highlighttable .linenos pre {
+    color: #999;
+}
+
+.example table.highlighttable td {
+    border: 1px solid #cccccc;
+}

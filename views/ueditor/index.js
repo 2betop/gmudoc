@@ -14,6 +14,13 @@
             METHOD: 'method',
             PROPERTY: 'property',
             EVENT: 'event'
+        },
+        ITEM_TYPE = {
+            MODULE: 'module',
+            CLASS: 'class',
+            METHOD: 'method',
+            EVENT: 'event',
+            PROPERTY: 'property'
         };
 
     function View () {
@@ -41,11 +48,11 @@
                     modules: []
                 };
 
-            for ( var key in modules ) {
+            util._.each( modules, function ( moduleData ) {
 
-                tplData.modules.push( _innerHelper.renderModule( modules[ key ] ) );
+                tplData.modules.push( _innerHelper.renderModule( moduleData ) );
 
-            }
+            } );
 
             return _innerHelper.renderPage( tplData );
 
@@ -62,7 +69,7 @@
             var count = Object.keys( data.modules ).length,
                 _self = this;
 
-            util.eachObject( data.modules, function ( clsData ) {
+            util._.each( data.modules, function ( clsData ) {
 
                 _self.transformClass( clsData.classes, function () {
 
@@ -81,11 +88,11 @@
         transformClass: function ( clsData, callback ) {
 
             var _self = this,
-                count = clsData.length;
+                count = Object.keys( clsData ).length;
 
-            clsData.forEach( function ( cls ) {
+            util._.each( clsData, function ( cls ) {
 
-                _self.transformMember( cls.classitems, function () {
+                _self.transformMember( cls.items, function () {
                     count--;
                     !count && callback();
                 } );
@@ -96,9 +103,9 @@
 
         transformMember: function ( memberData, callback ) {
 
-            var count = memberData.length;
+            var count = Object.keys( memberData ).length;
 
-            memberData.forEach( function ( member ) {
+            util._.each( memberData, function ( member ) {
 
                 if ( member.example ) {
 
@@ -128,7 +135,7 @@
 
             tpls.module = this.render( 'module.ejs', module );
 
-            module.classes.forEach( function ( clsData ) {
+            util._.each( module.classes, function ( clsData ) {
 
                 var data = _innerHelper.renderClass( clsData );
 
@@ -150,7 +157,7 @@
                 method: []
             };
 
-            clsData.classitems.forEach( function ( member ) {
+            util._.each( clsData.items, function ( member ) {
 
                 data = _innerHelper.renderMember( member );
 
@@ -204,6 +211,7 @@
 
         render: function ( file, data ) {
             data.ViewHelper = ViewHelper;
+            data._self = data;
             return ejs.render( this.readTpl( file ), data )
         }
 
@@ -239,19 +247,39 @@
         //获取当前处理对象的路径
         getPath: function ( data ) {
 
-            var path = [
-                data.module
-            ];
+            switch ( data.itemtype ) {
 
-            if ( data['class'] ) {
-                path.push( data['class'] );
+                case ITEM_TYPE.MODULE:
+
+                    return data.name;
+
+                case ITEM_TYPE.CLASS:
+
+                    return data.module + "." + data.name;
+
+                default:
+
+                    return data.module + "." + data.class + ":" + data.name;
+
             }
 
-            path = path.join(".");
+        },
 
-            path += ':' + data.name;
+        getMembers: function ( data ) {
 
-            return path;
+            if ( data.itemtype === ITEM_TYPE.CLASS ) {
+
+                var result = [];
+
+                Object.keys( data.items ).forEach( function ( key ) {
+
+                    result.push( data.items[ key ] );
+
+                } );
+
+                return result;
+
+            }
 
         },
 
@@ -259,7 +287,7 @@
 
             var match = /^<p><code>(.+)\n([^<]+)<\/code><\/p>$/i.exec( htmlStr );
 
-            match && highlight( RegExp.$2, RegExp.$1, 'html', function(data) {
+            match && highlight( match[ 2 ], match[ 1 ], 'html', function(data) {
 
                 callback( data );
 

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API文档</title>
+        <meta charset="UTF-8">
+        <script src="/gmudoc/lib/highlight/google-code-prettify/src/prettify.js"></script>
+        <script src="/gmudoc/lib/highlight/google-code-prettify/src/lang-css.js"></script>
+        <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/bootstrap.css">
+        <link rel="stylesheet" href="/gmudoc/lib/highlight/google-code-prettify/styles/desert.css" type="text/css">
+        <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/pygments.css" type="text/css>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+    </head>
+    <body>
+        <div class="page">
+            
+                <div class="module">
+                    <div class="module">
+    <dl>
+        <dt>UE</dt>
+        <dd>UEditor公用空间，UEditor所有的功能都挂载在该空间下</dd>
+    </dl>
+    <div class="member-list">
+        <ul>
+            
+                <li class="member-item-cls">
+                    Editor
+                </li>
+            
+        </ul>
+    </div>
+</div>
+                </div>
+                <div class="module-member">
+                    
+                        <div class="cls">
+    <dl>
+        <dt>Editor</dt>
+        <dd>UEditor的核心类，为用户提供与编辑器交互的接口。</dd>
+    </dl>
+    <div class="member-list">
+
+        <!-- 事件 start -->
+        
+        <fileset>
+            <legend>事件</legend>
+            <ul>
+                
+                    <li><div class="member">
+    <dl>
+       <dt>selectionchange</dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li>每当编辑器内部选区发生改变后， 将触发该事件</li>
+                    
+                    <li class="warning">该事件的触发非常频繁，不建议在该事件的处理过程中做重量级的处理</li>
+                    
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <fileset>
+                <legend>参数列表</legend>
+                <ol>
+                    
+                    <li>
+                        <dl>
+                            <dt>editor</dt>
+                            <dd><span>UE.Editor</span><span>当前所监听的编辑器对象的引用</span></dd>
+                        </dl>
+                    </li>
+                    
+                </ol>
+            </fileset>
+            
+            <!-- 示例 -->
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+            </ul>
+        </fileset>
+        
+        <!-- 事件 end -->
+
+        <!-- 属性 start -->
+        
+        <!-- 属性 end -->
+
+        <!-- 方法 start -->
+        
+        <fileset>
+            <legend>方法</legend>
+            <ul>
+                
+                    <li><div class="member">
+    <dl>
+       <dt><a name=".:ready">
+    
+    
+        
+            
+        
+    
+    ready
+</a>
+(<a href="#Function">Function</a><span class="member-name">&nbsp;&nbsp;fn</span>)</dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li></li>
+                    
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <fileset>
+                <legend>参数列表</legend>
+                <ol>
+                    
+                    <li>
+                        <dl>
+                            <dt>fn</dt>
+                            <dd><span>Function</span><span>编辑器ready之后所执行的回调, 如果在注册事件之前编辑器已经ready，将会</span></dd>
+                        </dl>
+                    </li>
+                    
+                </ol>
+            </fileset>
+            
+            <!-- 返回值 -->
+            
+            <!-- 示例 -->
+            
+                <fileset>
+                    <legend>示例</legend>
+                    <div class="example">
+                        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span> <span class="s1">&#39;ready&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">editor</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">editor</span><span class="p">.</span><span class="nx">setContent</span><span class="p">(</span><span class="s1">&#39;初始化完毕&#39;</span><span class="p">);</span>
+<span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table>
+                    </div>
+                </fileset>
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+                    <li><div class="member">
+    <dl>
+       <dt><a name=".:setOpt">
+    
+    
+        
+            
+        
+    
+    setOpt
+</a>
+(<a href="#PlainObject">PlainObject</a><span class="member-name">&nbsp;&nbsp;settings</span>)</dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li>以key-value集合的方式设置编辑器的配置项，以覆盖编辑器的默认选项值</li>
+                    
+                    <li class="warning">该方法仅供编辑器构造函数调用，其他任何方法不能调用。</li>
+                    
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <fileset>
+                <legend>参数列表</legend>
+                <ol>
+                    
+                    <li>
+                        <dl>
+                            <dt>settings</dt>
+                            <dd><span>PlainObject</span><span>编辑器的可接受的选项的key-value集合</span></dd>
+                        </dl>
+                    </li>
+                    
+                </ol>
+            </fileset>
+            
+            <!-- 返回值 -->
+            
+            <!-- 示例 -->
+            
+                <fileset>
+                    <legend>示例</legend>
+                    <div class="example">
+                        <p><code>javascript
+editor.setOpt( {
+    'initContent': '欢迎使用编辑器'
+} );
+</code></p>
+                    </div>
+                </fileset>
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+                    <li><div class="member">
+    <dl>
+       <dt><a name=".:destroy">
+    
+    
+    destroy
+</a>
+()</dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li>销毁编辑器实例对象</li>
+                    
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <!-- 返回值 -->
+            
+            <!-- 示例 -->
+            
+                <fileset>
+                    <legend>示例</legend>
+                    <div class="example">
+                        <p><code>javascript
+editor.destroy();
+</code></p>
+                    </div>
+                </fileset>
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+                    <li><div class="member">
+    <dl>
+       <dt><a name=".:getContent">
+    
+    
+        
+            
+        
+    
+    getContent
+</a>
+(<a href="#Function">Function</a><span class="member-name">&nbsp;&nbsp;fn</span>)</dt>
+       <dd>
+            <fileset>
+                <legend>描述</legend>
+                <ul>
+                    <li>获取编辑器的内容。 可以通过参数定义编辑器内置的判空规则</li>
+                    
+                    <li class="warning">该方法获取到的是经过编辑器内置的过滤规则进行过滤后得到的内容</li>
+                    
+                    
+                    <li class="remind">该方法在处理包含有初始化内容的时候能起到很好的作用。</li>
+                    
+                </ul>
+            </fileset>
+            <!-- 参数列表 -->
+            
+            <fileset>
+                <legend>参数列表</legend>
+                <ol>
+                    
+                    <li>
+                        <dl>
+                            <dt>fn</dt>
+                            <dd><span>Function</span><span>自定的判空规则， 要求该方法返回一个boolean类型的值，</span></dd>
+                        </dl>
+                    </li>
+                    
+                </ol>
+            </fileset>
+            
+            <!-- 返回值 -->
+            
+            <fileset>
+                <legend>返回值</legend>
+                <ul>
+                    
+                    <li><a class="return-value-type" href="String">String</a><span class="return-value-desc">编辑器的内容字符串</span></li>
+                    
+                </ul>
+            </fileset>
+            
+            <!-- 示例 -->
+            
+                <fileset>
+                    <legend>示例</legend>
+                    <div class="example">
+                        <p><code>javascript
+// editor 是一个编辑器的实例
+var content = editor.getContent( function ( editor ) {
+     return editor.body.innerHTML === '欢迎使用UEditor';
+} );
+</code></p>
+                    </div>
+                </fileset>
+            
+       </dd>
+    </dl>
+    <div>
+
+    </div>
+</div></li>
+                
+            </ul>
+        </fileset>
+        
+        <!-- 方法 end -->
+
+    </div>
+</div>
+                    
+                </div>
+            
+        </div>
+    </body>
+</html>
