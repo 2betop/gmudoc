@@ -5,6 +5,7 @@
     var util = require( '../../lib/util.js' ),
         ejs = require( 'ejs' ),
         fs = require( 'fs' ),
+        highlight = require('pygments').colorize,
         markdown = require( 'markdown-js' ),
         fileOptions = {
             encoding: 'utf-8'
@@ -21,15 +22,21 @@
 
     util.extend( View.prototype, {
 
-        transform: function ( jsonData ) {
+        build: function ( jsonData, callback ) {
 
-            this.data = jsonData;
+            var _self = this;
+
+            _innerHelper.transform( jsonData, function () {
+
+                callback( _self._render( jsonData ) );
+
+            } );
 
         },
 
-        render: function () {
+        _render: function ( data ) {
 
-            var modules = this.data.modules,
+            var modules = data.modules,
                 tplData = {
                     modules: []
                 };
@@ -49,6 +56,68 @@
 
     //内部工具类
     var _innerHelper = {
+
+        transform: function ( data, callback ) {
+
+            var count = Object.keys( data.modules ).length,
+                _self = this;
+
+            util.eachObject( data.modules, function ( clsData ) {
+
+                _self.transformClass( clsData.classes, function () {
+
+                    count--;
+
+                    if ( !count ) {
+                        callback();
+                    }
+
+                } );
+
+            } );
+
+        },
+
+        transformClass: function ( clsData, callback ) {
+
+            var _self = this,
+                count = clsData.length;
+
+            clsData.forEach( function ( cls ) {
+
+                _self.transformMember( cls.classitems, function () {
+                    count--;
+                    !count && callback();
+                } );
+
+            } );
+
+        },
+
+        transformMember: function ( memberData, callback ) {
+
+            var count = memberData.length;
+
+            memberData.forEach( function ( member ) {
+
+                if ( member.example ) {
+
+                    ViewHelper.highlight( ViewHelper.markdownToHtml( member.example ), function ( data ) {
+
+                        count--;
+                        member.example = data;
+
+                        !count && callback();
+
+                    } );
+
+                } else {
+                    count--;
+                }
+
+            } );
+
+        },
 
         renderModule: function ( module ) {
 
@@ -140,12 +209,13 @@
 
     },
 
+        test = 0,
     //视图工具类
     ViewHelper = {
 
         markdownToHtml: function ( str ) {
 
-            return this.filter( markdown.makeHtml( str ) );
+            return markdown.makeHtml( str );
 
         },
 
@@ -185,11 +255,19 @@
 
         },
 
-        filter: function ( htmlStr ) {
+        highlight: function ( htmlStr, callback ) {
 
-            return htmlStr.replace( /<p><code>(.+)\n/ig, function( str, $1 ) {
-                return '<pre class="prettyprint linenums lang-'+ $1 +'">\n';
-            }).replace( /<\/code><\/p>/ig, '</pre>' );
+            var match = /^<p><code>(.+)\n([^<]+)<\/code><\/p>$/i.exec( htmlStr );
+
+            match && highlight( RegExp.$2, RegExp.$1, 'html', function(data) {
+
+                callback( data );
+
+            }, {
+                O: 'style=colorful,linenos=table,encoding=utf-8 '
+            });
+
+            !match && callback( htmlStr );
 
         }
 

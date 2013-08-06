@@ -5,7 +5,9 @@
         <meta charset="UTF-8">
         <script src="/gmudoc/lib/highlight/google-code-prettify/src/prettify.js"></script>
         <script src="/gmudoc/lib/highlight/google-code-prettify/src/lang-css.js"></script>
+        <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/bootstrap.css">
         <link rel="stylesheet" href="/gmudoc/lib/highlight/google-code-prettify/styles/desert.css" type="text/css">
+        <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/pygments.css" type="text/css>
         <script>
             window.onload = function () {
                 prettyPrint();
@@ -80,11 +82,13 @@
                 <fileset>
                     <legend>示例</legend>
                     <div class="example">
-                        <pre class="prettyprint linenums lang-javascript">
-editor.addListener( 'ready', function( editor ) {
-    editor.execCommand( 'focus' );
-} );
-</pre>
+                        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span> <span class="s1">&#39;ready&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">editor</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span> <span class="s1">&#39;focus&#39;</span> <span class="p">);</span>
+<span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table>
                     </div>
                 </fileset>
             
@@ -158,8 +162,9 @@ editor.addListener( 'ready', function( editor ) {
             
         
     
-    ready(<a href="#Function">Function</a><span class="member-name">&nbsp;&nbsp;fn</span>)
-</a></dt>
+    ready
+</a>
+(<a href="#Function">Function</a><span class="member-name">&nbsp;&nbsp;fn</span>)</dt>
        <dd>
             <fileset>
                 <legend>描述</legend>
@@ -192,11 +197,13 @@ editor.addListener( 'ready', function( editor ) {
                 <fileset>
                     <legend>示例</legend>
                     <div class="example">
-                        <pre class="prettyprint linenums lang-javascript">
-editor.addListener( 'ready', function( editor ) {
-    editor.setContent('初始化完毕');
-} );
-</pre>
+                        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span> <span class="s1">&#39;ready&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">editor</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">editor</span><span class="p">.</span><span class="nx">setContent</span><span class="p">(</span><span class="s1">&#39;初始化完毕&#39;</span><span class="p">);</span>
+<span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table>
                     </div>
                 </fileset>
             
@@ -218,8 +225,9 @@ editor.addListener( 'ready', function( editor ) {
             
         
     
-    setOpt(<a href="#String">String</a><span class="member-name">&nbsp;&nbsp;key</span>, <a href="#*">*</a><span class="member-name">&nbsp;&nbsp;val</span>)
-</a></dt>
+    setOpt
+</a>
+(<a href="#String">String</a><span class="member-name">&nbsp;&nbsp;key</span>, <a href="#*">*</a><span class="member-name">&nbsp;&nbsp;val</span>)</dt>
        <dd>
             <fileset>
                 <legend>描述</legend>
@@ -261,9 +269,9 @@ editor.addListener( 'ready', function( editor ) {
                 <fileset>
                     <legend>示例</legend>
                     <div class="example">
-                        <pre class="prettyprint linenums lang-javascript">
-editor.setOpt( 'initContent', '欢迎使用编辑器' );
-</pre>
+                        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">setOpt</span><span class="p">(</span> <span class="s1">&#39;initContent&#39;</span><span class="p">,</span> <span class="s1">&#39;欢迎使用编辑器&#39;</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table>
                     </div>
                 </fileset>
             
@@ -283,8 +291,9 @@ editor.setOpt( 'initContent', '欢迎使用编辑器' );
             
         
     
-    setOpt(<a href="#PlainObject">PlainObject</a><span class="member-name">&nbsp;&nbsp;settings</span>)
-</a></dt>
+    setOpt
+</a>
+(<a href="#PlainObject">PlainObject</a><span class="member-name">&nbsp;&nbsp;settings</span>)</dt>
        <dd>
             <fileset>
                 <legend>描述</legend>
@@ -319,11 +328,13 @@ editor.setOpt( 'initContent', '欢迎使用编辑器' );
                 <fileset>
                     <legend>示例</legend>
                     <div class="example">
-                        <pre class="prettyprint linenums lang-javascript">
-editor.setOpt( {
-    'initContent': '欢迎使用编辑器'
-} );
-</pre>
+                        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">setOpt</span><span class="p">(</span> <span class="p">{</span>
+    <span class="s1">&#39;initContent&#39;</span><span class="o">:</span> <span class="s1">&#39;欢迎使用编辑器&#39;</span>
+<span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table>
                     </div>
                 </fileset>
             
@@ -339,8 +350,9 @@ editor.setOpt( {
        <dt><a name="UE.Editor:destroy">
     
     
-    destroy()
-</a></dt>
+    destroy
+</a>
+()</dt>
        <dd>
             <fileset>
                 <legend>描述</legend>
@@ -359,9 +371,9 @@ editor.setOpt( {
                 <fileset>
                     <legend>示例</legend>
                     <div class="example">
-                        <pre class="prettyprint linenums lang-javascript">
-editor.destroy();
-</pre>
+                        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+</pre></div>
+</td></tr></table>
                     </div>
                 </fileset>
             
@@ -377,8 +389,9 @@ editor.destroy();
        <dt><a name="UE.Editor:getContent">
     
     
-    getContent()
-</a></dt>
+    getContent
+</a>
+()</dt>
        <dd>
             <fileset>
                 <legend>描述</legend>
@@ -408,9 +421,9 @@ editor.destroy();
                 <fileset>
                     <legend>示例</legend>
                     <div class="example">
-                        <pre class="prettyprint linenums lang-javascript">
-var content = editor.getContent();
-</pre>
+                        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="nx">editor</span><span class="p">.</span><span class="nx">getContent</span><span class="p">();</span>
+</pre></div>
+</td></tr></table>
                     </div>
                 </fileset>
             
@@ -430,8 +443,9 @@ var content = editor.getContent();
             
         
     
-    getContent(<a href="#Function">Function</a><span class="member-name">&nbsp;&nbsp;fn</span>)
-</a></dt>
+    getContent
+</a>
+(<a href="#Function">Function</a><span class="member-name">&nbsp;&nbsp;fn</span>)</dt>
        <dd>
             <fileset>
                 <legend>描述</legend>
@@ -477,12 +491,15 @@ var content = editor.getContent();
                 <fileset>
                     <legend>示例</legend>
                     <div class="example">
-                        <pre class="prettyprint linenums lang-javascript">
-// editor 是一个编辑器的实例
-var content = editor.getContent( function ( editor ) {
-     return editor.body.innerHTML === '欢迎使用UEditor';
-} );
-</pre>
+                        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// editor 是一个编辑器的实例</span>
+<span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="nx">editor</span><span class="p">.</span><span class="nx">getContent</span><span class="p">(</span> <span class="kd">function</span> <span class="p">(</span> <span class="nx">editor</span> <span class="p">)</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="nx">editor</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">===</span> <span class="s1">&#39;欢迎使用UEditor&#39;</span><span class="p">;</span>
+<span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table>
                     </div>
                 </fileset>
             
