@@ -1,6 +1,6 @@
 {
     "files": {
-        "./Editor.js": {
+        "../src/Editor.js": {
             "name": "Editor",
             "modules": {
                 "UE": 1
@@ -12,6 +12,17 @@
             "class": "Editor",
             "itemtype": "class",
             "module": "UE"
+        },
+        "../src/config.js": {
+            "name": "UEDITOR_CONFIG",
+            "modules": {
+                "window": 1
+            },
+            "classes": {},
+            "fileoverview": "",
+            "class": "UEDITOR_CONFIG",
+            "itemtype": "class",
+            "module": "window"
         }
     },
     "modules": {
@@ -20,7 +31,7 @@
             "classes": {
                 "Editor": {
                     "name": "Editor",
-                    "file": "./Editor.js",
+                    "file": "../src/Editor.js",
                     "module": "UE",
                     "items": [
                         {
@@ -180,12 +191,67 @@
                     "description": "UEditor的核心类，为用户提供与编辑器交互的接口。",
                     "class": "Editor",
                     "itemtype": "class"
+                },
+                "UEDITOR_CONFIG": {
+                    "name": "UEDITOR_CONFIG",
+                    "file": "../src/config.js",
+                    "module": "UE",
+                    "items": [],
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [],
+                    "extension_for": []
                 }
             },
             "items": [],
-            "file": "./Editor.js",
+            "file": "../src/Editor.js",
             "description": "UEditor公用空间，UEditor所有的功能都挂载在该空间下",
             "module": "UE",
+            "itemtype": "module"
+        },
+        "window": {
+            "name": "window",
+            "classes": {
+                "UEDITOR_CONFIG": {
+                    "name": "UEDITOR_CONFIG",
+                    "file": "../src/config.js",
+                    "module": "window",
+                    "items": [
+                        {
+                            "default": "由编辑器自动计算出的根路径地址",
+                            "itemtype": "property",
+                            "type": [
+                                "String"
+                            ],
+                            "description": " 编辑器的根路径",
+                            "name": "UEDITOR_HOME_URL",
+                            "module": "window",
+                            "class": "UEDITOR_CONFIG"
+                        },
+                        {
+                            "default": "UEditor提供的默认接口路径\n* PHP下的默认路径是: UEDITOR_HOME_URL／php/imageUp.php",
+                            "itemtype": "property",
+                            "type": [
+                                "String"
+                            ],
+                            "description": " 图片上传的后端接口",
+                            "name": "imageUrl",
+                            "module": "window",
+                            "class": "UEDITOR_CONFIG"
+                        }
+                    ],
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [],
+                    "extension_for": [],
+                    "description": "UEditor配置项集合",
+                    "class": "UEDITOR_CONFIG",
+                    "itemtype": "class"
+                }
+            },
+            "items": [],
+            "file": "../src/config.js",
+            "module": "window",
             "itemtype": "module"
         }
     }

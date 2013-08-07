@@ -1,6 +1,10 @@
 
 
 /* global */
+.module-wrap dt, .module-wrap dd {
+    line-height: 2;
+}
+
 .module-wrap dl {
     margin: 0;
 }
@@ -13,12 +17,24 @@
     font-weight: normal;
 }
 
-.module-wrap dd {
-    text-indent: 2em;
+.module-wrap .list-table th {
+    font-weight: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+h6 {
+    font-size: 14px;
+}
+
+.module-wrap .example pre {
+    text-indent: 0;
 }
 
 .module-wrap ul, .module-wrap ol {
@@ -42,11 +58,17 @@ h1, h2, h3, h4, h5, h6 {
     margin: 1em 0;
 }
 
+.module-wrap .warning {
+}
+
+.module-wrap .remind {
+
+}
 
 /* module */
 .module .member-list {
     padding-left: 2em;
-    margin: 1em 0;
+    margin: 50px 0;
 }
 
 .module .member-list ul {
@@ -80,17 +102,25 @@ h1, h2, h3, h4, h5, h6 {
 .module-member .preview-list .list-table-desc {
 }
 
-.module-member  .member-list .member-item {
-    margin-bottom: 50px;
+.module-member  .member-list .member-item, .module-member .method {
+    margin: 50px 0;
 }
 
 
 /* 成员详情部分 */
-.module-member .member-item .member-item-dl dd {
-    text-indent: 0;
+.module-member .member-item-dl>dd>ul {
+    padding-left: 0;
+}
+
+.module-member .member-item-dl .member-supplementary {
+    margin: 2em 0;
 }
 
 .module-member .table-wrap {
+    padding-left: 2em;
+}
+
+.module-member .example {
     padding-left: 2em;
 }
 

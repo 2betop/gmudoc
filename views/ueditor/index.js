@@ -48,6 +48,7 @@
                     modules: []
                 };
 
+
             util._.each( modules, function ( moduleData ) {
 
                 tplData.modules.push( _innerHelper.renderModule( moduleData ) );

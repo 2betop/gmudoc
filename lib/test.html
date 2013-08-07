@@ -26,18 +26,34 @@
     </dl>
     <div class="member-list">
         <fileset>
-            <legend>成员列表</legend>
-            <ul>
-                
-                    
-                    <li class="member-item member-item-cls">
-                        <dl>
-                            <dt><a href="#UE.Editor">Editor</a></dt>
-                            <dd>UEditor的核心类，为用户提供与编辑器交互的接口。</dd>
-                        </dl>
-                    </li>
-                
-            </ul>
+            <legend><h5>成员列表</h5></legend>
+            <div class="table-wrap">
+                <table class="table list-table">
+                    <thead>
+                        <tr>
+                            <th>类型</th>
+                            <th>名称</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        
+                            <tr>
+                                <td>
+                                    类
+                                </td>
+                                <td>
+                                    <a href="#UE.Editor">Editor</a>
+                                </td>
+                                <td class="list-table-desc">
+                                    UEditor的核心类，为用户提供与编辑器交互的接口。
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
         </fileset>
     </div>
 </div>
@@ -270,63 +286,64 @@
                 
             </ul>
        </dd>
-    </dl>
 
-    <!-- 说明补充 start -->
-    <div class="member-supplementary">
+       <!-- 说明补充 start -->
+       <div class="member-supplementary">
 
-        <!-- 事件监听器参数列表 start -->
-        
-        <fileset>
-            <legend>回调函数参数列表</legend>
-            <div class="table-wrap">
-                <table class="table list-table">
-                    <thead>
-                        <tr>
-                            <th>参数</th>
-                            <th>类型</th>
-                            <th>描述</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    
-                    <tr>
-                        <td>
-                            editor
-                        </td>
-                        <td>
-                            <a href="#UE.Editor">UE.Editor</a>
-                        </td>
-                        <td>
-                            UE.Editor</span><span>当前所监听的编辑器对象的引用
-                        </td>
-                    </tr>
-                    
-                    </tbody>
-                </table>
-            </div>
-        </fileset>
-        
-        <!-- 事件监听器参数列表 end -->
+           <!-- 事件监听器参数列表 start -->
+           
+           <fileset>
+               <legend>回调函数参数列表</legend>
+               <div class="table-wrap">
+                   <table class="table list-table">
+                       <thead>
+                           <tr>
+                               <th>参数</th>
+                               <th>类型</th>
+                               <th>描述</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                       
+                       <tr>
+                           <td>
+                               editor
+                           </td>
+                           <td>
+                               <a href="#UE.Editor">UE.Editor</a>
+                           </td>
+                           <td>
+                               当前所监听的编辑器对象的引用
+                           </td>
+                       </tr>
+                       
+                       </tbody>
+                   </table>
+               </div>
+           </fileset>
+           
+           <!-- 事件监听器参数列表 end -->
 
-        <!-- 示例 start -->
-        
-            <fileset>
-                <legend>示例</legend>
-                <div class="example">
-                    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+           <!-- 示例 start -->
+           
+               <fileset>
+                   <legend>示例</legend>
+                   <div class="example">
+                       <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nx">editor</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span> <span class="s1">&#39;ready&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">editor</span> <span class="p">)</span> <span class="p">{</span>
     <span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span> <span class="s1">&#39;focus&#39;</span> <span class="p">);</span>
 <span class="p">}</span> <span class="p">);</span>
 </pre></div>
 </td></tr></table>
-                </div>
-            </fileset>
-        
-        <!-- 示例 end -->
+                   </div>
+               </fileset>
+           
+           <!-- 示例 end -->
 
-    </div>
+       </div>
+
+    </dl>
 </div></li>
                     
                         <li><div class="member-item member-event">
@@ -341,50 +358,51 @@
                 
             </ul>
        </dd>
+
+       <!-- 说明补充 start -->
+       <div class="member-supplementary">
+
+           <!-- 事件监听器参数列表 start -->
+           
+           <fileset>
+               <legend>回调函数参数列表</legend>
+               <div class="table-wrap">
+                   <table class="table list-table">
+                       <thead>
+                           <tr>
+                               <th>参数</th>
+                               <th>类型</th>
+                               <th>描述</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                       
+                       <tr>
+                           <td>
+                               editor
+                           </td>
+                           <td>
+                               <a href="#UE.Editor">UE.Editor</a>
+                           </td>
+                           <td>
+                               当前所监听的编辑器对象的引用
+                           </td>
+                       </tr>
+                       
+                       </tbody>
+                   </table>
+               </div>
+           </fileset>
+           
+           <!-- 事件监听器参数列表 end -->
+
+           <!-- 示例 start -->
+           
+           <!-- 示例 end -->
+
+       </div>
+
     </dl>
-
-    <!-- 说明补充 start -->
-    <div class="member-supplementary">
-
-        <!-- 事件监听器参数列表 start -->
-        
-        <fileset>
-            <legend>回调函数参数列表</legend>
-            <div class="table-wrap">
-                <table class="table list-table">
-                    <thead>
-                        <tr>
-                            <th>参数</th>
-                            <th>类型</th>
-                            <th>描述</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    
-                    <tr>
-                        <td>
-                            editor
-                        </td>
-                        <td>
-                            <a href="#UE.Editor">UE.Editor</a>
-                        </td>
-                        <td>
-                            UE.Editor</span><span>当前所监听的编辑器对象的引用
-                        </td>
-                    </tr>
-                    
-                    </tbody>
-                </table>
-            </div>
-        </fileset>
-        
-        <!-- 事件监听器参数列表 end -->
-
-        <!-- 示例 start -->
-        
-        <!-- 示例 end -->
-
-    </div>
 </div></li>
                     
                 </ul>
@@ -425,16 +443,32 @@
             
             <fileset>
                 <legend>参数</legend>
-                <ol>
-                    
-                    <li>
-                        <dl>
-                            <dt>fn</dt>
-                            <dd><span>Function</span><span>编辑器ready之后所执行的回调, 如果在注册事件之前编辑器已经ready，将会</span></dd>
-                        </dl>
-                    </li>
-                    
-                </ol>
+                <div class="table-wrap">
+                   <table class="table list-table">
+                       <thead>
+                           <tr>
+                               <th>名称</th>
+                               <th>类型</th>
+                               <th>描述</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                       
+                       <tr>
+                           <td>
+                               fn
+                           </td>
+                           <td>
+                               <a href="#Function">Function</a>
+                           </td>
+                           <td>
+                               编辑器ready之后所执行的回调, 如果在注册事件之前编辑器已经ready，将会
+                           </td>
+                       </tr>
+                       
+                       </tbody>
+                   </table>
+               </div>
             </fileset>
             
 
@@ -462,9 +496,6 @@
 
        </dd>
     </dl>
-    <div>
-
-    </div>
 </div></li>
                     
                         <li><div class="method">
@@ -494,23 +525,44 @@
             
             <fileset>
                 <legend>参数</legend>
-                <ol>
-                    
-                    <li>
-                        <dl>
-                            <dt>key</dt>
-                            <dd><span>String</span><span>编辑器的可接受的选项名称</span></dd>
-                        </dl>
-                    </li>
-                    
-                    <li>
-                        <dl>
-                            <dt>val</dt>
-                            <dd><span>*</span><span>该选项可接受的值</span></dd>
-                        </dl>
-                    </li>
-                    
-                </ol>
+                <div class="table-wrap">
+                   <table class="table list-table">
+                       <thead>
+                           <tr>
+                               <th>名称</th>
+                               <th>类型</th>
+                               <th>描述</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                       
+                       <tr>
+                           <td>
+                               key
+                           </td>
+                           <td>
+                               <a href="#String">String</a>
+                           </td>
+                           <td>
+                               编辑器的可接受的选项名称
+                           </td>
+                       </tr>
+                       
+                       <tr>
+                           <td>
+                               val
+                           </td>
+                           <td>
+                               <a href="#*">*</a>
+                           </td>
+                           <td>
+                               该选项可接受的值
+                           </td>
+                       </tr>
+                       
+                       </tbody>
+                   </table>
+               </div>
             </fileset>
             
 
@@ -534,9 +586,6 @@
 
        </dd>
     </dl>
-    <div>
-
-    </div>
 </div></li>
                     
                         <li><div class="method">
@@ -564,16 +613,32 @@
             
             <fileset>
                 <legend>参数</legend>
-                <ol>
-                    
-                    <li>
-                        <dl>
-                            <dt>settings</dt>
-                            <dd><span>PlainObject</span><span>编辑器的可接受的选项的key-value集合</span></dd>
-                        </dl>
-                    </li>
-                    
-                </ol>
+                <div class="table-wrap">
+                   <table class="table list-table">
+                       <thead>
+                           <tr>
+                               <th>名称</th>
+                               <th>类型</th>
+                               <th>描述</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                       
+                       <tr>
+                           <td>
+                               settings
+                           </td>
+                           <td>
+                               <a href="#PlainObject">PlainObject</a>
+                           </td>
+                           <td>
+                               编辑器的可接受的选项的key-value集合
+                           </td>
+                       </tr>
+                       
+                       </tbody>
+                   </table>
+               </div>
             </fileset>
             
 
@@ -601,9 +666,6 @@
 
        </dd>
     </dl>
-    <div>
-
-    </div>
 </div></li>
                     
                         <li><div class="method">
@@ -644,9 +706,6 @@
 
        </dd>
     </dl>
-    <div>
-
-    </div>
 </div></li>
                     
                         <li><div class="method">
@@ -674,11 +733,28 @@
             
             <fileset>
                 <legend>返回值</legend>
-                <ul>
-                    
-                    <li><a class="return-value-type" href="String">String</a><span class="return-value-desc">编辑器的内容字符串, 如果编辑器的内容为空， 则返回空字符串</span></li>
-                    
-                </ul>
+                <div class="table-wrap">
+                   <table class="table list-table">
+                       <thead>
+                           <tr>
+                               <th>类型</th>
+                               <th>描述</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                       
+                       <tr>
+                           <td>
+                               <a href="#String">String</a>
+                           </td>
+                           <td>
+                               编辑器的内容字符串, 如果编辑器的内容为空， 则返回空字符串
+                           </td>
+                       </tr>
+                       
+                       </tbody>
+                   </table>
+                </div>
             </fileset>
             
 
@@ -698,9 +774,6 @@
 
        </dd>
     </dl>
-    <div>
-
-    </div>
 </div></li>
                     
                         <li><div class="method">
@@ -730,16 +803,32 @@
             
             <fileset>
                 <legend>参数</legend>
-                <ol>
-                    
-                    <li>
-                        <dl>
-                            <dt>fn</dt>
-                            <dd><span>Function</span><span>自定的判空规则， 要求该方法返回一个boolean类型的值，</span></dd>
-                        </dl>
-                    </li>
-                    
-                </ol>
+                <div class="table-wrap">
+                   <table class="table list-table">
+                       <thead>
+                           <tr>
+                               <th>名称</th>
+                               <th>类型</th>
+                               <th>描述</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                       
+                       <tr>
+                           <td>
+                               fn
+                           </td>
+                           <td>
+                               <a href="#Function">Function</a>
+                           </td>
+                           <td>
+                               自定的判空规则， 要求该方法返回一个boolean类型的值，
+                           </td>
+                       </tr>
+                       
+                       </tbody>
+                   </table>
+               </div>
             </fileset>
             
 
@@ -748,11 +837,28 @@
             
             <fileset>
                 <legend>返回值</legend>
-                <ul>
-                    
-                    <li><a class="return-value-type" href="String">String</a><span class="return-value-desc">编辑器的内容字符串</span></li>
-                    
-                </ul>
+                <div class="table-wrap">
+                   <table class="table list-table">
+                       <thead>
+                           <tr>
+                               <th>类型</th>
+                               <th>描述</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                       
+                       <tr>
+                           <td>
+                               <a href="#String">String</a>
+                           </td>
+                           <td>
+                               编辑器的内容字符串
+                           </td>
+                       </tr>
+                       
+                       </tbody>
+                   </table>
+                </div>
             </fileset>
             
 
@@ -778,9 +884,6 @@
 
        </dd>
     </dl>
-    <div>
-
-    </div>
 </div></li>
                     
                 </ul>

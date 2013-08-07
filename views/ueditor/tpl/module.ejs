@@ -5,18 +5,34 @@
     </dl>
     <div class="member-list">
         <fileset>
-            <legend>成员列表</legend>
-            <ul>
-                <%for ( var key in classes ) {%>
-                    <%var member = classes[ key ];%>
-                    <li class="member-item member-item-cls">
-                        <dl>
-                            <dt><a href="#<%= ViewHelper.getPath( member ) %>"><%= member.name %></a></dt>
-                            <dd><%= member.description %></dd>
-                        </dl>
-                    </li>
-                <%}%>
-            </ul>
+            <legend><h5>成员列表</h5></legend>
+            <div class="table-wrap">
+                <table class="table list-table">
+                    <thead>
+                        <tr>
+                            <th>类型</th>
+                            <th>名称</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for ( var key in classes ) {%>
+                        <%var member = classes[ key ];%>
+                            <tr>
+                                <td>
+                                    类
+                                </td>
+                                <td>
+                                    <a href="#<%- ViewHelper.getPath( member ) %>"><%- member.name %></a>
+                                </td>
+                                <td class="list-table-desc">
+                                    <%- member.description %>
+                                </td>
+                            </tr>
+                        <%}%>
+                    </tbody>
+                </table>
+            </div>
         </fileset>
     </div>
 </div>
