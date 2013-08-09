@@ -9,6 +9,15 @@
 </head>
 <body>
 <div class="wrapper">
+    <div class="themes-list">
+        <h3 class="invisible">切换主题</h3>
+        <ul>
+            <% _.forEach( themes, function( value, key ){ %>
+            <li <%- key === activeTheme ? 'class="on"': '' %>><a href="javascript:void(0)" class="<%- key %>"><%= key %></a></li>
+
+            <% })%>
+        </ul>
+    </div>
     <%- renderTpl('sidebar') %>
     <%- renderTpl('content') %>
 </div>
@@ -16,9 +25,9 @@
 <script type="text/javascript">
 //<![CDATA[
 var globalSettings = {
-    themes: [],
-    activeTheme:'',
-    source: {}
+    themes: <%- JSON.stringify( themes, null) %>,
+    activeTheme: '<%= activeTheme %>',
+    source: <%- JSON.stringify( getSearchEntry(), null) %>
 };
 // //]]>
 </script>

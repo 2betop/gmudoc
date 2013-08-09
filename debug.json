@@ -1,4 +1,3090 @@
 {
-    "files": {},
-    "modules": {}
+    "files": {
+        "core/event.js": {
+            "name": "core/event.js",
+            "modules": {},
+            "classes": {
+                "Event": 1,
+                "event": 1
+            },
+            "fileoverview": "Event相关",
+            "import": [
+                "core/gmu.js"
+            ],
+            "module": "GMU"
+        },
+        "core/gmu.js": {
+            "name": "core/gmu.js",
+            "modules": {
+                "GMU": 1
+            },
+            "classes": {},
+            "fileoverview": "声明gmu命名空间",
+            "namespace": "gmu",
+            "import": [
+                "zepto.js"
+            ]
+        },
+        "core/widget.js": {
+            "name": "core/widget.js",
+            "modules": {},
+            "classes": {
+                "Base": 1
+            },
+            "fileoverview": "gmu底层，定义了创建gmu组件的方法",
+            "import": [
+                "core/gmu.js",
+                "core/event.js",
+                "extend/parseTpl.js"
+            ],
+            "module": "GMU"
+        },
+        "widget/popover/arrow.js": {
+            "name": "widget/popover/arrow.js",
+            "modules": {},
+            "classes": {
+                "Popover.arrow": 1
+            },
+            "fileoverview": "是否现实剪头",
+            "import": [
+                "widget/popover/popover.js"
+            ]
+        },
+        "widget/popover/collision.js": {
+            "name": "widget/popover/collision.js",
+            "modules": {},
+            "classes": {
+                "Popover.collision": 1
+            },
+            "fileoverview": "碰撞检测，根据指定的容器，做最优位置显示",
+            "import": [
+                "widget/popover/popover.js"
+            ]
+        },
+        "widget/popover/dismissible.js": {
+            "name": "widget/popover/dismissible.js",
+            "modules": {},
+            "classes": {
+                "Popover.dismissible": 1
+            },
+            "fileoverview": "是否点击其他区域，关闭自己",
+            "import": [
+                "widget/popover/popover.js"
+            ]
+        },
+        "widget/popover/placement.js": {
+            "name": "widget/popover/placement.js",
+            "modules": {},
+            "classes": {
+                "Popover.placement": 1
+            },
+            "fileoverview": "简单版定位",
+            "import": [
+                "widget/popover/popover.js",
+                "extend/offset.js"
+            ]
+        },
+        "widget/popover/popover.js": {
+            "name": "widget/popover/popover.js",
+            "modules": {},
+            "classes": {
+                "Popover": 1
+            },
+            "fileoverview": "弹出层组件, 基础版本。",
+            "import": [
+                "core/widget.js"
+            ],
+            "module": "GMU"
+        },
+        "zeptodoc/core.js": {
+            "name": "zeptodoc/core.js",
+            "modules": {
+                "Zepto中文API": 1
+            },
+            "classes": {},
+            "description": "",
+            "fileoverview": true,
+            "module": "Zepto中文API",
+            "class": "Core"
+        },
+        "zeptodoc/ajax.js": {
+            "name": "zeptodoc/ajax.js",
+            "modules": {},
+            "classes": {},
+            "description": "",
+            "fileoverview": true,
+            "module": "Zepto中文API",
+            "class": "Ajax"
+        },
+        "zeptodoc/effect.js": {
+            "name": "zeptodoc/effect.js",
+            "modules": {},
+            "classes": {},
+            "description": "",
+            "fileoverview": true,
+            "module": "Zepto中文API",
+            "class": "Effects"
+        },
+        "zeptodoc/event.js": {
+            "name": "zeptodoc/event.js",
+            "modules": {},
+            "classes": {},
+            "description": "",
+            "fileoverview": true,
+            "module": "Zepto中文API",
+            "class": "Event"
+        },
+        "zeptodoc/form.js": {
+            "name": "zeptodoc/form.js",
+            "modules": {},
+            "classes": {},
+            "description": "",
+            "fileoverview": true,
+            "module": "Zepto中文API",
+            "class": "Form"
+        },
+        "zeptodoc/touch.js": {
+            "name": "zeptodoc/touch.js",
+            "modules": {},
+            "classes": {},
+            "description": "",
+            "fileoverview": true,
+            "module": "Zepto中文API",
+            "class": "Touch"
+        }
+    },
+    "modules": {
+        "GMU": {
+            "name": "GMU",
+            "classes": {
+                "Event": {
+                    "name": "Event",
+                    "file": "core/event.js",
+                    "module": "GMU",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [],
+                    "extension_for": [],
+                    "items": [
+                        {
+                            "description": "```javascript\nvar obj = {};\n\n$.extend( obj, gmu.event );\n\nvar etv = gmu.Event( 'beforeshow' );\nobj.trigger( etv );\n\nif ( etv.isDefaultPrevented() ) {\n    console.log( 'before show has been prevented!' );\n}\n```",
+                            "class": "Event",
+                            "params": [
+                                {
+                                    "type": [
+                                        "String"
+                                    ],
+                                    "description": "事件名字",
+                                    "name": "type"
+                                },
+                                {
+                                    "type": [
+                                        "Object"
+                                    ],
+                                    "description": "属性对象，将被复制进event对象。",
+                                    "optional": true,
+                                    "name": "props"
+                                }
+                            ],
+                            "grammars": [
+                                {
+                                    "signature": "new gmu.Event( name[, props]) ",
+                                    "return": " instance"
+                                }
+                            ],
+                            "constructor": "```javascript\nvar obj = {};\n\n$.extend( obj, gmu.event );\n\nvar etv = gmu.Event( 'beforeshow' );\nobj.trigger( etv );\n\nif ( etv.isDefaultPrevented() ) {\n    console.log( 'before show has been prevented!' );\n}\n```",
+                            "itemtype": "constructor",
+                            "name": "Event",
+                            "module": "GMU"
+                        },
+                        {
+                            "description": "判断此事件是否被阻止",
+                            "itemtype": "method",
+                            "name": "isDefaultPrevented",
+                            "module": "GMU",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "e.isDefaultPrevented() ",
+                                    "return": " Boolean"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "判断此事件是否被停止蔓延",
+                            "itemtype": "method",
+                            "name": "isPropagationStopped",
+                            "module": "GMU",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "e.isPropagationStopped() ",
+                                    "return": " Boolean"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "阻止事件默认行为",
+                            "itemtype": "method",
+                            "name": "preventDefault",
+                            "module": "GMU",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "e.preventDefault() ",
+                                    "return": " undefined"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "阻止事件蔓延",
+                            "itemtype": "method",
+                            "name": "stopPropagation",
+                            "module": "GMU",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "e.stopPropagation() ",
+                                    "return": " undefined"
+                                }
+                            ]
+                        }
+                    ],
+                    "description": "Event类，结合gmu.event一起使用。包含基本`preventDefault()`, `stopPropagation()`方法。\n考虑到此事件没有Dom冒泡概念，所以没有`stopImmediatePropagation()`方法。而`stopProgapation()`的作用就是\n让之后的handler都不执行。",
+                    "class": "Event",
+                    "params": [
+                        {
+                            "type": [
+                                "String"
+                            ],
+                            "description": "事件名字",
+                            "name": "type"
+                        },
+                        {
+                            "type": [
+                                "Object"
+                            ],
+                            "description": "属性对象，将被复制进event对象。",
+                            "optional": true,
+                            "name": "props"
+                        }
+                    ],
+                    "grammars": [
+                        {
+                            "signature": "new gmu.Event( name[, props]) ",
+                            "return": " instance"
+                        }
+                    ],
+                    "constructor": "```javascript\nvar obj = {};\n\n$.extend( obj, gmu.event );\n\nvar etv = gmu.Event( 'beforeshow' );\nobj.trigger( etv );\n\nif ( etv.isDefaultPrevented() ) {\n    console.log( 'before show has been prevented!' );\n}\n```",
+                    "itemtype": "class"
+                },
+                "event": {
+                    "name": "event",
+                    "file": "core/event.js",
+                    "module": "GMU",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [],
+                    "extension_for": [],
+                    "items": [
+                        {
+                            "description": "绑定事件。",
+                            "itemtype": "method",
+                            "name": "on",
+                            "module": "GMU",
+                            "class": "event",
+                            "params": [
+                                {
+                                    "type": [
+                                        "String"
+                                    ],
+                                    "description": "事件名",
+                                    "name": "name"
+                                },
+                                {
+                                    "type": [
+                                        "Function"
+                                    ],
+                                    "description": "事件处理器",
+                                    "name": "callback"
+                                },
+                                {
+                                    "type": [
+                                        "Object"
+                                    ],
+                                    "description": "事件处理器的上下文。",
+                                    "name": "context"
+                                }
+                            ],
+                            "grammars": [
+                                {
+                                    "signature": "on( name, fn[, context] ) ",
+                                    "return": " self"
+                                }
+                            ],
+                            "returns": [
+                                {
+                                    "description": "返回自身，方便链式",
+                                    "type": [
+                                        "self"
+                                    ]
+                                }
+                            ],
+                            "chainable": true
+                        },
+                        {
+                            "description": "绑定事件，且当handler执行完后，自动解除绑定。",
+                            "itemtype": "method",
+                            "name": "one",
+                            "module": "GMU",
+                            "class": "event",
+                            "params": [
+                                {
+                                    "type": [
+                                        "String"
+                                    ],
+                                    "description": "事件名",
+                                    "name": "name"
+                                },
+                                {
+                                    "type": [
+                                        "Function"
+                                    ],
+                                    "description": "事件处理器",
+                                    "name": "callback"
+                                },
+                                {
+                                    "type": [
+                                        "Object"
+                                    ],
+                                    "description": "事件处理器的上下文。",
+                                    "name": "context"
+                                }
+                            ],
+                            "grammars": [
+                                {
+                                    "signature": "one( name, fn[, context] ) ",
+                                    "return": " self"
+                                }
+                            ],
+                            "returns": [
+                                {
+                                    "description": "返回自身，方便链式",
+                                    "type": [
+                                        "self"
+                                    ]
+                                }
+                            ],
+                            "chainable": true
+                        },
+                        {
+                            "description": "解除事件绑定",
+                            "itemtype": "method",
+                            "name": "off",
+                            "module": "GMU",
+                            "class": "event",
+                            "params": [
+                                {
+                                    "type": [
+                                        "String"
+                                    ],
+                                    "description": "事件名",
+                                    "name": "name"
+                                },
+                                {
+                                    "type": [
+                                        "Function"
+                                    ],
+                                    "description": "事件处理器",
+                                    "name": "callback"
+                                },
+                                {
+                                    "type": [
+                                        "Object"
+                                    ],
+                                    "description": "事件处理器的上下文。",
+                                    "name": "context"
+                                }
+                            ],
+                            "grammars": [
+                                {
+                                    "signature": "off( name[, fn[, context] ] ) ",
+                                    "return": " self"
+                                }
+                            ],
+                            "returns": [
+                                {
+                                    "description": "返回自身，方便链式",
+                                    "type": [
+                                        "self"
+                                    ]
+                                }
+                            ],
+                            "chainable": true
+                        },
+                        {
+                            "description": "触发事件",
+                            "itemtype": "method",
+                            "name": "trigger",
+                            "module": "GMU",
+                            "class": "event",
+                            "params": [
+                                {
+                                    "type": [
+                                        "String",
+                                        "Event"
+                                    ],
+                                    "description": "事件名或gmu.Event对象实例",
+                                    "name": "evt"
+                                },
+                                {
+                                    "type": [
+                                        "*"
+                                    ],
+                                    "description": "任意参数",
+                                    "multiple": true,
+                                    "name": ""
+                                }
+                            ],
+                            "grammars": [
+                                {
+                                    "signature": "trigger( name[, ...] ) ",
+                                    "return": " self"
+                                }
+                            ],
+                            "returns": [
+                                {
+                                    "description": "返回自身，方便链式",
+                                    "type": [
+                                        "self"
+                                    ]
+                                }
+                            ],
+                            "chainable": true
+                        }
+                    ],
+                    "description": "event对象，包含一套event操作方法。可以将此对象扩张到任意对象，来增加事件行为。\n\n```javascript\nvar myobj = {};\n\n$.extend( myobj, gmu.event );\n\nmyobj.on( 'eventname', function( e, var1, var2, var3 ) {\n    console.log( 'event handler' );\n    console.log( var1, var2, var3 );    // =>1 2 3\n} );\n\nmyobj.trigger( 'eventname', 1, 2, 3 );\n```",
+                    "class": "event",
+                    "isStatic": true,
+                    "itemtype": "class"
+                },
+                "Base": {
+                    "name": "Base",
+                    "file": "core/widget.js",
+                    "module": "GMU",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [],
+                    "extension_for": [],
+                    "items": [
+                        {
+                            "description": "组件的初始化方法，子类需要重写该方法",
+                            "itemtype": "method",
+                            "name": "_init",
+                            "module": "GMU",
+                            "class": "Base",
+                            "grammars": [
+                                {
+                                    "signature": "instance._init() ",
+                                    "return": " instance"
+                                }
+                            ]
+                        },
+                        {
+                            "override": "",
+                            "description": "组件创建DOM的方法，子类需要重写该方法",
+                            "itemtype": "method",
+                            "name": "_create",
+                            "module": "GMU",
+                            "class": "Base",
+                            "grammars": [
+                                {
+                                    "signature": "instance._create() ",
+                                    "return": " instance"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "返回组件的$el",
+                            "itemtype": "method",
+                            "name": "getEl",
+                            "module": "GMU",
+                            "class": "Base",
+                            "grammars": [
+                                {
+                                    "signature": "instance.getEl() ",
+                                    "return": " $el"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "订阅事件",
+                            "itemtype": "method",
+                            "name": "on",
+                            "module": "GMU",
+                            "class": "Base",
+                            "grammars": [
+                                {
+                                    "signature": "instance.on(name, callback, context) ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "订阅事件（只执行一次）",
+                            "itemtype": "method",
+                            "name": "one",
+                            "module": "GMU",
+                            "class": "Base",
+                            "grammars": [
+                                {
+                                    "signature": "instance.one(name, callback, context) ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "解除订阅事件",
+                            "itemtype": "method",
+                            "name": "off",
+                            "module": "GMU",
+                            "class": "Base",
+                            "grammars": [
+                                {
+                                    "signature": "instance.off(name, callback, context) ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "派发事件, 此trigger会优先把options上的事件回调函数先执行\noptions上回调函数可以通过调用event.stopPropagation()来阻止事件系统继续派发,\n或者调用event.preventDefault()阻止后续事件执行",
+                            "itemtype": "method",
+                            "name": "trigger",
+                            "module": "GMU",
+                            "class": "Base",
+                            "grammars": [
+                                {
+                                    "signature": "instance.trigger( name ) ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "将template输出成html字符串，当传入 data 时，html将通过$.parseTpl渲染。\ntemplate支持指定subpart, 当无subpart时，template本身将为模板，当有subpart时，\ntemplate[subpart]将作为模板输出。",
+                            "itemtype": "method",
+                            "name": "tpl2html",
+                            "module": "GMU",
+                            "class": "Base",
+                            "grammars": [
+                                {
+                                    "signature": "instance.tpl2html() ",
+                                    "return": " String"
+                                },
+                                {
+                                    "signature": "instance.tpl2html( data ) ",
+                                    "return": " String"
+                                },
+                                {
+                                    "signature": "instance.tpl2html( subpart, data ) ",
+                                    "return": " String"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "注销组件",
+                            "itemtype": "method",
+                            "name": "destroy",
+                            "module": "GMU",
+                            "class": "Base",
+                            "grammars": [
+                                {
+                                    "signature": "instance.destroy()"
+                                }
+                            ]
+                        }
+                    ],
+                    "description": "widget基类。不能直接使用。",
+                    "class": "Base",
+                    "itemtype": "class"
+                },
+                "Popover": {
+                    "name": "Popover",
+                    "file": "widget/popover/popover.js",
+                    "module": "GMU",
+                    "plugins": [
+                        "Popover.arrow",
+                        "Popover.collision",
+                        "Popover.dismissible",
+                        "Popover.placement"
+                    ],
+                    "extensions": [],
+                    "plugin_for": [],
+                    "extension_for": [],
+                    "items": [
+                        {
+                            "description": "Html部分\n```html\n<a id=\"btn\">按钮<a/>\n```\n\njavascript部分\n```javascript\n$('#btn').popover({\n    content: 'Hello world'\n});\n```",
+                            "class": "Popover",
+                            "params": [
+                                {
+                                    "type": [
+                                        "dom",
+                                        "zepto",
+                                        "selector"
+                                    ],
+                                    "description": "按钮节点",
+                                    "optional": true,
+                                    "name": "el"
+                                },
+                                {
+                                    "type": [
+                                        "Object"
+                                    ],
+                                    "description": "组件配置项。具体参数请查看[Options](#GMU:Popover:options)",
+                                    "optional": true,
+                                    "name": "options"
+                                }
+                            ],
+                            "grammars": [
+                                {
+                                    "signature": "$( el ).popover( options ) ",
+                                    "return": " zepto"
+                                },
+                                {
+                                    "signature": "new gmu.Popover( el, options ) ",
+                                    "return": " instance"
+                                }
+                            ],
+                            "constructor": "Html部分\n```html\n<a id=\"btn\">按钮<a/>\n```\n\njavascript部分\n```javascript\n$('#btn').popover({\n    content: 'Hello world'\n});\n```",
+                            "itemtype": "constructor",
+                            "name": "Popover",
+                            "module": "GMU"
+                        },
+                        {
+                            "namespace": "options",
+                            "class": "Popover",
+                            "itemtype": "property",
+                            "type": [
+                                "Boolean"
+                            ],
+                            "description": " 是否显示剪头",
+                            "optional": true,
+                            "defaultvalue": "true",
+                            "shortname": "arrow",
+                            "name": "options.arrow",
+                            "module": "GMU",
+                            "uses": [
+                                {
+                                    "name": "Popover.arrow",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "namespace": "options",
+                            "class": "Popover",
+                            "itemtype": "property",
+                            "type": [
+                                "Boolean"
+                            ],
+                            "description": " 开启碰撞检测。",
+                            "optional": true,
+                            "defaultvalue": "true",
+                            "shortname": "collision",
+                            "name": "options.collision",
+                            "module": "GMU",
+                            "uses": [
+                                {
+                                    "name": "Popover.collision",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "namespace": "options",
+                            "class": "Popover",
+                            "itemtype": "property",
+                            "type": [
+                                "Boolean"
+                            ],
+                            "description": " 是否点击其他区域，关闭自己.",
+                            "optional": true,
+                            "defaultvalue": "true",
+                            "shortname": "dismissible",
+                            "name": "options.dismissible",
+                            "module": "GMU",
+                            "uses": [
+                                {
+                                    "name": "Popover.dismissible",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "namespace": "options",
+                            "class": "Popover",
+                            "itemtype": "property",
+                            "type": [
+                                "String"
+                            ],
+                            "description": " 设置定位位置。",
+                            "optional": true,
+                            "defaultvalue": "\"bottom\"",
+                            "shortname": "placement",
+                            "name": "options.placement",
+                            "module": "GMU",
+                            "uses": [
+                                {
+                                    "name": "Popover.placement",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "namespace": "options",
+                            "class": "Popover",
+                            "itemtype": "property",
+                            "type": [
+                                "Object",
+                                "Function"
+                            ],
+                            "description": " 设置偏移量。",
+                            "optional": true,
+                            "defaultvalue": "null",
+                            "shortname": "offset",
+                            "name": "options.offset",
+                            "module": "GMU",
+                            "uses": [
+                                {
+                                    "name": "Popover.placement",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        {
+                            "namespace": "options",
+                            "itemtype": "property",
+                            "type": [
+                                "Zepto",
+                                "Selector"
+                            ],
+                            "description": " 指定容器，如果不传入，组件将在el的后面自动创建一个。",
+                            "optional": true,
+                            "shortname": "container",
+                            "name": "options.container",
+                            "module": "GMU",
+                            "class": "Popover"
+                        },
+                        {
+                            "namespace": "options",
+                            "itemtype": "property",
+                            "type": [
+                                "String",
+                                "Zepto",
+                                "Selector"
+                            ],
+                            "description": " 弹出框的内容。",
+                            "optional": true,
+                            "shortname": "content",
+                            "name": "options.content",
+                            "module": "GMU",
+                            "class": "Popover"
+                        },
+                        {
+                            "namespace": "options",
+                            "itemtype": "property",
+                            "type": [
+                                "String"
+                            ],
+                            "description": " 交互事件名, 可能你会设置成tap。",
+                            "optional": true,
+                            "defaultvalue": "\"click\"",
+                            "shortname": "event",
+                            "name": "options.event",
+                            "module": "GMU",
+                            "class": "Popover"
+                        },
+                        {
+                            "description": "当组件初始化完后触发。",
+                            "itemtype": "event",
+                            "name": "ready",
+                            "module": "GMU",
+                            "class": "Popover",
+                            "params": [
+                                {
+                                    "type": [
+                                        "Event"
+                                    ],
+                                    "description": "gmu.Event对象",
+                                    "name": "e"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "但弹出层打算显示时触发，可以通过`e.preventDefault()`来阻止。",
+                            "itemtype": "event",
+                            "name": "beforeshow",
+                            "module": "GMU",
+                            "class": "Popover",
+                            "params": [
+                                {
+                                    "type": [
+                                        "Event"
+                                    ],
+                                    "description": "gmu.Event对象",
+                                    "name": "e"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "当弹出层显示后触发。",
+                            "itemtype": "event",
+                            "name": "show",
+                            "module": "GMU",
+                            "class": "Popover",
+                            "params": [
+                                {
+                                    "type": [
+                                        "Event"
+                                    ],
+                                    "description": "gmu.Event对象",
+                                    "name": "e"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "显示弹出层。",
+                            "itemtype": "method",
+                            "name": "show",
+                            "module": "GMU",
+                            "class": "Popover",
+                            "returns": [
+                                {
+                                    "description": "返回本身。",
+                                    "type": [
+                                        "self"
+                                    ]
+                                }
+                            ],
+                            "chainable": true
+                        },
+                        {
+                            "description": "但弹出层打算隐藏时触发，可以通过`e.preventDefault()`来阻止。",
+                            "itemtype": "event",
+                            "name": "beforehide",
+                            "module": "GMU",
+                            "class": "Popover",
+                            "params": [
+                                {
+                                    "type": [
+                                        "Event"
+                                    ],
+                                    "description": "gmu.Event对象",
+                                    "name": "e"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "当弹出层隐藏后触发。",
+                            "itemtype": "event",
+                            "name": "hide",
+                            "module": "GMU",
+                            "class": "Popover",
+                            "params": [
+                                {
+                                    "type": [
+                                        "Event"
+                                    ],
+                                    "description": "gmu.Event对象",
+                                    "name": "e"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "隐藏弹出层。",
+                            "itemtype": "method",
+                            "name": "hide",
+                            "module": "GMU",
+                            "class": "Popover",
+                            "returns": [
+                                {
+                                    "description": "返回本身。",
+                                    "type": [
+                                        "self"
+                                    ]
+                                }
+                            ],
+                            "chainable": true
+                        },
+                        {
+                            "description": "切换弹出层的显示和隐藏。",
+                            "itemtype": "method",
+                            "name": "toggle",
+                            "module": "GMU",
+                            "class": "Popover",
+                            "returns": [
+                                {
+                                    "description": "返回本身。",
+                                    "type": [
+                                        "self"
+                                    ]
+                                }
+                            ],
+                            "chainable": true
+                        },
+                        {
+                            "description": "设置或者获取当前`按钮`(被点击的对象)。",
+                            "itemtype": "method",
+                            "name": "target",
+                            "module": "GMU",
+                            "class": "Popover",
+                            "params": [
+                                {
+                                    "type": [
+                                        "dom",
+                                        "selector",
+                                        "zepto"
+                                    ],
+                                    "description": "target新值。",
+                                    "optional": true,
+                                    "name": "el"
+                                }
+                            ],
+                            "returns": [
+                                {
+                                    "description": "当传入了el时，此方法为setter, 返回值为self.",
+                                    "type": [
+                                        "self"
+                                    ]
+                                },
+                                {
+                                    "description": "当没有传入el时，为getter, 返回当前target值。",
+                                    "type": [
+                                        "dom"
+                                    ]
+                                }
+                            ],
+                            "chainable": true
+                        },
+                        {
+                            "description": "设置当前容器内容。",
+                            "itemtype": "method",
+                            "name": "setContent",
+                            "module": "GMU",
+                            "class": "Popover",
+                            "params": [
+                                {
+                                    "type": [
+                                        "dom",
+                                        "selector",
+                                        "zepto"
+                                    ],
+                                    "description": "容器内容",
+                                    "optional": true,
+                                    "name": "value"
+                                }
+                            ],
+                            "returns": [
+                                {
+                                    "description": "组件本身。",
+                                    "type": [
+                                        "self"
+                                    ]
+                                }
+                            ],
+                            "chainable": true
+                        },
+                        {
+                            "description": "销毁组件，包括事件销毁和删除自动创建的dom.",
+                            "itemtype": "method",
+                            "name": "destroy",
+                            "module": "GMU",
+                            "class": "Popover",
+                            "returns": [
+                                {
+                                    "description": "组件本身。",
+                                    "type": [
+                                        "self"
+                                    ]
+                                }
+                            ],
+                            "chainable": true
+                        }
+                    ],
+                    "description": "弹出层组件，具有点击按钮在周围弹出层的交互效果。至于弹出层内容，可以通过`content`直接设置内容，\n也可以通过`container`设置容器节点。按钮和弹出层之间没有位置依赖。\n\n基础版本只有简单的点击显示，再点击隐藏功能。像用更多的功能请参看[插件介绍](#GMU:Popover:plugins)部分.",
+                    "class": "Popover",
+                    "params": [
+                        {
+                            "type": [
+                                "dom",
+                                "zepto",
+                                "selector"
+                            ],
+                            "description": "按钮节点",
+                            "optional": true,
+                            "name": "el"
+                        },
+                        {
+                            "type": [
+                                "Object"
+                            ],
+                            "description": "组件配置项。具体参数请查看[Options](#GMU:Popover:options)",
+                            "optional": true,
+                            "name": "options"
+                        }
+                    ],
+                    "grammars": [
+                        {
+                            "signature": "$( el ).popover( options ) ",
+                            "return": " zepto"
+                        },
+                        {
+                            "signature": "new gmu.Popover( el, options ) ",
+                            "return": " instance"
+                        }
+                    ],
+                    "constructor": "Html部分\n```html\n<a id=\"btn\">按钮<a/>\n```\n\njavascript部分\n```javascript\n$('#btn').popover({\n    content: 'Hello world'\n});\n```",
+                    "itemtype": "class"
+                },
+                "Popover.arrow": {
+                    "name": "Popover.arrow",
+                    "file": "widget/popover/arrow.js",
+                    "module": "GMU",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [
+                        "Popover"
+                    ],
+                    "extension_for": [],
+                    "items": [],
+                    "description": "扩展Popover显示剪头功能。当此文件引入后，Popover实例将自动开启显示剪头。\n剪头的位置会根据不同的placement显示在不同的位置。",
+                    "namespace": "Popover",
+                    "class": "arrow",
+                    "itemtype": "class",
+                    "shortname": "arrow"
+                },
+                "Popover.collision": {
+                    "name": "Popover.collision",
+                    "file": "widget/popover/collision.js",
+                    "module": "GMU",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [
+                        "Popover"
+                    ],
+                    "extension_for": [],
+                    "items": [],
+                    "description": "碰撞检测，依赖于placement插件，根据是否能完全显示内容的策略，挑选最合适的placement.",
+                    "namespace": "Popover",
+                    "class": "collision",
+                    "itemtype": "class",
+                    "shortname": "collision"
+                },
+                "Popover.dismissible": {
+                    "name": "Popover.dismissible",
+                    "file": "widget/popover/dismissible.js",
+                    "module": "GMU",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [
+                        "Popover"
+                    ],
+                    "extension_for": [],
+                    "items": [],
+                    "description": "用来实现自动关闭功能，在弹出层打开的条件下，点击其他位置，将自动关闭此弹出层。\n此功能包括多个实例间的互斥功能。",
+                    "namespace": "Popover",
+                    "class": "dismissible",
+                    "itemtype": "class",
+                    "shortname": "dismissible"
+                },
+                "Popover.placement": {
+                    "name": "Popover.placement",
+                    "file": "widget/popover/placement.js",
+                    "module": "GMU",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [
+                        "Popover"
+                    ],
+                    "extension_for": [],
+                    "items": [],
+                    "description": "支持弹出层相对于按钮上下左右定位。",
+                    "namespace": "Popover",
+                    "class": "placement",
+                    "itemtype": "class",
+                    "shortname": "placement"
+                }
+            },
+            "items": [
+                {
+                    "description": "调用此方法，可以减小重复实例化Zepto的开销。所有通过此方法调用的，都将公用一个Zepto实例，\n如果你想较少Zepto实例创建的开销，就用此方法。",
+                    "itemtype": "method",
+                    "name": "staticCall",
+                    "module": "GMU",
+                    "params": [
+                        {
+                            "type": [
+                                "DOM"
+                            ],
+                            "description": "Dom对象",
+                            "name": "elem"
+                        },
+                        {
+                            "type": [
+                                "String"
+                            ],
+                            "description": "Zepto方法名。",
+                            "name": "fn"
+                        },
+                        {
+                            "type": [
+                                "*"
+                            ],
+                            "description": "zepto中对应的方法参数。",
+                            "multiple": true,
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "description": "定义一个gmu组件",
+                    "itemtype": "method",
+                    "name": "define",
+                    "module": "GMU",
+                    "params": [
+                        {
+                            "type": [
+                                "String"
+                            ],
+                            "description": "组件名字标识符。",
+                            "name": "name"
+                        },
+                        {
+                            "type": [
+                                "Object"
+                            ],
+                            "description": "",
+                            "name": "object"
+                        }
+                    ]
+                },
+                {
+                    "description": "判断object是不是 widget实例, klass不传时，默认为Base基类",
+                    "itemtype": "method",
+                    "name": "isWidget",
+                    "module": "GMU",
+                    "params": [
+                        {
+                            "type": [
+                                "*"
+                            ],
+                            "description": "需要判断的对象",
+                            "name": "anything"
+                        },
+                        {
+                            "type": [
+                                "String",
+                                "Class"
+                            ],
+                            "description": "字符串或者类。",
+                            "name": "klass"
+                        }
+                    ],
+                    "examples": [
+                        "var a = new gmu.Button();\n\nconsole.log( gmu.isWidget( a ) );    // => true\nconsole.log( gmu.isWidget( a, 'Dropmenu' ) );    // => false"
+                    ]
+                }
+            ],
+            "description": "GMU是基于zepto的轻量级mobile UI组件库，符合jquery ui使用规范，提供webapp、pad端简单易用的UI组件。为了减小代码量，提高性能，组件再插件化，兼容iOS3+ / android2.1+，支持国内主流移动端浏览器，如safari, chrome, UC, qq等。\nGMU由百度GMU小组开发，基于开源BSD协议，支持商业和非商业用户的免费使用和任意修改，您可以通过[get started](http://gmu.baidu.com/getstarted)快速了解。\n\n###Quick Start###\n+ **官网：**http://gmu.baidu.com/\n+ **API：**http://gmu.baidu.com/doc",
+            "title": "GMU API 文档",
+            "module": "GMU",
+            "itemtype": "module"
+        },
+        "Zepto中文API": {
+            "name": "Zepto中文API",
+            "classes": {
+                "Core": {
+                    "name": "Core",
+                    "file": "zeptodoc/core.js",
+                    "module": "Zepto中文API",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [],
+                    "extension_for": [],
+                    "items": [
+                        {
+                            "description": "可使用CSS选择器，DOM节点或HTML字符串来建立Zepto集合对象。\nZepto集合是类似数组的对象集合，并采用链式调用的方法操作DOM元素。\n如果已经给出了上下文（CSS选择器，DOM节点或者Zepto集合对象），则CSS选择器的范围就在给出的上下文中。如同调用了`$(context).find(selector)`\n当参数为HTML字符串时，$用来创建DOM元素。\n当参数为方法时，将其作为句柄添加到`DOMContentLoaded`事件中。页面加载完成后，立即执行。",
+                            "itemtype": "method",
+                            "name": "$()",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$(selector, [context])  ",
+                                    "return": " collection"
+                                },
+                                {
+                                    "signature": "$(<Zepto collection>)  ",
+                                    "return": " same collection"
+                                },
+                                {
+                                    "signature": "$(<DOM nodes>)  ",
+                                    "return": " collection"
+                                },
+                                {
+                                    "signature": "$(htmlString)  ",
+                                    "return": " collection"
+                                },
+                                {
+                                    "signature": "$(htmlString, attributes)  ",
+                                    "since": "v1.0+",
+                                    "return": " collection"
+                                },
+                                {
+                                    "signature": "Zepto(function($){ ... })"
+                                }
+                            ],
+                            "examples": [
+                                "$('div')  //=> all DIV elements on the page\n// 创建元素\n$(\"<p>Hello</p>\") //=> the new P element\n// 创建元素和属性\n$(\"<p />\", { text:\"Hello\", id:\"greeting\", css:{color:'darkblue'} })\n//=> <p id=greeting style=\"color:darkblue\">Hello</p>\n\n// 页面加载完成后执行函数\nZepto(function($){\n  alert('Ready to Zepto!')\n})"
+                            ]
+                        },
+                        {
+                            "description": "将带有破折号的字符串转成“驼峰式”。不影响已经是驼峰式的字符串。",
+                            "itemtype": "method",
+                            "name": "$.camelCase",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.camelCase(string)  ",
+                                    "since": "v1.0+",
+                                    "return": " string"
+                                }
+                            ],
+                            "examples": [
+                                "$.camelCase('hello-there') //=> \"helloThere\"\n$.camelCase('helloThere')  //=> \"helloThere\""
+                            ]
+                        },
+                        {
+                            "description": "检查父节点是否包含第二个参数中的DOM节点。若两者为同一个元素也返回false。",
+                            "itemtype": "method",
+                            "name": "$.contains",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.contains(parent, node)  ",
+                                    "since": "v1.0+",
+                                    "return": " boolean"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "遍历数组中每个元素或键值对象， 当遍历函数返回`false`时，遍历停止。",
+                            "itemtype": "method",
+                            "name": "$.each",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.each(collection, function(index, item){ ... })  ",
+                                    "return": " collection"
+                                }
+                            ],
+                            "examples": [
+                                "$.each(['a', 'b', 'c'], function(index, item){\n    console.log('item %d is: %s', index, item)\n})\n\nvar hash = { name: 'zepto.js', size: 'micro' }\n    $.each(hash, function(key, value){\n    console.log('%s: %s', key, value)\n})"
+                            ]
+                        },
+                        {
+                            "description": "默认为浅拷贝，第一个参数（可选）设置为`ture`可以触发深拷贝。",
+                            "itemtype": "method",
+                            "name": "$.extend",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.extend(target, [source, [source2, ...]])  ",
+                                    "return": " target"
+                                },
+                                {
+                                    "signature": "$.extend(true, target, [source, ...])  ",
+                                    "since": "v1.0+",
+                                    "return": " target"
+                                }
+                            ],
+                            "examples": [
+                                "var target = { one: 'patridge' },\n   source = { two: 'turtle doves' }\n\n   $.extend(target, source)\n   //=> { one: 'patridge',\n   //     two: 'turtle doves' }"
+                            ]
+                        },
+                        {
+                            "description": "`Zepto.fn`是一个包含了Zepto所有可用方法的集合，例如`addClass()`, `attr()`以及其他。在这个对象上添加函数可以让每个Zepto集合都可以使用。",
+                            "itemtype": "method",
+                            "name": "$.fn",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "examples": [
+                                "$.fn.empty = function(){\n    return this.each(function(){ this.innerHTML = '' })\n}"
+                            ]
+                        },
+                        {
+                            "description": "获取一个新的数组，只包含回调函数返回ture的对象。",
+                            "itemtype": "method",
+                            "name": "$.grep",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.grep(items, function(item){ ... })  ",
+                                    "return": " array"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "获取元素在数组中的位置， 若没有找到，则返回`-1`。",
+                            "itemtype": "method",
+                            "name": "$.inArray",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.inArray(element, array, [fromIndex])  ",
+                                    "since": "v1.0+",
+                                    "return": " number  "
+                                }
+                            ]
+                        },
+                        {
+                            "description": "如果对象为数组则返回true。",
+                            "itemtype": "method",
+                            "name": "$.isArray",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.isArray(object)  ",
+                                    "return": " boolean"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "如果对象是函数则返回true。",
+                            "itemtype": "method",
+                            "name": "$.isFunction",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.isFunction(object)  ",
+                                    "return": " boolean"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "如果Javascript对象是由`new Object` 或者对象字面量生成的，则返回true。",
+                            "itemtype": "method",
+                            "name": "$.isPlainObject",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.isPlainObject(object)  ",
+                                    "return": " boolean"
+                                }
+                            ],
+                            "examples": [
+                                "$.isPlainObject({})         // => true\n$.isPlainObject(new Object) // => true\n$.isPlainObject(new Date)   // => false\n$.isPlainObject(window)     // => false"
+                            ]
+                        },
+                        {
+                            "description": "如果对象是窗体对象则返回true。这对每个都有自己的窗体，并且使用普通的`obj === window` 方法检测会失败的iframes特别有用。",
+                            "itemtype": "method",
+                            "name": "$.isWindow",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.isWindow(object)  ",
+                                    "since": "v1.0+",
+                                    "return": " boolean "
+                                }
+                            ]
+                        },
+                        {
+                            "description": "遍历所有集合中的元素，移除函数返回值为`null`和`undefined`的元素。",
+                            "itemtype": "method",
+                            "name": "$.map",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.map(collection, function(item, index){ ... })  ",
+                                    "return": " collection"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "原生`JSON.parse` 的别名。",
+                            "itemtype": "method",
+                            "name": "$.parseJSON",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.parseJSON(string)  ",
+                                    "since": "v1.0+",
+                                    "return": " string "
+                                }
+                            ]
+                        },
+                        {
+                            "description": "去掉字符串开头和结尾的空白符。",
+                            "itemtype": "method",
+                            "name": "$.trim",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.trim(string)  ",
+                                    "since": "v1.0+",
+                                    "return": " string  "
+                                }
+                            ]
+                        },
+                        {
+                            "description": "对于别的对象该函数只是简单的返回“object”，要检测出一个对象是否是一个纯粹对象（plain object），请用<a href=\"#$.isplainobject\">isPlainObject</a>",
+                            "itemtype": "method",
+                            "name": "$.type",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "$.type(string)  ",
+                                    "since": "v1.0+",
+                                    "return": " string  "
+                                }
+                            ]
+                        },
+                        {
+                            "description": "添加选择器的结果到当前集合。",
+                            "itemtype": "method",
+                            "name": "add",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "add(selector, [context])  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "给集合中每个元素添加类名，多个类名可用空格分隔开。",
+                            "itemtype": "method",
+                            "name": "addClass",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "addClass(name)  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "addClass(function(index, oldClassName){ ... })  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "集合中每个元素后添加内容，可以是HTML字符串，也可以是DOM节点，或者是节点数组。",
+                            "itemtype": "method",
+                            "name": "after",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "after(content)  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$('form label').after('<p>A note below the label</p>')"
+                            ]
+                        },
+                        {
+                            "description": "集合中每个元素中添加内容，可以是HTML字符串，也可以是DOM节点，或者是节点数组。",
+                            "itemtype": "method",
+                            "name": "append",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "append(content)  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$('ul').append('<li>new list item</li>')"
+                            ]
+                        },
+                        {
+                            "description": "将现集合中的元素添加到目标元素中。",
+                            "itemtype": "method",
+                            "name": "appendTo",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "appendTo(target)  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$('<li>new list item</li>').appendTo('ul')"
+                            ]
+                        },
+                        {
+                            "description": "读或写DOM属性。当没有给出value值的时候，从集合的第一个元素中读取特定属性；当给出value值的时候，修改集合中每个元素的特定属性值；当value值为null，则删除属性。多个属性可用对象来传递。",
+                            "itemtype": "method",
+                            "name": "attr",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "attr(name)  ",
+                                    "return": " string"
+                                },
+                                {
+                                    "signature": "attr(name, value)  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "attr(name, function(index, oldValue){ ... })  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "attr({ name: value, name2: value2, ... })  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "var form = $('form')\nform.attr('action')             //=> 读action\nform.attr('action', '/create')  //=> 写action\nform.attr('action', null)       //=> 删除action属性\n// 多个属性\nform.attr({\n    action: '/create',\n    method: 'post'\n})"
+                            ]
+                        },
+                        {
+                            "description": "在集合每个元素前添加内容，可以是HTML字符串，也可以是DOM节点，或者是节点数组。",
+                            "itemtype": "method",
+                            "name": "before",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "before(content)  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$('table').before('<p>See the following table:</p>')"
+                            ]
+                        },
+                        {
+                            "description": "获取每个元素的子节点，并可以通过选择器进行匹配。",
+                            "itemtype": "method",
+                            "name": "children",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "children([selector])  ",
+                                    "return": " collection"
+                                }
+                            ],
+                            "examples": [
+                                "$('ol').children('*:nth-child(2n)')\n //=> every other list item from every ordered list"
+                            ]
+                        },
+                        {
+                            "description": "该方法并不像jQuery中那样有一个复制数据以及事件到新元素的选项。",
+                            "itemtype": "method",
+                            "name": "clone",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "clone()  ",
+                                    "since": "v1.0+",
+                                    "return": " collection "
+                                }
+                            ]
+                        },
+                        {
+                            "grammer": "closest(element) ⇒collection v1.0+",
+                            "description": "如果传入一个Zepto集合或一个元素，返回的结果必须匹配传入的集合或元素而不是选择器。",
+                            "itemtype": "method",
+                            "name": "closest",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "closest(selector, [context])  ",
+                                    "return": " collection"
+                                },
+                                {
+                                    "signature": "closest(collection) ",
+                                    "since": "v1.0+",
+                                    "return": " collection"
+                                }
+                            ],
+                            "examples": [
+                                "var input = $('input[type=text]')\n   input.closest('form')"
+                            ]
+                        },
+                        {
+                            "description": "添加元素到当前集合，如果参数为数组，其中所有元素添加到集合中。",
+                            "itemtype": "method",
+                            "name": "concat",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "concat(nodes, [node2, ...])  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "获取集合中每个元素的子元素，包括文字节点和注释节点。",
+                            "itemtype": "method",
+                            "name": "contents",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "contents()  ",
+                                    "since": "v1.0+",
+                                    "return": " collection "
+                                }
+                            ]
+                        },
+                        {
+                            "description": "读写DOM元素的CSS属性。",
+                            "itemtype": "method",
+                            "name": "css",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "css(property)  ",
+                                    "since": "value",
+                                    "return": ""
+                                },
+                                {
+                                    "signature": "css(property, value)  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "css({ property: value, property2: value2, ... })  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "var elem = $('h1')\nelem.css('background-color')          // read property\nelem.css('background-color', '#369')  // set property\nelem.css('background-color', '')      // remove property\n\n// set multiple properties:\nelem.css({ backgroundColor: '#8EE', fontSize: 28 })"
+                            ]
+                        },
+                        {
+                            "description": "Zepto基本的data（）只能存储字符串，若想存储对象，需要引入Zepto的data.js文件。",
+                            "itemtype": "method",
+                            "name": "data",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "data(name)  ",
+                                    "since": "value",
+                                    "return": ""
+                                },
+                                {
+                                    "signature": "data(name, value)  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "遍历集合中每个元素，在遍历函数中，`this`指向当前元素。如果遍历函数返回false，遍历停止。",
+                            "itemtype": "method",
+                            "name": "each",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "each(function(index, item){ ... })  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$('form input').each(function(index){\n    console.log('input %d is: %o', index, this)\n})"
+                            ]
+                        },
+                        {
+                            "description": "清除集合中每个元素的DOM节点。",
+                            "itemtype": "method",
+                            "name": "empty",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "empty()  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "获取指定位置的元素。",
+                            "itemtype": "method",
+                            "name": "eq",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "eq(index)  ",
+                                    "return": " collection"
+                                }
+                            ],
+                            "examples": [
+                                "$('li').eq(0)   //=> only the first list item\n$('li').eq(-1)  //=> only the last list item"
+                            ]
+                        },
+                        {
+                            "description": "如果想排除集合中元素的话，请用<a href=\"#not\">not</a>",
+                            "itemtype": "method",
+                            "name": "filter",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "filter(selector)  ",
+                                    "return": " collection"
+                                },
+                                {
+                                    "signature": "filter(function(index){ ... })  ",
+                                    "since": "v1.0+",
+                                    "return": " collection"
+                                }
+                            ]
+                        },
+                        {
+                            "grammer": "find(element) ⇒ collection v1.0+",
+                            "description": "如果传入一个Zepto集合或一个元素，则只会保留那些是当前集合子级的元素。",
+                            "itemtype": "method",
+                            "name": "find",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "find(selector)  ",
+                                    "return": " collection"
+                                }
+                            ],
+                            "examples": [
+                                "var form = $('#myform')\nform.find('input, select')"
+                            ]
+                        },
+                        {
+                            "description": "集合中第一个元素。",
+                            "itemtype": "method",
+                            "name": "first",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "first()  ",
+                                    "return": " collection"
+                                }
+                            ],
+                            "examples": [
+                                "$('form').first()"
+                            ]
+                        },
+                        {
+                            "description": "遍历所有元素，和each类似，但参数不同，而且返回值为false不会阻止遍历。",
+                            "itemtype": "method",
+                            "name": "forEach",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "forEach(function(item, index, array){ ... }, [context])"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "获取集合中元素，与eq不同的是，get返回的是不被Zepto包装的DOM节点。",
+                            "itemtype": "method",
+                            "name": "get",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "get()  ",
+                                    "return": " array"
+                                },
+                                {
+                                    "signature": "get(index)  ",
+                                    "return": " DOM node"
+                                }
+                            ],
+                            "examples": [
+                                "var elements = $('h2')\nelements.get()   //=> get all headings as an array\nelements.get(0)  //=> get first heading node"
+                            ]
+                        },
+                        {
+                            "description": "保留子孙匹配选择器的元素，或包含特定节点的元素。",
+                            "itemtype": "method",
+                            "name": "has",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "has(selector)  ",
+                                    "since": "v1.0+",
+                                    "return": " collection "
+                                },
+                                {
+                                    "signature": "has(node)  ",
+                                    "since": "v1.0+",
+                                    "return": " collection "
+                                }
+                            ],
+                            "examples": [
+                                "$('ol > li').has('a[href]')\n//=> get only LI elements that contain links"
+                            ]
+                        },
+                        {
+                            "description": "检查集合中首个元素是否含有指定类名。",
+                            "itemtype": "method",
+                            "name": "hasClass",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "hasClass(name)  ",
+                                    "return": " boolean"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "获取首个元素高度，或者设置高度。",
+                            "itemtype": "method",
+                            "name": "height",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "height()  ",
+                                    "return": " number"
+                                },
+                                {
+                                    "signature": "height(value)  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "height(function(index, oldHeight){ ... })  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$('#foo').height()   // => 123\n$(window).height()   // => 838 (viewport height)\n$(document).height() // => 22302"
+                            ]
+                        },
+                        {
+                            "description": "将集合中元素`display`设为`none`。",
+                            "itemtype": "method",
+                            "name": "hide",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "hide()  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "读写元素的innerHTML值， value为空，返回首个元素的innerHTML.若value不为空，则修改每个元素的innerHTML值。",
+                            "itemtype": "method",
+                            "name": "html",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "html()  ",
+                                    "return": " string"
+                                },
+                                {
+                                    "signature": "html(content)  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "html(function(index, oldHtml){ ... })  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "// autolink everything that looks like a Twitter username\n$('.comment p').html(function(idx, oldHtml){\n    return oldHtml.replace(/(^|\\W)@(\\w{1,15})/g,\n        '$1@<a href=\"http://twitter.com/$2\">$2</a>')\n})"
+                            ]
+                        },
+                        {
+                            "description": "获取元素的位置（在父节点中与其他兄弟节点比较的位置）。",
+                            "itemtype": "method",
+                            "name": "index",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "index([element])  ",
+                                    "return": " number"
+                                }
+                            ],
+                            "examples": [
+                                "$('li:nth-child(2)').index()  //=> 1"
+                            ]
+                        },
+                        {
+                            "description": "获取一个元素在当前集合的位置,fromIndex表示开始搜索的位置。",
+                            "itemtype": "method",
+                            "name": "indexOf",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "indexOf(element, [fromIndex])  ",
+                                    "return": " number"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "将当前集合中的元素插入到目标元素之后。",
+                            "itemtype": "method",
+                            "name": "insertAfter",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "insertAfter(target)  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$('<p>Emphasis mine.</p>').insertAfter('blockquote')"
+                            ]
+                        },
+                        {
+                            "description": "将当前集合中的元素插入到目标元素之前。",
+                            "itemtype": "method",
+                            "name": "insertBefore",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "insertBefore(target)  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$('<p>See the following table:</p>').insertBefore('table')"
+                            ]
+                        },
+                        {
+                            "description": "首个元素是否匹配选择器。",
+                            "itemtype": "method",
+                            "name": "is",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "is(selector)  ",
+                                    "return": " boolean"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "获取末尾元素。",
+                            "itemtype": "method",
+                            "name": "last",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "last()  ",
+                                    "return": " collection"
+                                }
+                            ],
+                            "examples": [
+                                "$('li').last()"
+                            ]
+                        },
+                        {
+                            "description": "遍历集合中所有元素，并收集遍历函数的返回值。\n\n若返回值为`null`或`Returns`，则不包含在返回的集合中。",
+                            "itemtype": "method",
+                            "name": "map",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "map(function(index, item){ ... })  ",
+                                    "return": " collection"
+                                }
+                            ],
+                            "examples": [
+                                "elements.map(function(){ return $(this).text() }).get().join(', ')"
+                            ]
+                        },
+                        {
+                            "description": "获取下一个兄弟节点，可以传入一个选择器参数。",
+                            "itemtype": "method",
+                            "name": "next",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "next()  ",
+                                    "return": " collection"
+                                },
+                                {
+                                    "signature": "next(selector)  ",
+                                    "since": "v1.0+",
+                                    "return": " collection"
+                                }
+                            ],
+                            "examples": [
+                                "$('dl dt').next()   //=> the DD elements"
+                            ]
+                        },
+                        {
+                            "description": "返回不匹配选择器的集合。 若参数为集合，则返回不包含在内的集合。若参数为函数，则返回值为假的元素。",
+                            "itemtype": "method",
+                            "name": "not",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "not(selector)  ",
+                                    "return": " collection"
+                                },
+                                {
+                                    "signature": "not(collection)  ",
+                                    "return": " collection"
+                                },
+                                {
+                                    "signature": "not(function(index){ ... })  ",
+                                    "return": " collection"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "当传入一个带有`left`和`top`属性的对象时，会用这些值来把集合中的每一个元素相对于document定位。",
+                            "itemtype": "method",
+                            "name": "offset",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "offset()  ",
+                                    "return": " object"
+                                },
+                                {
+                                    "signature": "offset(coordinates)  ",
+                                    "since": "v1.0+",
+                                    "return": " object"
+                                },
+                                {
+                                    "signature": "offset(function(index, oldOffset){ ... })  ",
+                                    "since": "v1.0+",
+                                    "return": " object"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "返回首个祖先节点CSS`position`属性是\"relative\", \"absolute\", \"fixed\"。",
+                            "itemtype": "method",
+                            "name": "offsetParent",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "offsetParent()  ",
+                                    "since": "v1.0+",
+                                    "return": " collection "
+                                }
+                            ]
+                        },
+                        {
+                            "description": "获取每个元素的最近父节点。",
+                            "itemtype": "method",
+                            "name": "parent",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "parent([selector])  ",
+                                    "return": " collection"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "获取元素的所有的祖先元素。",
+                            "itemtype": "method",
+                            "name": "parents",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "parents([selector])  ",
+                                    "return": " collection"
+                                }
+                            ],
+                            "examples": [
+                                "$('h1').parents()   //=> [<div#container>, <body>, <html>]"
+                            ]
+                        },
+                        {
+                            "description": "获取集合元素中指定的属性值，不包含值为`null`*和`undefined`。",
+                            "itemtype": "method",
+                            "name": "pluck",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "pluck(property)  ",
+                                    "return": " array"
+                                }
+                            ],
+                            "examples": [
+                                "$('body > *').pluck('nodeName') // => [\"DIV\", \"SCRIPT\"]\n\n\n$.fn.next = function(){\n    return $(this.pluck('nextElementSibling'))\n}"
+                            ]
+                        },
+                        {
+                            "description": "获取集合首个元素的position值，包含`top`，`left`值。",
+                            "itemtype": "method",
+                            "name": "position",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "position()  ",
+                                    "since": "v1.0+",
+                                    "return": " object "
+                                }
+                            ],
+                            "examples": [
+                                "var pos = element.position()\n\n$('#tooltip').css({\n    position: 'absolute',\n    top: pos.top - 30,\n    left: pos.left\n})"
+                            ]
+                        },
+                        {
+                            "description": "将内容添加到DOM元素中。",
+                            "itemtype": "method",
+                            "name": "prepend",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "prepend(content)  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$('ul').prepend('<li>first list item</li>')"
+                            ]
+                        },
+                        {
+                            "description": "将元素添加到内容中。",
+                            "itemtype": "method",
+                            "name": "prependTo",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "prependTo(target)  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$('<li>first list item</li>').prependTo('ul')"
+                            ]
+                        },
+                        {
+                            "description": "获取集合中每个元素的前一个兄弟节点，可以传入选择器参数。",
+                            "itemtype": "method",
+                            "name": "prev",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "prev()  ",
+                                    "since": "v1.0+",
+                                    "return": " collection "
+                                },
+                                {
+                                    "signature": "prev(selector)  ",
+                                    "since": "v1.0+",
+                                    "return": " collection  "
+                                }
+                            ]
+                        },
+                        {
+                            "description": "读写DOM元素的属性。这个方法在读取像`checked`和`selected`等在不同时间可能随着用户行为而变化的属性值时，应该比<a href=\"#attr\">attr</a>方法更优先使用。",
+                            "itemtype": "method",
+                            "name": "prop",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "prop(name)  ",
+                                    "since": "v1.0+",
+                                    "return": " value "
+                                },
+                                {
+                                    "signature": "prop(name, value)  ",
+                                    "since": "v1.0+",
+                                    "return": " self  "
+                                },
+                                {
+                                    "signature": "prop(name, function(index, oldValue){ ... })  ",
+                                    "since": "v1.0+",
+                                    "return": " self "
+                                }
+                            ]
+                        },
+                        {
+                            "description": "添加元素至当前集合中。",
+                            "itemtype": "method",
+                            "name": "push",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "push(element, [element2, ...])  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "绑定DOMContentLoaded事件，当页面加载完成后执行函数。",
+                            "itemtype": "method",
+                            "name": "ready",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "ready(function($){ ... })  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "类似Array.reduce。",
+                            "itemtype": "method",
+                            "name": "reduce",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "reduce(function(memo, item, index, array){ ... }, [initial])  ",
+                                    "since": "value",
+                                    "return": ""
+                                }
+                            ]
+                        },
+                        {
+                            "description": "将元素从父节点中移出。",
+                            "itemtype": "method",
+                            "name": "remove",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "remove()  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "移出所有元素中指定的属性。",
+                            "itemtype": "method",
+                            "name": "removeAttr",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "removeAttr(name)  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "移出所有元素中指定的类。",
+                            "itemtype": "method",
+                            "name": "removeClass",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "removeClass([name])  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "removeClass(function(index, oldClassName){ ... })  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "用新的内容替换集合中的元素。",
+                            "itemtype": "method",
+                            "name": "replaceWith",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "replaceWith(content)  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "获取window或可滚动元素在当前页面滚动的像素值。",
+                            "itemtype": "method",
+                            "name": "scrollTop",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "scrollTop()  ",
+                                    "since": "v1.0+",
+                                    "return": " number "
+                                }
+                            ]
+                        },
+                        {
+                            "description": "恢复元素display的默认值。",
+                            "itemtype": "method",
+                            "name": "show",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "show()  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "获取元素的兄弟节点。",
+                            "itemtype": "method",
+                            "name": "siblings",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "siblings([selector])  ",
+                                    "return": " collection"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "获取集合内元素个数。",
+                            "itemtype": "method",
+                            "name": "size",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "size()  ",
+                                    "return": " number"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "抽取数组的子集，start作为起始位置。",
+                            "itemtype": "method",
+                            "name": "slice",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "slice(start, [end])  ",
+                                    "return": " array"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "读写元素的text内容。",
+                            "itemtype": "method",
+                            "name": "text",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "text()  ",
+                                    "return": " string"
+                                },
+                                {
+                                    "signature": "text(content)  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "切换元素的显示隐藏，设置setting为true，显示元素，反之则隐藏元素。",
+                            "itemtype": "method",
+                            "name": "toggle",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "toggle([setting])  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "var input = $('input[type=text]')\n$('#too_long').toggle(input.val().length > 140)"
+                            ]
+                        },
+                        {
+                            "description": "切换元素的类名，若存在，则删除该类名，反之，则添加该类名。",
+                            "itemtype": "method",
+                            "name": "toggleClass",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "toggleClass(name, [setting])  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "toggleClass(function(index, oldClassName){ ... }, [setting])  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "移出元素的父节点，并加元素添加到原先自身父节点的位置。",
+                            "itemtype": "method",
+                            "name": "unwrap",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "unwrap()  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$(document.body).append('<div id=wrapper><p>Content</p></div>')\n$('#wrapper p').unwrap().parents()  //=> [<body>, <html>]"
+                            ]
+                        },
+                        {
+                            "description": "读写元素的value值。",
+                            "itemtype": "method",
+                            "name": "val",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "val()  ",
+                                    "return": " string"
+                                },
+                                {
+                                    "signature": "val(value)  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "val(function(index, oldValue){ ... })  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "获取首个元素的宽度，或设置所有元素的宽度。",
+                            "itemtype": "method",
+                            "name": "width",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "width()  ",
+                                    "return": " number"
+                                },
+                                {
+                                    "signature": "width(value)  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "width(function(index, oldWidth){ ... })  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$('#foo').width()   // => 123\n$(window).width()   // => 768 (viewport width)\n$(document).width() // => 768"
+                            ]
+                        },
+                        {
+                            "description": "用DOM结构包装集合元素。参数可以为一个元素、几个可以被当做HTML字符串或DOM节点传入的嵌套的元素，或者是一个每个元素都会调用并返回前两种类型值的函数。",
+                            "itemtype": "method",
+                            "name": "wrap",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "wrap(structure)  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "wrap(function(index){ ... })  ",
+                                    "since": "v1.0+",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "// wrap each button in a separate span:\n$('.buttons a').wrap('<span>')\n// wrap each code block in a div and pre:\n$('code').wrap('<div class=highlight><pre /></div>')"
+                            ]
+                        },
+                        {
+                            "description": "将所有元素用一个Wrap包装起来。",
+                            "itemtype": "method",
+                            "name": "wrapAll",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "wrapAll(structure)  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "// wrap all buttons in a single div:\n$('a.button').wrap('<div id=buttons />')"
+                            ]
+                        },
+                        {
+                            "description": "将元素内部的内容用一个Wrap包装起来。参数可以为一个元素、几个可以被当做HTML字符串或DOM节点传入的嵌套的元素，或者是一个每个元素都会调用并返回前两种类型值的函数。",
+                            "itemtype": "method",
+                            "name": "wrapInner",
+                            "module": "Zepto中文API",
+                            "class": "Core",
+                            "grammars": [
+                                {
+                                    "signature": "wrapInner(structure)  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "wrapInner(function(index){ ... })  ",
+                                    "since": "v1.0+",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "// wrap the contents of each navigation link in a span:\n$('nav a').wrapInner('<span>')\n\n// wrap the contents of each list item in a paragraph and emphasis:\n$('ol li').wrapInner('<p><em /></p>')"
+                            ]
+                        }
+                    ]
+                },
+                "Ajax": {
+                    "name": "Ajax",
+                    "file": "zeptodoc/ajax.js",
+                    "module": "Zepto中文API",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [],
+                    "extension_for": [],
+                    "items": [
+                        {
+                            "description": "发起一个Ajax请求，可以是本地请求，也可以是通过HTTP准入的跨域请求，或者是JSONP。\n\n**可用属性**\n- `type`         (默认值：\"GET\") HTTP的请求方法(“GET”, “POST”, or other)。\n- `url`          (默认值：当前url) 请求的url地址。\n- `data`         (默认值：none) 请求中包含的数据，对于GET请求来说，这是包含查询字符串的url地址，如果是包含的是object的话，$.param会将其转化成string。\n- `processData`  (默认值：true) 是否自动将`data`转化成string。\n- `contentType`  (默认值：\"application/x-www-form-urlencoded\") 传送到服务端数据的内容格式（也可以通过`headers`进行设置）， 设置为`false`可跳过设定，使用默认值。\n- `dataType`     (默认值：none) 期望从服务端返回的格式 (“json”, “jsonp”, “xml”, “html”, or “text”)。\n- `timeout`      (默认值：0) 请求超时，0为永不超时。\n- `headers`      ajax请求的HTTP首部内容。\n- `async`        (默认值：true) 设置为`false`可发起同步请求。\n- `global`       (默认值：true) 在请求过程中触发Ajax全局事件。\n- `context`      (默认值：window) 当前运行环境的上下文。\n- `traditional`  (默认值：false) 激活$.param 使用传统（浅）方法对`data`进行字符串化。\n如果url地址中包含`=?`或者`dataType`的值是\"jsonp\", 请求自动转为$.ajaxJSONP。\n\n**Ajax 回调函数**\n可以具体指定的回调函数。\n- `beforeSend(xhr, settings)` 在请求发送之前触发，提供xhr对象接口，返回`false`可取消此次请求。\n- `success(data, status, xhr)` 请求成功后触发。\n- `error(xhr, errorType, error)` 请求错误时触发（超时，解析错误， 状态码不为HTTP 2**）。\n- `complete(xhr, status)` 请求完成时触发，不论成功与否。\n\n**Ajax 事件**\n若属性`global:true`， 以下事件会在Ajax请求的整个生命周期中触发：\n- `ajaxStart` (global): 没有其他Ajax请求进行时出发。\n- `ajaxBeforeSend` (data: xhr, options): 在请求前触发，返回值为false可以取消此次ajax请求。\n- `ajaxSend` (data: xhr, options): 同ajaxBeforeSend, 不论返回值为何值都无法取消此次ajax请求。\n- `ajaxSuccess` (data: xhr, options, data): 请求成功时触发。\n- `ajaxError` (data: xhr, options, error): 请求失败时出发。\n- `ajaxComplete` (data: xhr, options): 请求完成时触发，不论请求成功与否。\n- `ajaxStop` (global): 当没有其他激活状态的Ajax请求时触发。\n\n默认Ajax事件是在document对象上触发的。但如果某个请求的上下文是DOM节点，事件将在这个节点上触发并向上冒泡。只有`ajaxStart`&`ajaxStop`例外。",
+                            "itemtype": "method",
+                            "name": "$.ajax",
+                            "module": "Zepto中文API",
+                            "class": "Ajax",
+                            "grammars": [
+                                {
+                                    "signature": "$.ajax(options)  ",
+                                    "return": " XMLHttpRequest"
+                                }
+                            ],
+                            "examples": [
+                                "$(document).on('ajaxBeforeSend', function(e, xhr, options){\n // 此页面的每个Ajax请求发起时会触发该函数。\n // xhr对象和$.ajax()选项可被修改。\n // 返回false可取消此次请求。\n})\n\n$.ajax({\n type: 'POST',\n url: '/projects',\n data: { name: 'Zepto.js' },\n dataType: 'json',\n timeout: 300,\n context: $('body'),\n success: function(data){\n //  假设接受JSON数据\n //   {\"project\": {\"id\": 42, \"html\": \"<div>...\" }}\n // 将html语句赋值在当前上下文对象中\n     this.append(data.project.html)\n },\n error: function(xhr, type){\n     alert('Ajax error!')\n }\n})"
+                            ]
+                        },
+                        {
+                            "description": "发起跨域的JSONP请求。JSONP请求不是通过XMLHttpRequest发起的，而是在document注入script标签。支持大多数$.ajax的属性，以下是几个注意点：\n- `type` 必须是“GET”。\n- `url`  需要包含“=?”。\n- `contentType`, `dataType`, `headers`, and `async` 不支持。\nURL中的占位符`?`会被请求中动态生成的回调函数名替换。一般来说，URL会包含`callback=?`这样的字符串，大多数服务端都期望参数是这么写的。\n\n返回值是模拟的XMLHttpRequest对象，只支持abort方法。",
+                            "itemtype": "method",
+                            "name": "$.ajaxJSONP",
+                            "module": "Zepto中文API",
+                            "class": "Ajax",
+                            "grammars": [
+                                {
+                                    "signature": "$.ajaxJSONP(options)  ",
+                                    "return": " mock XMLHttpRequest"
+                                }
+                            ],
+                            "examples": [
+                                "$.ajaxJSONP({\n    url: 'http://example.com/projects?callback=?',\n    success: function(data){\n    // 数据是js对象，比如Object或者Array\n  }\n})"
+                            ]
+                        },
+                        {
+                            "description": "包含Ajax请求的默认参数，大多数参数在$.ajax中均有描述。以下是经常在全局中设定的参数：\n- `timeout` (default: 0): 设置一个非0的值可设定Ajax请求的超时时间。\n- `global` (default: true): 设为false可阻止触发Ajax事件。\n- `xhr` (default: XMLHttpRequest): 设置函数返回值为XMLHttpRequest的实例（或者一个兼容对象）。\n- `accepts`: 从服务端获取的具体MIME类型：\n     - script: “text/javascript, application/javascript”\n     - json: “application/json”\n     - xml: “application/xml, text/xml”\n     - html: “text/html”\n     - text: “text/plain”",
+                            "itemtype": "method",
+                            "name": "$.ajaxSettings",
+                            "module": "Zepto中文API",
+                            "class": "Ajax"
+                        },
+                        {
+                            "description": "发起Ajax GET请求。",
+                            "itemtype": "method",
+                            "name": "$.get",
+                            "module": "Zepto中文API",
+                            "class": "Ajax",
+                            "grammars": [
+                                {
+                                    "signature": "$.get(url, function(data, status, xhr){ ... })  ",
+                                    "return": " XMLHttpRequest"
+                                }
+                            ],
+                            "examples": [
+                                "$.get('/whatevs.html', function(response){\n // 在控制台输出返回内容\n console.log(response)\n })"
+                            ]
+                        },
+                        {
+                            "description": "发起Ajax GET请求，并将返回的数据转成JSON对象。",
+                            "itemtype": "method",
+                            "name": "$.getJSON",
+                            "module": "Zepto中文API",
+                            "class": "Ajax",
+                            "grammars": [
+                                {
+                                    "signature": "$.getJSON(url, function(data, status, xhr){ ... })  ",
+                                    "return": " XMLHttpRequest"
+                                }
+                            ],
+                            "examples": [
+                                "$.getJSON('/awesome.json', function(data){\n    console.log(data)\n})"
+                            ]
+                        },
+                        {
+                            "description": "将对象转化成URL-encoded字符串，用于Ajax请求的查询字符串或者传输的数据。若设置了shallow，嵌套的对象和数组将不会被转化。",
+                            "itemtype": "method",
+                            "name": "$.param",
+                            "module": "Zepto中文API",
+                            "class": "Ajax",
+                            "grammars": [
+                                {
+                                    "signature": "$.param(object, [shallow])  ",
+                                    "return": " string"
+                                },
+                                {
+                                    "signature": "$.param(array)  ",
+                                    "return": " string"
+                                }
+                            ],
+                            "examples": [
+                                "$.param({ foo: { one: 1, two: 2 }})\n//=> \"foo[one]=1&foo[two]=2)\"\n\n$.param({ ids: [1,2,3] })\n//=> \"ids[]=1&ids[]=2&ids[]=3\"\n\n$.param({ ids: [1,2,3] }, true)\n//=> \"ids=1&ids=2&ids=3\"\n\n$.param({ foo: 'bar', nested: { will: 'not be ignored' }})\n//=> \"foo=bar&nested[will]=not+be+ignored\"\n\n$.param({ foo: 'bar', nested: { will: 'be ignored' }}, true)\n//=> \"foo=bar&nested=[object+Object]\""
+                            ]
+                        },
+                        {
+                            "description": "`data` 可以为字符串。",
+                            "itemtype": "method",
+                            "name": "$.post",
+                            "module": "Zepto中文API",
+                            "class": "Ajax",
+                            "grammars": [
+                                {
+                                    "signature": "$.post(url, [data], function(data, status, xhr){ ... }, [dataType])  ",
+                                    "return": " XMLHttpRequest"
+                                }
+                            ],
+                            "examples": [
+                                "$.post('/form', { foo: 'bar' }, function(response){\n     console.log(response)\n })",
+                                "$.post('/form', $('#some_form').serialize(), function(response){\n     console.log(response)\n })"
+                            ]
+                        },
+                        {
+                            "description": "如果没有给出CSS选择器， 会返回完整的response的text值。",
+                            "itemtype": "method",
+                            "name": "load",
+                            "module": "Zepto中文API",
+                            "class": "Ajax",
+                            "grammars": [
+                                {
+                                    "signature": "load(url, function(data, status, xhr){ ... })  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$('#some_element').load('/foo.html #bar')"
+                            ]
+                        }
+                    ]
+                },
+                "Effects": {
+                    "name": "Effects",
+                    "file": "zeptodoc/effect.js",
+                    "module": "Zepto中文API",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [],
+                    "extension_for": [],
+                    "items": [
+                        {
+                            "description": "动画全局设定\n- `$.fx.off` (在支持CSStransition的浏览器中默认为false): 设置为true将停止所有的animate()动画。\n- `$.fx.speeds`: 动画用时设定：\n     - `_default` (400 ms)\n     - `fast` (200 ms)\n     - `slow` (600 ms)",
+                            "itemtype": "method",
+                            "name": "$.fx",
+                            "module": "Zepto中文API",
+                            "class": "Effects"
+                        },
+                        {
+                            "description": "平滑过渡当前集合中元素的css属性。\n- `properties`: 包含css属性的对象，或者是css关键帧动画的名字。\n- `duration` (default 400): ms为单位，或者为字符串\n     -`fast` (200 ms)\n     -`slow` (600 ms)\n     - 任何$.fx.speeds中自定义的属性\n- `easing` (default `linear`): 动画变化过程的类型:\n     - `ease`\n     - `linear`\n     - `ease-in` / `ease-out`\n     - `ease-in-out`\n     - `cubic-bezier(...)`\n- `complete`: 动画结束后的回调函数\n支持以下CSS变化的属性\n- `translate(X|Y|Z|3d)`\n- `rotate(X|Y|Z|3d)`\n- `scale(X|Y|Z)`\n- `matrix(3d)`\n- `perspective`\n- `skew(X|Y)`\n\n如果时间间隔为`0` 或者 `$.fx.off` 为真 (浏览器不支持CSS动画), 将不会运行动画。目标值将立即生效。\n\n如果第一个参数是字符串，则将它当做CSS关键帧来处理。",
+                            "itemtype": "method",
+                            "name": "animate",
+                            "module": "Zepto中文API",
+                            "class": "Effects",
+                            "grammars": [
+                                {
+                                    "signature": "animate(properties, [duration, [easing, [function(){ ... }]]])  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "animate(properties, { duration: msec, easing: type, complete: fn })  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "animate(animationName, { ... })  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "$(\"#some_element\").animate({\n     opacity: 0.25, left: '50px',\n     color: '#abcdef',\n     rotateZ: '45deg', translate3d: '0,10px,0'\n}, 500, 'ease-out')"
+                            ]
+                        }
+                    ]
+                },
+                "Event": {
+                    "name": "Event",
+                    "file": "zeptodoc/event.js",
+                    "module": "Zepto中文API",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [],
+                    "extension_for": [],
+                    "items": [
+                        {
+                            "description": "创建并初始化特定的DOM event，可设定初始的属性值。event默认为冒泡，可通过设定`bubbles`为`false`进行修改。\n通过该方法创建的event可以被trigger触发。",
+                            "itemtype": "method",
+                            "name": "$.Event",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "$.Event(type, [properties])  ",
+                                    "return": " event"
+                                }
+                            ],
+                            "examples": [
+                                "$.Event('mylib:change', { bubbles: false })"
+                            ]
+                        },
+                        {
+                            "description": "使函数能在指定的上下文中执行。",
+                            "itemtype": "method",
+                            "name": "$.proxy",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "$.proxy(fn, context)  ",
+                                    "since": "v1.0+",
+                                    "return": " function "
+                                },
+                                {
+                                    "signature": "$.proxy(context, property)  ",
+                                    "since": "v1.0+",
+                                    "return": " function  "
+                                }
+                            ],
+                            "examples": [
+                                "var obj = {name: 'Zepto'},\nhandler = function(){ console.log(\"hello from + \", this.name) }\n\n// 确保句柄在obj上下文中执行\n$(document).on('click', $.proxy(handler, obj))"
+                            ]
+                        },
+                        {
+                            "description": "不推荐，建议使用on代替。\n给元素绑定事件",
+                            "itemtype": "method",
+                            "name": "bind",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "bind(type, function(e){ ... })  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "bind({ type: handler, type2: handler2, ... })  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "不推荐，建议使用on代替。\n绑定事件，当触发元素匹配选择器的时候触发。",
+                            "itemtype": "method",
+                            "name": "delegate",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "delegate(selector, type, function(e){ ... })  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "delegate(selector, { type: handler, type2: handler2, ... })  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "不推荐，建议使用off代替。\n取消用live绑定的事件句柄。",
+                            "itemtype": "method",
+                            "name": "die",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "die(type, function(e){ ... })  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "die({ type: handler, type2: handler2, ... })  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "不推荐，建议使用on代替。\n同delegate，选择器从当前集合中获取。",
+                            "itemtype": "method",
+                            "name": "live",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "live(type, function(e){ ... })  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "live({ type: handler, type2: handler2, ... })  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "取消用on绑定的事件句柄。若取消特定句柄，需要传入相同的句柄。否则会取消该event type下的所有句柄。若没有参数，则取消所有事件句柄。",
+                            "itemtype": "method",
+                            "name": "off",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "off(type, [selector], function(e){ ... })  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "off({ type: handler, type2: handler2, ... }, [selector])  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "off(type, [selector])  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "off()  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "添加集合中元素的事件句柄。可用空格分隔事件类型，或者传入包含事件类型和句柄的对象。若使用CSS选择器，句柄在符合选择器的元素触发时执行。\n\n句柄在绑定元素的上下文中执行，或被选择器匹配的元素中。当事件句柄返回`false`，`preventDefault()`,将阻止浏览器默认的行为。",
+                            "itemtype": "method",
+                            "name": "on",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "on(type, [selector], function(e){ ... })  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "on({ type: handler, type2: handler2, ... }, [selector])  ",
+                                    "return": " self"
+                                }
+                            ],
+                            "examples": [
+                                "var elem = $('#content')\n// 监听#content下所有的click事件\nelem.on('click', function(e){ ... })\n// #content元素下所有nav a的click事件\nelem.on('click', 'nav a', function(e){ ... })\n// document中所有a的click事件\n$(document).on('click', 'a', function(e){ ... })"
+                            ]
+                        },
+                        {
+                            "description": "添加事件句柄，运行一次后就移除，保证句柄只运行一次。",
+                            "itemtype": "method",
+                            "name": "one",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "one(type, function(e){ ... })  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "one({ type: handler, type2: handler2, ... })  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "触发集合元素中特定的事件，event可以为字符串，也可以为Event对象。可通过data传递额外参数。",
+                            "itemtype": "method",
+                            "name": "trigger",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "trigger(event, [data])"
+                                }
+                            ],
+                            "examples": [
+                                "// 添加自定义事件\n$(document).on('mylib:change', function(e, from, to){\n    console.log('change on %o with data %s, %s', e.target, from, to)\n})\n// 触发自定义事件\n$(document.body).trigger('mylib:change', ['one', 'two'])"
+                            ]
+                        },
+                        {
+                            "description": "同trigger，但该方法只触发当前元素的事件句柄，不冒泡。",
+                            "itemtype": "method",
+                            "name": "triggerHandler",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "triggerHandler(event, [data])  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "不推荐，建议使用off代替。",
+                            "itemtype": "method",
+                            "name": "unbind",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "unbind(type, function(e){ ... })  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "unbind({ type: handler, type2: handler2, ... })  ",
+                                    "return": " self"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "不推荐，建议使用off代替。",
+                            "itemtype": "method",
+                            "name": "undelegate",
+                            "module": "Zepto中文API",
+                            "class": "Event",
+                            "grammars": [
+                                {
+                                    "signature": "undelegate(selector, type, function(e){ ... })  ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "undelegate(selector, { type: handler, type2: handler2, ... })  ",
+                                    "return": " self"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Form": {
+                    "name": "Form",
+                    "file": "zeptodoc/form.js",
+                    "module": "Zepto中文API",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [],
+                    "extension_for": [],
+                    "items": [
+                        {
+                            "description": "将表单值序列化为URL编码的字符串以供Ajax post请求使用。",
+                            "itemtype": "method",
+                            "name": "serialize",
+                            "module": "Zepto中文API",
+                            "class": "Form",
+                            "grammars": [
+                                {
+                                    "signature": "serialize() ",
+                                    "return": " string"
+                                }
+                            ]
+                        },
+                        {
+                            "description": "将表单值序列化为包含由`name`和`value`构成的对象的数组。表单中禁用的按钮，未选中的单选/复选按钮会被跳过。结果不包含文件域中的数据。",
+                            "itemtype": "method",
+                            "name": "serializeArray",
+                            "module": "Zepto中文API",
+                            "class": "Form",
+                            "grammars": [
+                                {
+                                    "signature": "serializeArray() ",
+                                    "return": " array"
+                                }
+                            ],
+                            "examples": [
+                                "$('form').serializeArray()\n //=> [{ name: 'size', value: 'micro' },\n //    { name: 'name', value: 'Zepto' }]"
+                            ]
+                        },
+                        {
+                            "description": "当传入函数作为参数时，则只是在当前元素上添加一个“submit”事件的监听函数。",
+                            "itemtype": "method",
+                            "name": "submit",
+                            "module": "Zepto中文API",
+                            "class": "Form",
+                            "grammars": [
+                                {
+                                    "signature": "submit() ",
+                                    "return": " self"
+                                },
+                                {
+                                    "signature": "submit(function(e){ ... })  ",
+                                    "return": " self"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Touch": {
+                    "name": "Touch",
+                    "file": "zeptodoc/touch.js",
+                    "module": "Zepto中文API",
+                    "plugins": [],
+                    "extensions": [],
+                    "plugin_for": [],
+                    "extension_for": [],
+                    "items": [
+                        {
+                            "description": "“touch”模块增加了以下的事件，可以用on和off函数进行绑定和取消。\n\n- `tap` — 当元素被单击时出发\n- `singleTap` and `doubleTap` — 单击和双击\n- `longTap` — 当元素被按住并且超过750ms以上时触发\n- `swipe`, `swipeLeft`, `swipeRight`, `swipeUp`, `swipeDown` — 元素被滑动时触发\n所有事件在Zepto集合中都有快捷方式\n\n```html\n<style>.delete { display: none; }</style>\n\n<ul id=items>\n   <li>List item 1 <span class=delete>DELETE</span></li>\n   <li>List item 2 <span class=delete>DELETE</span></li>\n</ul>\n```\n```javascript\n// 通过滑动显示delete按钮\n$('#items li').swipe(function(){\n    $('.delete').hide()\n    $('.delete', this).show()\n})\n\n// 单击delete按钮删除一行\n$('.delete').tap(function(){\n    $(this).parent('li').remove()\n})\n```",
+                            "itemtype": "method",
+                            "name": "Touch",
+                            "module": "Zepto中文API",
+                            "class": "Touch"
+                        }
+                    ]
+                }
+            },
+            "items": [],
+            "title": "Zepto API",
+            "description": "Zepto是一个轻量级的针对现代浏览器的JS库，兼容jQuery用法",
+            "module": "Zepto中文API",
+            "itemtype": "module"
+        }
+    }
 }

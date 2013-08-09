@@ -43,7 +43,7 @@ ul.signature li .return {
     background: #bce1fe;
 }
 
-span.code {
+span.code, code {
     border: 1px solid #e8f5ff;
     background-color: #f5fafe;
 }

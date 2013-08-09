@@ -16,20 +16,32 @@
 
 
         // 注册变量和方法给tpl用
-        this.asign( '_', _ );
-        this.asign( 'title', 'GMU API 文档' );
+        this.assign( '_', _ );
+        this.assign( 'title', 'GMU API 文档' );
         [ 'renderTpl', 'forUrl', 'gennerateID', 'markdown',
-                'formatExample', 'renderParams'
+                'formatExample', 'renderParams', 'renderUses',
+                'addSearchEntry', 'getSearchEntry', 'renderFileInfo'
                 ].forEach(function( name ) {
 
-            me.asign( name, function() {
+            me.assign( name, function() {
                 return me[ name ].apply( me, arguments );
             } );
         });
+
+
+        // 注册主题
+        me.assign( 'themes', {
+            purple: './css/purple.css',
+            blue: './css/blue.css',
+            dark: './css/dark.css',
+            orange: './css/orange.css'
+        });
+
+        me.assign( 'activeTheme', 'purple' );
     }
 
     util.extend( View.prototype, {
-        asign: function( key, val ) {
+        assign: function( key, val ) {
             this.locals[ key ] = val;
         },
 
@@ -62,10 +74,6 @@
                     host = navs[ modulename ] = {};
 
                 _.forEach( module.classes, function( clazz ) {
-                    if ( !clazz || clazz.plugin_for.length ) {
-                        return;
-                    }
-
                     var classname = clazz.name,
                         methods = [],
                         options = [],
@@ -77,15 +85,24 @@
                         switch( item.itemtype ) {
                             case 'event':
                                 events.push( item );
+                                me.addSearchEntry( item.shortname || item.name, item.name,
+                                        me.forUrl( modulename + ':' + classname + ':events' ),
+                                        item.description, classname + ' - Events' );
                                 break;
 
                             case 'property':
                                 options.push( item );
+                                me.addSearchEntry( item.shortname || item.name, item.name,
+                                        me.forUrl( modulename + ':' + classname + ':options' ),
+                                        item.description, classname + ' - Options' );
                                 break;
 
                             case 'method':
                             case 'constructor':
                                 methods.push( item );
+                                me.addSearchEntry( item.shortname || item.name, item.name,
+                                        me.forUrl( modulename + ':' + classname + ':' + item.name),
+                                        item.description, classname );
 
                                 host[ classname ].push({
                                     text: item.shortname || item.name,
@@ -114,7 +131,7 @@
 
                     clazz.plugins = clazz.plugins.map(function( name ){
                         var obj = module.classes[ name ];
-                        delete module.classes[ name ];
+                        obj.isPlugin = true;
                         return obj;
                     });
 
@@ -128,10 +145,9 @@
                 module.description = module.description || '';
             } );
 
-            me.asign( 'navs', navs );
-            me.asign( 'modules', json.modules );
-
-            this.files['debug.json'] = JSON.stringify( this.locals, null, 4);
+            me.assign( 'navs', navs );
+            me.assign( 'files', json.files );
+            me.assign( 'modules', json.modules );
         },
 
         renderTpl: function( file, data ) {
@@ -161,8 +177,46 @@
 
             files[ 'index.html' ] = content;
             collector.collect(['**/*.*', '!*.ejs'], this.themeDir ).forEach(function( file ){
-                files[ file.relative ] = util.readFile( file.absolute );
+                files[ file.relative ] = file.absolute;
             });
+        },
+
+        renderFileInfo: function() {
+            var me = this,
+                host = me.localStack[ me.localStack.length - 1 ],
+                files = me.fetch('files'),
+                file = files[ host.file ],
+                html = '';
+
+            html += '<span class="label">文件</span>' + host.file ;
+
+            if( file && file[ 'import' ] ) {
+                html += '<span class="label deps">依赖</span>'
+                html += file[ 'import' ].join(', ');
+            }
+            return '<div class="fileinfo">!html</div>'.replace(/\!html/, html);
+        },
+
+        renderUses: function( arr, wrap ) {
+            var parts = [],
+                me = this,
+                host = me.localStack[ me.localStack.length - 1 ],
+                modulename = host.module,
+                classes = host.modules[ modulename ].classes,
+                clazz;
+
+            arr.forEach(function( val ) {
+                if ( val.description ) {
+                    parts.push( me.markdown( val.description ).replace(/^<p>(.*?)<\/p>/, '$1') );
+                } else {
+                    clazz = classes[ val.name ];
+                    parts.push( me.markdown( '[' + (clazz ? clazz.shortname || clazz.name : val.name) + '](#' + modulename + ':' + val.name + ')' ).replace(/^<p>(.*?)<\/p>/, '$1') );
+                }
+            });
+
+            wrap = wrap || '<p><span class="label">依赖: </span>%s</p>';
+
+            return wrap.replace(/%s/, parts.join(', ') );
         },
 
         renderParams: function( params ) {
@@ -180,11 +234,11 @@
                     html += ' {' + param.type.join( ', ') + '}';
 
                     if ( param.optional ) {
-                        html += ' [ 可选 ]';
+                        html += ' [可选]';
                     }
 
                     if ( param.defaultvalue ) {
-                        html += ' [ 默认值: ' + param.defaultvalue + ' ] ';
+                        html += ' [默认值: ' + param.defaultvalue + '] ';
                     }
 
                     html += '</span>';
@@ -213,6 +267,35 @@
                 text = '```javascript\n' + text + '\n```';
             }
             return this.markdown( text );
+        },
+
+        addSearchEntry: function( label, value, href, desc, category ) {
+            var arr;
+
+            arr = this._search_entries || (this._search_entries = []);
+            desc = this.stripTags( desc );
+            desc = desc.substring(0, 30);
+
+            arr.push({
+                label: label,
+                value: value,
+                desc: desc,
+                href: href,
+                category: category
+            });
+        },
+
+        getSearchEntry: function() {
+            return this._search_entries || [];
+        },
+
+        stripTags: function( input, allowed ) {
+            allowed = (((allowed || "") + "").toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join(''); // making sure the allowed arg is a string containing only tags in lowercase (<a><b><c>)
+            var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
+                commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+            return input.replace(commentsAndPhpTags, '').replace(tags, function($0, $1) {
+                return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
+            });
         }
     } );
 

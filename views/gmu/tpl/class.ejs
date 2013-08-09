@@ -1,6 +1,6 @@
 <div class="clearfix category">
     <h2 id="<%- gennerateID( module + ':' + name ) %>"><%= title || name %></h2>
-    <!--依赖-->
+    <%- renderFileInfo() %>
     <% if ( description ) { %><%- markdown( description ) %><% } %>
 
 

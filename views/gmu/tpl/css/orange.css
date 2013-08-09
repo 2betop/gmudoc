@@ -38,7 +38,7 @@ ul.signature li .return {
     color: #700;
 }
 
-span.code {
+span.code, code {
     border: 1px solid #fdf3df;
     background-color: #fefaf2;
 }

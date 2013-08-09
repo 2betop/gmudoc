@@ -1,10 +1,12 @@
-<% _.forEach( methods, function( method ) { %>
+<% _.sortBy( methods, function( value ){ return value.uses ? value.uses.length : 0; } ).forEach(function( method ) { %>
 <article class="clearfix method">
     <h3 id="<%- gennerateID( method[ 'class' ] ? (method.module + ':' + method[ 'class' ] + ':' + method.name) : (method.module + ':' + method.name)  ) %>" <% if ( method.hasOwnProperty( 'deprecated' ) ) { %>class="deprecated"<% } %> ><%= method.name %>
         <% if ( method.since ) { %><span
         class="version"><%- method.since %></span><% } %>
     </h3>
     <% if ( method[ 'deprecated' ] ) { %><div class="warning"><%- markdown( method[ 'deprecated' ] ) %></div><% } %>
+
+    <% if( method.uses ) { %><%- renderUses( method.uses ) %><% }%>
 
     <% if ( method.grammars ) { %>
     <ul class="signature">

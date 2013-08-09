@@ -8,5 +8,5 @@
 <hr />
 <% } %>
 <% _.forEach( classes, function( clazz ) { %>
-<%- renderTpl( 'class', clazz ) %>
+<%- clazz.isPlugin ? '' : renderTpl( 'class', clazz ) %>
 <% }) %>

@@ -71,7 +71,7 @@ ul.signature li .return {
     background: #bce1fe;
 }
 
-span.code {
+span.code, code {
     border: 1px solid #262822;
     background-color: #262822;
     border-radius: 3px;
