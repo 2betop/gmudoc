@@ -1,0 +1,12 @@
+<% if ( title ) { %>
+<h2 id="<%- gennerateID( name ) %>"><%= title %></h2>
+<% } %>
+<% if ( description ) { %>
+<div class="doc_desc">
+    <%- markdown( description ) %>
+</div>
+<hr />
+<% } %>
+<% _.forEach( classes, function( clazz ) { %>
+<%- renderTpl( 'class', clazz ) %>
+<% }) %>

@@ -1,0 +1,32 @@
+<div id="sidebar">
+    <div id="search">
+        <input disabled="disabled" results="5"  type="search" placeholder="Search" autosave="searchdoc" autocomplete="off">
+    </div>
+    <div class="sidebar-list">
+        <div id="result"></div>
+        <div id="static_list">
+            <% _.forEach( navs, function( classes, modulename ) { %>
+            <a class="doc_g_t" href="<%- forUrl( modulename ) %>"><%= modulename %></a>
+            <hr />
+
+            <% _.forEach( classes, function( items, classname ) { %>
+            <div class="collapsble">
+                <div class="toc_title">
+                    <a href="<%- forUrl( modulename + ':' + classname ) %>"><%= classname %></a>
+                    <span class="icon"></span>
+                </div>
+                <div class="toc_section">
+                    <ul>
+                        <% _.forEach( items, function( item ) { %>
+                        <li>
+                            <a class="<%= item.classname || '' %>" href="<%- item.href %>"><%= item.text %></a>
+                        </li>
+                        <% });%>
+                    </ul>
+                </div>
+            </div>
+            <% }); %>
+            <% }); %>
+        </div>
+    </div>
+</div>
