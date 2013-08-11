@@ -6,6 +6,7 @@
     <% _.forEach( plugins, function( item ) { %>
     <li id="<%- gennerateID(module + ':' + item.name) %>">
         <code><%= item.shortname || item.name %></code><%- markdown(item.description) %>
+        <%- renderFileInfo( item.file ) %>
     </li>
     <% }) %>
     </ol>

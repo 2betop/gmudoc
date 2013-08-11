@@ -409,7 +409,13 @@ table p+p {
 }
 
 .toc_section li:before {
-    content: "- ";
+    content: " - ";
+}
+
+.toc_section li.options:before,
+.toc_section li.events:before,
+.toc_section li.plugins:before {
+    content: "";
 }
 
 .toc_section li a {
@@ -919,7 +925,6 @@ div.notice {
 }
 
 .fileinfo {
-    color: #333;
 }
 .fileinfo span {
     margin: 0 1em 0 0;

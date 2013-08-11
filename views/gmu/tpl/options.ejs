@@ -1,5 +1,5 @@
 <div>
-    <p id="<%- gennerateID(module + ':' + name + ':options') %>"><strong>参数说明</strong></p>
+    <h3 id="<%- gennerateID(module + ':' + name + ':options') %>">参数说明</h3>
     <ul class="params-list">
         <% _.sortBy( options, function( value ){ return value.uses ? value.uses.length : 0; } ).forEach(function( item ) { %>
         <li>

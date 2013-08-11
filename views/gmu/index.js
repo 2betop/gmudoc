@@ -4,6 +4,9 @@
         ejs = require( 'ejs' ),
         marked = require( 'marked' ),
         path = require( 'path' ),
+        sha1 = require( 'sha1' ),
+        qr = require( 'qrpng' ),
+        async = require( 'async' ),
         GlobCollector = require( '../../lib/collector.js' ).GlobCollector,
         view;
 
@@ -13,20 +16,19 @@
         this.locals = {};
         this.localStack = [ this.locals ];
         this.themeDir = path.join( __dirname, 'tpl' );
+        this.qrcodes = {};
 
 
         // 注册变量和方法给tpl用
         this.assign( '_', _ );
         this.assign( 'title', 'GMU API 文档' );
-        [ 'renderTpl', 'forUrl', 'gennerateID', 'markdown',
-                'formatExample', 'renderParams', 'renderUses',
-                'addSearchEntry', 'getSearchEntry', 'renderFileInfo'
-                ].forEach(function( name ) {
 
+        // 最好把一些危险的方法移出。比如build, render方法。
+        _.forEach( View.prototype, function( fn, name ) {
             me.assign( name, function() {
-                return me[ name ].apply( me, arguments );
+                return fn.apply( me, arguments );
             } );
-        });
+        } );
 
 
         // 注册主题
@@ -36,7 +38,6 @@
             dark: './css/dark.css',
             orange: './css/orange.css'
         });
-
         me.assign( 'activeTheme', 'purple' );
     }
 
@@ -50,10 +51,32 @@
         },
 
         build: function( json, complete ) {
+            var me = this,
+                qrcodes;
+
             this.files = {};
             this.transform( json );
             this.render();
-            complete( this.files );
+
+            qrcodes = this.qrcodes;
+
+            async.each( Object.keys( qrcodes ), function( key, next ){
+                var value = qrcodes[ key ];
+
+                qr( value, 3, function( err, png ) {
+                    if ( err ) {
+                        throw new Error( err );
+                    }
+
+                    me.files[ key ] = png;
+                    next();
+                });
+            }, function( err ){
+                if( !err ) {
+                    complete( me.files );
+                }
+            });
+
         },
 
         gennerateID: function( str ) {
@@ -73,9 +96,21 @@
                 var modulename = module.name,
                     host = navs[ modulename ] = {};
 
+                _.forEach( module.items, function( item ) {
+                    host[ modulename ] = host[ modulename ] || [];
+                    host[ modulename ].push({
+                        text: item.shortname || item.name,
+                        skin: item.itemtype,
+                        href: me.forUrl( modulename + ':' + item.name )
+                    });
+                    me.addSearchEntry( item.shortname || item.name, item.name,
+                            me.forUrl( modulename + ':' + item.name),
+                            item.description, modulename );
+                } );
+
                 _.forEach( module.classes, function( clazz ) {
                     var classname = clazz.name,
-                        methods = [],
+                        items = [],
                         options = [],
                         events = [];
 
@@ -91,21 +126,25 @@
                                 break;
 
                             case 'property':
-                                options.push( item );
-                                me.addSearchEntry( item.shortname || item.name, item.name,
-                                        me.forUrl( modulename + ':' + classname + ':options' ),
-                                        item.description, classname + ' - Options' );
-                                break;
+                                if ( /^options/i.exec( item.name ) ) {
+                                    options.push( item );
+                                    me.addSearchEntry( item.shortname || item.name, item.name,
+                                            me.forUrl( modulename + ':' + classname + ':options' ),
+                                            item.description, classname + ' - Options' );
 
+                                    // 如果property不是options大头的，则添加到items里面去。
+                                    break;
+                                }
                             case 'method':
                             case 'constructor':
-                                methods.push( item );
+                                items.push( item );
                                 me.addSearchEntry( item.shortname || item.name, item.name,
                                         me.forUrl( modulename + ':' + classname + ':' + item.name),
                                         item.description, classname );
 
                                 host[ classname ].push({
                                     text: item.shortname || item.name,
+                                    skin: item.itemtype,
                                     href: me.forUrl( modulename + ':' + classname + ':' + item.name )
                                 });
                                 break;
@@ -113,17 +152,18 @@
                     } );
 
                     events.length && host[ classname ].unshift({
+                        skin: 'events',
                         text: 'events',
                         href: me.forUrl( modulename + ':' + classname + ':events' )
                     });
 
                     options.length && host[ classname ].unshift({
+                        skin: 'options',
                         text: 'options',
                         href: me.forUrl( modulename + ':' + classname + ':options' )
                     });
 
-                    delete clazz.items;
-                    clazz.methods = methods;
+                    clazz.items = items;
                     clazz.options = options;
                     clazz.events = events;
                     clazz.title = clazz.title || '';
@@ -136,6 +176,7 @@
                     });
 
                     clazz.plugins.length && host[ classname ].push({
+                        skin: 'plugins',
                         text: 'plugins',
                         href: me.forUrl( modulename + ':' + classname + ':plugins' )
                     });
@@ -181,20 +222,36 @@
             });
         },
 
-        renderFileInfo: function() {
+        renderFileInfo: function( filename ) {
             var me = this,
                 host = me.localStack[ me.localStack.length - 1 ],
                 files = me.fetch('files'),
-                file = files[ host.file ],
+                file = files[ filename || host.file ],
                 html = '';
 
-            html += '<span class="label">文件</span>' + host.file ;
+            html += '<span class="label">文件</span>' + file.name ;
 
             if( file && file[ 'import' ] ) {
                 html += '<span class="label deps">依赖</span>'
-                html += file[ 'import' ].join(', ');
+                html += me._fixDependencies( file, files ).join(', ');
             }
             return '<div class="fileinfo">!html</div>'.replace(/\!html/, html);
+        },
+
+        _fixDependencies: function( file, map ) {
+            var me = this,
+                ret = file[ 'import' ] || [];
+
+            if ( !file._fixed && file[ 'import' ] ) {
+
+                ret.forEach(function( item ) {
+                    map[ item ] && (ret = _.union( me._fixDependencies( map[ item ], map ), ret ));
+                });
+
+                file._fixed = true;
+            }
+
+            return file[ 'import' ] = ret;
         },
 
         renderUses: function( arr, wrap ) {
@@ -296,6 +353,13 @@
             return input.replace(commentsAndPhpTags, '').replace(tags, function($0, $1) {
                 return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
             });
+        },
+
+        addQrcode: function( data ) {
+            var hash = './qrcode/' + sha1( data ) + '.png';
+
+            this.qrcodes[ hash ] = data;
+            return hash;
         }
     } );
 
@@ -310,9 +374,16 @@
 
 
         marked.InlineLexer.prototype.outputLink = function(cap, link) {
-            var match = /^#(.*:.*)/.exec( link.href );
-            if ( match ) {
-                link.href = view.forUrl( match[ 1 ] );
+            var match;
+
+            if (cap[0][0] !== '!') {
+                match = /^#(.*:.*)/.exec( link.href );
+                if ( match ) {
+                    link.href = view.forUrl( match[ 1 ] );
+                }
+            } else {
+                match = /^qrcode:(.*)$/i.exec( link.href );
+                match && (link.href = view.addQrcode( match[ 1 ] ));
             }
             return outputLink.apply( this, arguments );
         };

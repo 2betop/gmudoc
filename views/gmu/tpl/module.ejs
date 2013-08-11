@@ -7,6 +7,12 @@
 </div>
 <hr />
 <% } %>
+
+<% if ( items ) { %>
+<a id="<%- gennerateID( name + ':' + name ) %>" ></a>
+<%- renderTpl( 'items' ) %>
+<% } %>
+
 <% _.forEach( classes, function( clazz ) { %>
 <%- clazz.isPlugin ? '' : renderTpl( 'class', clazz ) %>
 <% }) %>
