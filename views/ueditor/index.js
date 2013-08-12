@@ -120,7 +120,10 @@
                     } );
 
                 } else {
+
                     count--;
+                    !count && callback();
+
                 }
 
             } );
@@ -162,7 +165,7 @@
 
                 data = _innerHelper.renderMember( member );
 
-                clsData.members[ data.type ].push( data.value );
+                data.type && clsData.members[ data.type ].push( data.value );
 
             } );
 
@@ -190,7 +193,10 @@
 
                 case MEMBER_TYPE.PROPERTY:
 
-                    return '';
+                    return {
+                        type: MEMBER_TYPE.PROPERTY,
+                        value: this.render( 'member/property.ejs', member )
+                    };
 
                 default:
 
@@ -305,15 +311,21 @@
 
         },
 
-        getMembers: function ( data ) {
+        getMembers: function ( type, data ) {
 
             if ( data.itemtype === ITEM_TYPE.CLASS ) {
 
-                var result = [];
+                var result = [],
+                    tmp = null;
 
                 Object.keys( data.items ).forEach( function ( key ) {
 
-                    result.push( data.items[ key ] );
+                    tmp = data.items[ key ];
+
+                    if ( tmp.itemtype === type ) {
+                        debugger;
+                        result.push( tmp );
+                    }
 
                 } );
 

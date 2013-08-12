@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/CHANGES.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/COPYING" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/README.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/examples/quine.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/js-modules/combinePrefixPatterns.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/js-modules/externs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/js-modules/extractSourceSpans.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/js-modules/extractSourceSpans_test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/js-modules/js_include.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/js-modules/numberLines.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/js-modules/numberLines_test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/js-modules/prettify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/js-modules/recombineTagsAndDecorations.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/js-modules/recombineTagsAndDecorations_test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/js-modules/regexpPrecederPatterns.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/js-modules/run_prettify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-apollo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-basic.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-clj.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-css.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-dart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-erlang.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-go.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-hs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-lisp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-llvm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-lua.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-matlab.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-ml.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-mumps.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-n.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-pascal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-proto.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-r.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-rd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-scala.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-sql.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-tcl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-tex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-vb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-vhdl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-wiki.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-xq.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/lang-yaml.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/prettify.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/prettify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/src/run_prettify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/styles/demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/styles/desert.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/styles/doxy.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/styles/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/styles/sons-of-obsidian.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/styles/sunburst.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tests/debug-ie-compat-matrix.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tests/ie-newline-copy-paste.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tests/large_input_test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tests/prettify_test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tests/prettify_test_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tests/run_prettify_test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tests/test_base.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tests/test_styles.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tools/closure-compiler/COPYING" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tools/closure-compiler/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tools/closure-compiler/amd-externs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tools/closure-compiler/compiler.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tools/closure-compiler/console-externs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tools/cut-release.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tools/googlecode_upload.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tools/lang-handler-aliases.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tools/yui-compressor/LICENSE.TXT" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tools/yui-compressor/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/google-code-prettify/tools/yui-compressor/yuicompressor-2.4.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/LGPL-LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/MIT-LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/_theme_template.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/config.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shCore.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shCoreDefault.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shCoreDjango.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shCoreEclipse.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shCoreEmacs.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shCoreFadeToGrey.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shCoreMDUltra.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shCoreMidnight.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shCoreRDark.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shThemeDefault.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shThemeDjango.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shThemeEclipse.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shThemeEmacs.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shThemeFadeToGrey.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shThemeMDUltra.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shThemeMidnight.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/compass/shThemeRDark.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shAutoloader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushAS3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushAppleScript.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushBash.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushCSharp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushColdFusion.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushCpp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushCss.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushDelphi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushDiff.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushErlang.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushGroovy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushJava.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushJavaFX.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushPerl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushPhp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushPlain.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushPowerShell.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushPython.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushRuby.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushSass.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushScala.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushSql.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushVb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shBrushXml.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shCore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/scripts/shLegacy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/src/shAutoloader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/src/shCore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/src/shLegacy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shCore.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shCoreDefault.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shCoreDjango.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shCoreEclipse.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shCoreEmacs.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shCoreFadeToGrey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shCoreMDUltra.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shCoreMidnight.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shCoreRDark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shThemeDefault.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shThemeDjango.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shThemeEclipse.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shThemeEmacs.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shThemeFadeToGrey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shThemeMDUltra.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shThemeMidnight.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/.rvmrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/brushes/sass.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/brushes_tests.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/001_basic.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/002_brushes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/003_script_tag.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/004_url_parsing.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/005_no_gutter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/006_pad_line_numbers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/007_collapse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/007_collapse_interaction.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/008_first_line.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/009_class_name.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/010_highlight.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/011_smart_tabs.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/012_server_side.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/013_html_script.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/cases/014_legacy.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/commonjs_tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/js/jquery-1.4.2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/js/qunit.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/js/qunit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/syntaxhighlighter_tests.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/theme_tests.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/webrick.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/highlight/syntaxhighlighter_3.0.83/tests/webrick.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/ueditor/tpl/member.ejs" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Editor.js" afterPath="$PROJECT_DIR$/src/Editor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/ueditor/tpl/cls.ejs" afterPath="$PROJECT_DIR$/views/ueditor/tpl/cls.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config.js" afterPath="$PROJECT_DIR$/src/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/debug.json" afterPath="$PROJECT_DIR$/lib/debug.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/ueditor/index.js" afterPath="$PROJECT_DIR$/views/ueditor/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/ueditor/tpl/layout.ejs" afterPath="$PROJECT_DIR$/views/ueditor/tpl/layout.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/ueditor/tpl/member/method.ejs" afterPath="$PROJECT_DIR$/views/ueditor/tpl/member/method.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/test.html" afterPath="$PROJECT_DIR$/lib/test.html" />
+    </list>
+    <ignored path="gmudoc.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376289201621" ignored="false" />
+    <file path="/doc.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376297031011" ignored="false" />
+    <file path="/start.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375844277565" ignored="false" />
+    <file path="/debug.json" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375360735893" ignored="false" />
+    <file path="/parser.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376295590150" ignored="false" />
+    <file path="/builder.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375844812076" ignored="false" />
+    <file path="/index.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376297738248" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditormini/_src/adapter/fullscreen.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375354700684" ignored="false" />
+    <file path="/fullscreen.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375354628545" ignored="false" />
+    <file path="/util.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375955332729" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditormini/_examples/editor_api.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375348410308" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditormini/_src/plugins/source.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375355128855" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditormini/ueditor.all.min.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375355128855" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditormini/ueditor.all.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375355128855" ignored="false" />
+    <file path="/test.ejs" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375420792773" ignored="false" />
+    <file path="/module.ejs" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375842513835" ignored="false" />
+    <file path="/module.html" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375422961110" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditormini/_src/core/Editor.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375845815168" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditormini/dialogs/image/image.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375845815168" ignored="false" />
+    <file path="/cls.ejs" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375866470353" ignored="false" />
+    <file path="$PROJECT_DIR$/../wenku/ueditor/_src/extend/plugins/enterkey.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375427042283" ignored="false" />
+    <file path="/enterkey.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375427024999" ignored="false" />
+    <file path="/a.dummy" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376031076798" ignored="false" />
+    <file path="$PROJECT_DIR$/../wenku/ueditor/_src/extend/plugins/wenku/output/empty-filter.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375427594661" ignored="false" />
+    <file path="$PROJECT_DIR$/../wenku/ueditor/_src/extend/plugins/wenku/output/classname-filter.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375427665882" ignored="false" />
+    <file path="/empty-filter.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375427529287" ignored="false" />
+    <file path="$PROJECT_DIR$/../wenku/ueditor/_examples/editor_api.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375427691024" ignored="false" />
+    <file path="/member.ejs" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375691434920" ignored="false" />
+    <file path="/layout.ejs" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375775479163" ignored="false" />
+    <file path="/ejs.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375674910999" ignored="false" />
+    <file path="/test.html" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375686723785" ignored="false" />
+    <file path="/desert.css" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375688937042" ignored="false" />
+    <file path="/signature.ejs" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375713688913" ignored="false" />
+    <file path="/method.ejs" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375857092365" ignored="false" />
+    <file path="/event.ejs" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375789844370" ignored="false" />
+    <file path="/page.css" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375790621713" ignored="false" />
+    <file path="/signature.link.ejs" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375771058684" ignored="false" />
+    <file path="/signature.anchor.ejs" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375780282022" ignored="false" />
+    <file path="/fragment.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375843994100" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditormini/_examples/index.html" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375845815168" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditormini/_src/ui/popup.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375846337109" ignored="false" />
+    <file path="/popup.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375846334973" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditormini/_src/adapter/popup.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375846044217" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditormini/_src/adapter/font.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375846228741" ignored="false" />
+    <file path="/font.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375846218311" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditormini/_src/ui/colorpicker.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375846344731" ignored="false" />
+    <file path="/colorpicker.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375846264126" ignored="false" />
+    <file path="/extractor.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376040418028" ignored="false" />
+    <file path="/property.ejs" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375866460787" ignored="false" />
+    <file path="/Editor.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375869136062" ignored="false" />
+    <file path="/config.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1375870068804" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditor-1.2.6/ueditor.config.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376016399432" ignored="false" />
+    <file path="$PROJECT_DIR$/../11/website/onlinedemo.html" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376021476219" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditor-1.2.6/_src/ui/popup.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376029577002" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditor-1.2.6/_src/ui/editor.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376030472509" ignored="false" />
+    <file path="/editor.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376030444242" ignored="false" />
+    <file path="$PROJECT_DIR$/../ueditor-1.2.6/themes/default/_css/button.css" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376030413524" ignored="false" />
+    <file path="/syntax.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376294416186" ignored="false" />
+    <file path="/Definition.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376287868396" ignored="false" />
+    <file path="/definition.js" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376296880928" ignored="false" />
+    <file path="/package.json" changelist="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" time="1376297231154" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="gmudoc" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/ueditor/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="29" selection-start="785" selection-end="785" vertical-scroll-proportion="0.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/lib/debug.json" />
+        <option value="$PROJECT_DIR$/src/test.js" />
+        <option value="$PROJECT_DIR$/new/test.json" />
+        <option value="$PROJECT_DIR$/new/lib/util.js" />
+        <option value="$PROJECT_DIR$/new/lib/extractor.js" />
+        <option value="$PROJECT_DIR$/new/lib/Definition.js" />
+        <option value="$PROJECT_DIR$/new/lib/syntax.js" />
+        <option value="$PROJECT_DIR$/new/origin.json" />
+        <option value="$PROJECT_DIR$/new/lib/parser.js" />
+        <option value="$PROJECT_DIR$/src/config.js" />
+        <option value="$PROJECT_DIR$/src/Editor.js" />
+        <option value="$PROJECT_DIR$/new/parsed.json" />
+        <option value="$PROJECT_DIR$/new/lib/definition.js" />
+        <option value="$PROJECT_DIR$/new/package.json" />
+        <option value="$PROJECT_DIR$/new/doc.js" />
+        <option value="$PROJECT_DIR$/views/ueditor/index.js" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-2" />
+    <option name="y" value="-8" />
+    <option name="width" value="1368" />
+    <option name="height" value="776" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="true" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gmudoc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gmudoc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gmudoc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gmudoc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gmudoc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="76" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="88" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="76" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ueditormini" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="105" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1000" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1000" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="105" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="88" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/new" />
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/views/ueditor/tpl/member" />
+      <recent name="$PROJECT_DIR$/views/ueditor/styles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/views/ueditor/tpl/member" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.doc local">
+    <configuration default="true" type="NodeJSRemoteDebug" factoryName="Node.js Remote Debug">
+      <node-js-remote-debug />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="chrome" />
+        <option name="fileUrl" value="127.0.0.1:5858" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="doc" type="NodeJSRemoteDebug" factoryName="Node.js Remote Debug" singleton="true">
+      <node-js-remote-debug local-path="$PROJECT_DIR$/lib" />
+      <RunnerSettings RunnerId="NodeJS.debug" />
+      <ConfigurationWrapper RunnerId="NodeJS.debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="doc local" type="NodeJSConfigurationType" factoryName="Node.js" singleton="true" path-to-node="/usr/local/bin/node" path-to-js-file="lib/start.js" working-dir="$PROJECT_DIR$">
+      <RunnerSettings RunnerId="NodeJS.debug" />
+      <RunnerSettings RunnerId="NodeJS.run" />
+      <ConfigurationWrapper RunnerId="NodeJS.debug" />
+      <ConfigurationWrapper RunnerId="NodeJS.run" />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Node.js Remote Debug.doc" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.doc local" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6dfd55eb-1d12-4c8d-9c1a-4c68fb9330f2" name="Default" comment="" />
+      <created>1375067335504</created>
+      <updated>1375067335504</updated>
+    </task>
+    <task id="LOCAL-00001" summary="原始文件&#10;">
+      <created>1375851408684</created>
+      <updated>1375851408684</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-2" y="-8" width="1368" height="776" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27210367" sideWeight="0.6709887" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6012966" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="原始文件&#10;" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="原始文件&#10;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="7" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/doc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="70" selection-start="1980" selection-end="1987" vertical-scroll-proportion="0.5268817" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/debug.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="208" column="27" selection-start="9143" selection-end="9149" vertical-scroll-proportion="0.47081712" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="20" selection-start="545" selection-end="545" vertical-scroll-proportion="0.53846157">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="20" selection-start="692" selection-end="692" vertical-scroll-proportion="0.5">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ueditor/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="29" selection-start="785" selection-end="785" vertical-scroll-proportion="0.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

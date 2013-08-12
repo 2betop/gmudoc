@@ -4,16 +4,8 @@
         <title>API文档</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/bootstrap.css">
-        <script src="/gmudoc/lib/highlight/google-code-prettify/src/prettify.js"></script>
-        <script src="/gmudoc/lib/highlight/google-code-prettify/src/lang-css.js"></script>
-        <link rel="stylesheet" href="/gmudoc/lib/highlight/google-code-prettify/styles/desert.css" type="text/css">
         <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/pygments.css" type="text/css">
         <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/page.css" type="text/css">
-        <script>
-            window.onload = function () {
-                prettyPrint();
-            };
-        </script>
     </head>
     <body>
         <div class="page row">
@@ -71,19 +63,21 @@
         <!-- 预览列表 start -->
         <div class="preview-list">
             
+            
 
-            <fileset>
-                <legend><h5>事件列表</h5></legend>
-                <div class="table-wrap">
-                    <table class="table list-table">
-                        <thead>
-                            <tr>
-                                <th>事件名</th>
-                                <th>描述</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
+            
+            
+                <fileset>
+                    <legend><h5>事件列表</h5></legend>
+                    <div class="table-wrap">
+                        <table class="table list-table">
+                            <thead>
+                                <tr>
+                                    <th>事件名</th>
+                                    <th>描述</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 
                                     <tr>
                                         <td>
@@ -94,8 +88,6 @@
                                         </td>
                                     </tr>
                                 
-                            
-                                
                                     <tr>
                                         <td>
                                             <a href="#UE.Editor:selectionchange">selectionchange</a>
@@ -105,40 +97,25 @@
                                         </td>
                                     </tr>
                                 
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                        </tbody>
-                    </table>
-                </div>
-            </fileset>
+                            </tbody>
+                        </table>
+                    </div>
+                </fileset>
+            
 
-            <fileset>
-                <legend><h5>方法列表</h5></legend>
-                <div class="table-wrap">
-                    <table class="table list-table">
-                        <thead>
-                            <tr>
-                                <th>方法签名</th>
-                                <th>描述</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                                
-                            
-                                
-                            
+            
+            
+                <fileset>
+                    <legend><h5>方法列表</h5></legend>
+                    <div class="table-wrap">
+                        <table class="table list-table">
+                            <thead>
+                                <tr>
+                                    <th>方法签名</th>
+                                    <th>描述</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 
                                     <tr>
                                         <td>
@@ -158,8 +135,6 @@
                                             编辑器对外提供的监听ready事件的接口， 通过调用该方法，达到的效果与监听ready事件是一致的
                                         </td>
                                     </tr>
-                                
-                            
                                 
                                     <tr>
                                         <td>
@@ -182,8 +157,6 @@
                                         </td>
                                     </tr>
                                 
-                            
-                                
                                     <tr>
                                         <td>
                                             <a href="#UE.Editor:setOpt(PlainObject)">
@@ -203,8 +176,6 @@
                                         </td>
                                     </tr>
                                 
-                            
-                                
                                     <tr>
                                         <td>
                                             <a href="#UE.Editor:destroy()">
@@ -220,8 +191,6 @@
                                         </td>
                                     </tr>
                                 
-                            
-                                
                                     <tr>
                                         <td>
                                             <a href="#UE.Editor:getContent()">
@@ -236,8 +205,6 @@
                                             获取编辑器的内容
                                         </td>
                                     </tr>
-                                
-                            
                                 
                                     <tr>
                                         <td>
@@ -258,15 +225,14 @@
                                         </td>
                                     </tr>
                                 
-                            
-                        </tbody>
-                    </table>
-                </div>
-            </fileset>
+                            </tbody>
+                        </table>
+                    </div>
+                </fileset>
+            
 
         </div>
         <!-- 预览列表 end -->
-
 
         <div class="member-list">
 
@@ -420,7 +386,7 @@
                 <legend><h5>方法</h5></legend>
                 <ul>
                     
-                        <li><div class="method">
+                        <li><div class="member-item member-method">
     <dl class="member-item-dl">
        <dt><a name="UE.Editor:ready(Function)" class="anchor">
     
@@ -498,7 +464,7 @@
     </dl>
 </div></li>
                     
-                        <li><div class="method">
+                        <li><div class="member-item member-method">
     <dl class="member-item-dl">
        <dt><a name="UE.Editor:setOpt(String,*)" class="anchor">
     
@@ -588,7 +554,7 @@
     </dl>
 </div></li>
                     
-                        <li><div class="method">
+                        <li><div class="member-item member-method">
     <dl class="member-item-dl">
        <dt><a name="UE.Editor:setOpt(PlainObject)" class="anchor">
     
@@ -668,7 +634,7 @@
     </dl>
 </div></li>
                     
-                        <li><div class="method">
+                        <li><div class="member-item member-method">
     <dl class="member-item-dl">
        <dt><a name="UE.Editor:destroy()" class="anchor">
     
@@ -708,7 +674,7 @@
     </dl>
 </div></li>
                     
-                        <li><div class="method">
+                        <li><div class="member-item member-method">
     <dl class="member-item-dl">
        <dt><a name="UE.Editor:getContent()" class="anchor">
     
@@ -776,7 +742,7 @@
     </dl>
 </div></li>
                     
-                        <li><div class="method">
+                        <li><div class="member-item member-method">
     <dl class="member-item-dl">
        <dt><a name="UE.Editor:getContent(Function)" class="anchor">
     
@@ -888,6 +854,200 @@
                     
                 </ul>
             </fileset>
+            
+            <!-- 方法 end -->
+
+        </div>
+
+    </div>
+</div>
+                        
+                    </div>
+                </div>
+            
+                <div class="module-wrap col-lg-10 col-lg-offset-1">
+                    <div class="module">
+    <dl>
+        <dt><h3>window</h3></dt>
+        <dd>全局域</dd>
+    </dl>
+    <div class="member-list">
+        <fileset>
+            <legend><h5>成员列表</h5></legend>
+            <div class="table-wrap">
+                <table class="table list-table">
+                    <thead>
+                        <tr>
+                            <th>类型</th>
+                            <th>名称</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        
+                            <tr>
+                                <td>
+                                    类
+                                </td>
+                                <td>
+                                    <a href="#window.UEDITOR_CONFIG">UEDITOR_CONFIG</a>
+                                </td>
+                                <td class="list-table-desc">
+                                    UEditor配置项集合
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </fileset>
+    </div>
+</div>
+                    <div class="module-member">
+                        
+                            <div class="cls">
+    <dl>
+        
+        <dt><h4><a name="window.UEDITOR_CONFIG" class="anchor">window.UEDITOR_CONFIG</a></h4></dt>
+        <dd>UEditor配置项集合</dd>
+    </dl>
+
+    <div class="member-wrap">
+
+        <!-- 预览列表 start -->
+        <div class="preview-list">
+            
+            
+                <fileset>
+                    <legend><h5>属性列表</h5></legend>
+                    <div class="table-wrap">
+                        <table class="table list-table">
+                            <thead>
+                                <tr>
+                                    <th>属性名</th>
+                                    <th>是否静态</th>
+                                    <th>描述</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="#window.UEDITOR_CONFIG:UEDITOR_HOME_URL">UEDITOR_HOME_URL</a>
+                                        </td>
+                                        <td>
+                                            否
+                                        </td>
+                                        <td class="list-table-desc">
+                                             编辑器的根路径
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="#window.UEDITOR_CONFIG:imageUrl">imageUrl</a>
+                                        </td>
+                                        <td>
+                                            否
+                                        </td>
+                                        <td class="list-table-desc">
+                                             图片上传的后端接口
+                                        </td>
+                                    </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </fileset>
+            
+
+            
+            
+
+            
+            
+
+        </div>
+        <!-- 预览列表 end -->
+
+        <div class="member-list">
+
+            <!-- 事件 start -->
+            
+            <!-- 事件 end -->
+
+            <!-- 属性 start -->
+            
+            <fileset class="member-desc">
+                <legend><h5>属性</h5></legend>
+                <ul>
+                    
+                        <li><div class="member-item member-property">
+    <dl class="member-item-dl">
+        <dt><a name="window.UEDITOR_CONFIG:UEDITOR_HOME_URL" class="anchor">UEDITOR_HOME_URL</a></dt>
+        <dd>
+            <ul>
+                <li> 编辑器的根路径</li>
+                
+                
+            </ul>
+
+            <fileset>
+                <legend>默认值</legend>
+                <div class="table-wrap">
+                    由编辑器自动计算出的根路径地址
+               </div>
+            </fileset>
+
+            <fileset>
+                <legend>是否为静态属性</legend>
+                <div class="table-wrap">
+                    否
+               </div>
+            </fileset>
+
+        </dd>
+
+    </dl>
+</div></li>
+                    
+                        <li><div class="member-item member-property">
+    <dl class="member-item-dl">
+        <dt><a name="window.UEDITOR_CONFIG:imageUrl" class="anchor">imageUrl</a></dt>
+        <dd>
+            <ul>
+                <li> 图片上传的后端接口</li>
+                
+                
+            </ul>
+
+            <fileset>
+                <legend>默认值</legend>
+                <div class="table-wrap">
+                    UEditor提供的默认接口路径
+* PHP下的默认路径是: UEDITOR_HOME_URL／php/imageUp.php
+               </div>
+            </fileset>
+
+            <fileset>
+                <legend>是否为静态属性</legend>
+                <div class="table-wrap">
+                    否
+               </div>
+            </fileset>
+
+        </dd>
+
+    </dl>
+</div></li>
+                    
+                </ul>
+            </fileset>
+            
+            <!-- 属性 end -->
+
+            <!-- 方法 start -->
             
             <!-- 方法 end -->
 

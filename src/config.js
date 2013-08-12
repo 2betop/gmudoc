@@ -1,17 +1,11 @@
 /**
  * @file
- * @module window
- * @class UEDITOR_CONFIG
- */
-
-/**
- * @module window
+ * @module UEDITOR_CONFIG
  */
 
 /**
  * UEditor配置项集合
- * @module window
- * @class UEDITOR_CONFIG
+ * @module UEDITOR_CONFIG
  */
 
 (function () {
@@ -33,7 +27,7 @@
         ,imageUrl:URL+"php/imageUp.php"
 
         /**
-         * @peoperty { String } imagePath
+         * @property { String } imagePath
          * @default
          */
         ,imagePath:URL + "php/"                     //图片修正地址，引用了fixedImagePath,如有特殊需求，可自行配置
