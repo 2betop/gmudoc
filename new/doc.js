@@ -6,7 +6,7 @@
         fs = require( "fs" ),
         $ = require( "./lib/util"),
         extractor = require( "./lib/extractor" ),
-        view = require( "../views/ueditor3" ),
+        view = require( "../views/ueditor" ),
         parser = require( "./lib/parser" ),
         docSyntax = require( "./lib/syntax" ),
         BASE_PATH = fs.realpathSync( "." );

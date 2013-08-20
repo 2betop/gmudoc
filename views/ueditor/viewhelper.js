@@ -21,7 +21,7 @@
                 data._self = data;
                 data.ViewHelper = ViewHelper;
 
-                filepath = '/home/hn/workspace/phpstrom/gmudoc/views/ueditor3/tpl/' + filepath;
+                filepath = '/home/hn/workspace/phpstrom/gmudoc/views/ueditor/tpl/' + filepath;
 
                 return ejs.render( fs.readFileSync( filepath, fileOptions ), data );
 
