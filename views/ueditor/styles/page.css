@@ -1,160 +1,174 @@
-
-
 /* global */
-.module-wrap dt, .module-wrap dd {
-    line-height: 2;
+
+.page {
+    width: 70%;
+    margin: 0 15%;
 }
 
-.module-wrap dl {
-    margin: 0;
+.member-module {
+    margin: 50px 0;
 }
 
-.module-wrap fileset {
+.anchor {
+    color: black;
+}
+
+.anchor:HOVER {
+    text-decoration: none;
+    color: black;
+}
+
+.go-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 7px;
+    display: none;
+    transition: background-color .5s ease-out, border-color .75s ease-out;
+}
+
+.go-to-top:HOVER {
+    background-color: #cfcfcf;
+    border-color: #ccc;
+}
+
+.member-box {
+    /*margin: 2em 0 2em 2em;*/
+}
+
+.member-event-info, .member-property-info, .member-constructor-info, .member-method-info {
+    /*margin: 2em 0 2em 2em;*/
+}
+
+fileset, .member {
     display: block;
+    margin: 70px 0;
 }
 
-.module-wrap dt {
-    font-weight: normal;
+.member fileset {
+    margin: 20px 0;
 }
 
-.module-wrap .list-table th {
-    font-weight: normal;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-}
-
-h5 {
+.member legend {
     font-size: 16px;
 }
 
-h6 {
-    font-size: 14px;
+.member-description {
+    padding: 10px 0;
 }
 
-.module-wrap .example pre {
-    text-indent: 0;
+.member h4, .member .member-flag {
+    display: inline-block;
 }
 
-.module-wrap ul, .module-wrap ol {
-    list-style: none;
+h4 {
     margin: 0;
+    font-size: 20px;
+}
+
+/* reset bootstrap */
+legend {
+    border-bottom: 0;
+}
+
+.alert {
+    padding: 5px;
+    margin: 3px 0;
+}
+
+/* Navigation */
+.nav .module-list, .nav .api-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 9%;
+    height: 100%;
+}
+
+.nav .api-list {
+    width: 100%;
+    background: #fff;
+    display: none;
+}
+
+.module-list ul {
+    margin: 0;
+    padding-left: 10px;
+    list-style: none;
+}
+
+
+/* warning */
+.member-warning, .member-remind {
     padding: 0;
-    padding-left: 2em;
+    margin: 0;
+    list-style: none;
 }
 
-.module-wrap .anchor {
-    color: #000000;
+
+/* search */
+
+.search-box {
+    width: 500px;
+    margin: 30px auto;
 }
 
-.module-wrap .anchor:HOVER {
+.search-panel {
+    position: absolute;
+    display: none;
+    max-height: 300px;
+    border: 1px solid #cfcfcf;
+    background: #fff;
+    padding: 5px;
+}
+
+.search-box .search-input {
+    width: 100%;
+    line-height: 20px;
+    padding: 5px;
+    border: 1px solid #d9d9d9;
+    border-top-color: #c0c0c0;
+    outline: none;
+}
+.search-box .search-input:HOVER {
+    box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
+}
+
+.search-box .focus {
+    border-color: #4d90fe;
+}
+
+.search-panel .search-result-item {
+    display: block;
+    color: #aaa;
+    padding: 3px;
+    cursor: default;
+}
+
+.search-panel .search-result-item:HOVER {
+    background: blue;
     text-decoration: none;
 }
 
-.module-wrap legend {
-    border: none;
-    font-size: 14px;
-    margin: 1em 0;
-}
-
-.module-wrap .warning {
-}
-
-.module-wrap .remind {
-
-}
-
-/* module */
-.module .member-list {
-    padding-left: 2em;
-    margin: 50px 0;
-}
-
-.module .member-list ul {
-    list-style: disc;
-}
-
-.module .member-list .member-item dt, .module .member-list .member-item dd {
-    display: inline-block;
-}
-
-
-/* module-member */
-.module-member {
-    margin: 150px 0;
-}
-
-.module-member .member-wrap {
-    margin: 50px 0;
-    padding-left: 2em;
-}
-
-.module-member .member-list, .module-member .preview-list {
-    margin: 50px 0;
-}
-
-
-.module-member .preview-list dt, .module-member .preview-list dd {
-    display: inline-block;
-}
-
-.module-member .preview-list .list-table-desc {
-}
-
-.module-member  .member-list .member-item, .module-member .method {
-    margin: 50px 0;
-}
-
-
-/* 成员详情部分 */
-.module-member .member-item-dl>dd>ul {
-    padding-left: 0;
-}
-
-.module-member .member-item-dl .member-supplementary {
-    margin: 2em 0;
-}
-
-.module-member .table-wrap {
-    padding-left: 2em;
-}
-
-.module-member .example {
-    padding-left: 2em;
-}
-
-
-/*代码高亮外部格式*/
-.example table.highlighttable {
-    border-spacing: 0;
-    border-collapse: collapse;
-    background: #f5f5f5;
-    width: 100%;
-}
-
-.example table.highlighttable {
-    border: 1px solid #cccccc;
-}
-
-.example .highlighttable pre {
-    border: 0;
-    background: transparent;
-    font-size: 12px;
-    line-height: 2;
+.search-panel ul {
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.example .highlighttable .linenos {
-    width: 40px;
-    text-align: right;
+.search-keyword {
+    font-weight: bold;
+    color: #000;
 }
 
-.example .highlighttable .linenos pre {
-    color: #999;
+.search-nothing {
+    font-style: italic;
 }
 
-.example table.highlighttable td {
-    border: 1px solid #cccccc;
+/* api panel */
+.api-wrap {
+    padding: 10px;
 }
-

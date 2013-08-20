@@ -2,82 +2,78 @@
 
     "use strict";
 
-    var util = require( '../../lib/util.js' ),
+    var $ = require( '../../new/lib/util' ),
         ejs = require( 'ejs' ),
         fs = require( 'fs' ),
-        highlight = require('pygments').colorize,
-        markdown = require( 'markdown-js' ),
+        pygments = require('pygments').colorize,
+        marked = require( 'marked' ),
+        ViewHelper = require( "./viewhelper" ),
+        NavRender = require( "./navrender" ),
         fileOptions = {
             encoding: 'utf-8'
         },
         MEMBER_TYPE = {
+            CONSTRUCTOR: 'constructor',
             METHOD: 'method',
             PROPERTY: 'property',
             EVENT: 'event'
-        },
-        ITEM_TYPE = {
-            MODULE: 'module',
-            CLASS: 'class',
-            METHOD: 'method',
-            EVENT: 'event',
-            PROPERTY: 'property'
         };
 
-    function View () {
-        this.data = null;
-    }
+    var View = {
 
-    util.extend( View.prototype, {
-
-        build: function ( jsonData, callback ) {
-
-            var _self = this;
-
-            _innerHelper.transform( jsonData, function () {
-
-                callback( _self._render( jsonData ) );
-
-            } );
-
-        },
-
-        _render: function ( data ) {
-
-            var modules = data.modules,
-                tplData = {
-                    modules: []
-                };
-
-
-            util._.each( modules, function ( moduleData ) {
-
-                tplData.modules.push( _innerHelper.renderModule( moduleData ) );
-
-            } );
-
-            return _innerHelper.renderPage( tplData );
-
-        }
-
-    } );
-
-
-    //内部工具类
-    var _innerHelper = {
-
+        /**
+         * 执行数据转换， 以便于render
+         * @param data 数据
+         */
         transform: function ( data, callback ) {
 
-            var count = Object.keys( data.modules ).length,
-                _self = this;
 
-            util._.each( data.modules, function ( clsData ) {
+            var transResult = [],
+                count = 0,
+                exampleKey = "example";
+            debugger;
 
-                _self.transformClass( clsData.classes, function () {
+            $.forOwn( data, function ( moduleData ) {
 
-                    count--;
+                transResult = transResult.concat( View.extractData( exampleKey, moduleData ) );
 
-                    if ( !count ) {
-                        callback();
+            } );
+
+            //example 解析
+            transResult.forEach( function ( targetData ) {
+
+                targetData.example.forEach( function ( exp, index ) {
+
+                    count++;
+
+                    if ( /`{3}([^\n]*)\n([\s\S]*?)(\s*`{3}$|$)/.test( exp ) ) {
+
+                        //代码高亮
+                        pygments( RegExp.$2, RegExp.$1 || 'javascript', 'html', function( data ) {
+
+                            count--;
+
+                            targetData.example[ index ] = data;
+
+                            if ( !count ) {
+                                callback();
+                            }
+
+                        }, {
+                            O: 'style=colorful,linenos=table,encoding=utf-8 '
+                        });
+
+                    } else {
+
+                        count--;
+
+                        //置空
+                        targetData.example[ index ] = '';
+
+                        if ( !count ) {
+                            callback();
+                        }
+
                     }
 
                 } );
@@ -86,273 +82,218 @@
 
         },
 
-        transformClass: function ( clsData, callback ) {
+        extractData: function ( keyword, data ) {
 
-            var _self = this,
-                count = Object.keys( clsData ).length;
+            var result = [];
 
-            util._.each( clsData, function ( cls ) {
+            View.getAllMembers( data ).forEach( function ( targetData ) {
 
-                _self.transformMember( cls.items, function () {
-                    count--;
-                    !count && callback();
+                targetData.hasOwnProperty( keyword ) && result.push( targetData );
+
+            } );
+
+            return result;
+
+        },
+
+        getAllMembers: function ( data ) {
+
+            var result = [];
+
+            if ( data.__type === "module" ) {
+
+                data[ 'class' ] && $.forOwn( data[ 'class' ], function ( classData ) {
+
+                    classData.__member && ( result = result.concat( classData.__member ) );
+
                 } );
 
+            }
+
+            debugger;
+
+            data.__member && ( result = result.concat( data.__member ) );
+
+            return result;
+
+        },
+
+        render: function ( data ) {
+
+            var tplData = [],
+                navTpl = View.renderNavigation( data );
+
+            $.forOwn( data, function ( moduleData ) {
+
+                tplData.push( View.renderModule( moduleData ) );
+
+            } );
+
+            return View.renderPage( tplData, navTpl );
+
+        },
+
+        _renderTpl: function ( filepath, data ) {
+
+            filepath = '/home/hn/workspace/phpstrom/gmudoc/views/ueditor3/tpl/' + filepath;
+
+            return ejs.render( fs.readFileSync( filepath, fileOptions ), $.extend( {}, data, {
+                _self: data,
+                ViewHelper: ViewHelper
+            } ) );
+
+        },
+
+        renderPage: function ( tplData, navHtml ) {
+
+            return this._renderTpl( 'layout.ejs', {
+                modules: tplData,
+                nav: navHtml
             } );
 
         },
 
-        transformMember: function ( memberData, callback ) {
+        renderNavigation: function ( data ) {
 
-            var count = Object.keys( memberData ).length;
+            return NavRender.renderNav( data );
 
-            util._.each( memberData, function ( member ) {
+        },
 
-                if ( member.example ) {
+        renderModule: function ( moduleData ) {
 
-                    ViewHelper.highlight( ViewHelper.markdownToHtml( member.example ), function ( data ) {
+            moduleData.__memberTpl = {};
 
-                        count--;
-                        member.example = data;
+            moduleData.__classTpl = [];
 
-                        !count && callback();
+            if ( moduleData.__member ) {
 
-                    } );
+                moduleData.__memberTpl = View.renderMember( moduleData.__member );
 
-                } else {
+            }
 
-                    count--;
-                    !count && callback();
+            if ( moduleData.hasOwnProperty( "class" ) ) {
+
+                moduleData.__classTpl = View.renderClass( moduleData[ 'class' ] );
+
+            }
+
+            return View._renderTpl( 'module.ejs', moduleData );
+
+        },
+
+        renderClass: function ( classData ) {
+
+            var result = [];
+
+            $.forOwn( classData, function ( clazzData ) {
+
+                clazzData.__memberTpl = {};
+
+                if ( clazzData.__member ) {
+                    clazzData.__memberTpl = View.renderMember( clazzData.__member );
+                }
+
+                result.push( View._renderTpl( 'class.ejs', clazzData ) );
+
+            } );
+
+            return result;
+
+        },
+
+        renderMember: function ( memberData ) {
+
+            var result = {};
+
+            $.forOwn( MEMBER_TYPE, function ( type ) {
+
+                result[ type ] = [];
+
+            } );
+
+            memberData.forEach( function ( data ) {
+
+                switch ( data.__type ) {
+
+                    case MEMBER_TYPE.CONSTRUCTOR:
+                        result[ MEMBER_TYPE.CONSTRUCTOR ].push( View.renderConstructor( data ) );
+                        break;
+
+                    case MEMBER_TYPE.METHOD:
+                        result[ MEMBER_TYPE.METHOD ].push( View.renderMethod( data ) );
+                        break;
+
+                    case MEMBER_TYPE.PROPERTY:
+                        result[ MEMBER_TYPE.PROPERTY ].push( View.renderProperty( data ) );
+                        break;
+
+                    case MEMBER_TYPE.EVENT:
+                        result[ MEMBER_TYPE.EVENT ].push( View.renderEvent( data ) );
+                        break;
+
+                    default:
+                        throw new Error( 'unknow member type!' );
 
                 }
 
             } );
 
+            return result;
+
         },
 
-        renderModule: function ( module ) {
+        renderClassMember: function ( classData ) {
 
-            var tpls = {
-                module: null,
-                classes: []
-            };
+            var result = [];
 
-            tpls.module = this.render( 'module.ejs', module );
+            $.forOwn( classData, function ( clazzData ) {
 
-            util._.each( module.classes, function ( clsData ) {
-
-                var data = _innerHelper.renderClass( clsData );
-
-                tpls.classes.push( data );
+                return View._renderTpl( 'event.ejs', data );
 
             } );
 
-            return tpls;
+            return result;
 
         },
 
-        renderClass: function ( clsData ) {
+        renderMethod: function ( data ) {
 
-            var data = null;
-
-            clsData.members = {
-                event: [],
-                property: [],
-                method: []
-            };
-
-            util._.each( clsData.items, function ( member ) {
-
-                data = _innerHelper.renderMember( member );
-
-                data.type && clsData.members[ data.type ].push( data.value );
-
-            } );
-
-            return this.render( "cls.ejs", clsData );
+            return View._renderTpl( 'method.ejs', data );
 
         },
 
-        renderMember: function ( member ) {
+        renderConstructor: function ( data ) {
 
-            switch ( member.itemtype ) {
-
-                case MEMBER_TYPE.METHOD:
-
-                    return {
-                        type: MEMBER_TYPE.METHOD,
-                        value: this.render( 'member/method.ejs', member )
-                    };
-
-                case MEMBER_TYPE.EVENT:
-
-                    return {
-                        type: MEMBER_TYPE.EVENT,
-                        value: this.render( 'member/event.ejs', member )
-                    };
-
-                case MEMBER_TYPE.PROPERTY:
-
-                    return {
-                        type: MEMBER_TYPE.PROPERTY,
-                        value: this.render( 'member/property.ejs', member )
-                    };
-
-                default:
-
-                    throw new Error( 'unknow member type!' );
-
-            }
+            return View._renderTpl( 'constructor.ejs', data );
 
         },
 
-        renderPage: function ( data ) {
+        renderProperty: function ( data ) {
 
-            return this.render( 'layout.ejs', data );
-
-        },
-
-        readTpl: function ( tplFile ) {
-            return fs.readFileSync( '../views/ueditor/tpl/' + tplFile, fileOptions );
-        },
-
-        render: function ( file, data ) {
-            data.ViewHelper = ViewHelper;
-            data._self = data;
-            return ejs.render( this.readTpl( file ), data )
-        }
-
-    },
-
-        test = 0,
-    //视图工具类
-    ViewHelper = {
-
-        markdownToHtml: function ( str ) {
-
-            return markdown.makeHtml( str );
+            return View._renderTpl( 'property.ejs', data );
 
         },
 
-        //解析method签名
-        parseSignature: function ( data, isLink ) {
+        renderEvent: function ( data ) {
 
-            var fullpath = [
-                    data.module,
-                    data['class']
-                ],
-                anchor = this.getPath( data ),
-                isLink = !!isLink;
-
-
-            //链接
-            if ( isLink ) {
-
-                return _innerHelper.render( 'member/signature.link.ejs', {
-                    anchor: anchor,
-                    name: data.name,
-                    params: data.params
-                } );
-
-            //锚点
-            } else {
-
-                return _innerHelper.render( 'member/signature.anchor.ejs', {
-                    anchor: anchor,
-                    name: data.name,
-                    params: data.params
-                } );
-
-            }
-
-        },
-
-        //获取当前处理对象的路径
-        getPath: function ( data ) {
-
-            switch ( data.itemtype ) {
-
-                case ITEM_TYPE.MODULE:
-
-                    return data.name;
-
-                case ITEM_TYPE.CLASS:
-
-                    return data.module + "." + data.name;
-
-                case ITEM_TYPE.METHOD:
-
-                    return this.getMethodPath( data );
-
-                default:
-
-                    return data.module + "." + data.class + ":" + data.name;
-
-            }
-
-        },
-
-        getMethodPath: function ( data ) {
-
-            var start = data.module + "." + data.class + ":" + data.name,
-                paramStr = [];
-
-            if ( data.params ) {
-
-                data.params.forEach( function ( param ) {
-                    paramStr.push( param.type[0] );
-                } );
-
-            }
-
-            paramStr = "(" + paramStr.join( "," ) + ")";
-
-            return start + paramStr;
-
-        },
-
-        getMembers: function ( type, data ) {
-
-            if ( data.itemtype === ITEM_TYPE.CLASS ) {
-
-                var result = [],
-                    tmp = null;
-
-                Object.keys( data.items ).forEach( function ( key ) {
-
-                    tmp = data.items[ key ];
-
-                    if ( tmp.itemtype === type ) {
-                        debugger;
-                        result.push( tmp );
-                    }
-
-                } );
-
-                return result;
-
-            }
-
-        },
-
-        highlight: function ( htmlStr, callback ) {
-
-            var match = /^<p><code>(.+)\n([^<]+)<\/code><\/p>$/i.exec( htmlStr );
-
-            match && highlight( match[ 2 ], match[ 1 ], 'html', function(data) {
-
-                callback( data );
-
-            }, {
-                O: 'style=colorful,linenos=table,encoding=utf-8 '
-            });
-
-            !match && callback( htmlStr );
+            return View._renderTpl( 'event.ejs', data );
 
         }
 
     };
 
-    module.exports = new View();
+    module.exports = {
+
+        build: function ( data, callback ) {
+
+            View.transform( data, function () {
+
+                callback( View.render( data ) );
+
+            } );
+
+        }
+
+    };
 
 } )();
