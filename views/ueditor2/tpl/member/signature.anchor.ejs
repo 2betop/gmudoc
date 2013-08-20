@@ -1,0 +1,10 @@
+<a name="<%- anchor %>" class="anchor">
+    <% var _pars=[]; %>
+    <%if ( locals.params ) {%>
+        <% for ( var i=0, _param; _param = params[ i ]; i++ ) {%>
+            <%_pars.push('<a href="#'+ _param.type +'">'+ _param.type +'</a><span class="member-name">&nbsp;&nbsp;'+ _param.name +'</span>');%>
+        <%}%>
+    <%}%>
+    <%- name %>
+</a>
+(<%- _pars.join(", ") %>)

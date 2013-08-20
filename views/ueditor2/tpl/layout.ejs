@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API文档</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/bootstrap.css">
+        <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/pygments.css" type="text/css">
+        <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/page.css" type="text/css">
+    </head>
+    <body>
+        <div class="page row">
+            <%for ( var i=0, module; module = modules[i]; i++ ) {%>
+                <div class="module-wrap col-lg-10 col-lg-offset-1">
+                    <%- module.module %>
+                    <div class="module-member">
+                        <%for ( var j=0, cls; cls=module.classes[j]; j++ ) {%>
+                            <%- cls %>
+                        <%}%>
+                    </div>
+                </div>
+            <%}%>
+        </div>
+    </body>
+</html>

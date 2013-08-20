@@ -8,7 +8,7 @@
 
 /**
  * UEditor公用空间，UEditor所有的功能都挂载在该空间下
- * @define
+ * @unfile
  * @module UE
  */
 
@@ -16,7 +16,7 @@
 
     /**
      * UEditor的核心类，为用户提供与编辑器交互的接口。
-     * @define
+     * @unfile
      * @module UE
      * @class Editor
      */
@@ -41,6 +41,7 @@
      * 每当编辑器内部选区发生改变后， 将触发该事件
      * @event selectionchange
      * @warning 该事件的触发非常频繁，不建议在该事件的处理过程中做重量级的处理
+     * @example
      * ```javascript
      * editor.addListener( 'selectionchange', function( editor ) {
      *
