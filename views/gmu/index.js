@@ -43,7 +43,7 @@
     util.extend( View.prototype, {
         init: function( opts ) {
             this.assign( 'title', opts.title || 'GMU API 文档' );
-            this.themeDir = opts.themeDir || path.join( __dirname, 'tpl' );
+            this.themeDir = opts.tplDir || path.join( __dirname, 'tpl' );
         },
 
         assign: function( key, val ) {
