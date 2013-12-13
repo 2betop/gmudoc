@@ -15,13 +15,12 @@
 
         this.locals = {};
         this.localStack = [ this.locals ];
-        this.themeDir = path.join( __dirname, 'tpl' );
         this.qrcodes = {};
 
 
         // 注册变量和方法给tpl用
         this.assign( '_', _ );
-        this.assign( 'title', 'GMU API 文档' );
+
 
         // 最好把一些危险的方法移出。比如build, render方法。
         _.forEach( View.prototype, function( fn, name ) {
@@ -42,6 +41,11 @@
     }
 
     util.extend( View.prototype, {
+        init: function( opts ) {
+            this.assign( 'title', opts.title || 'GMU API 文档' );
+            this.themeDir = opts.themeDir || path.join( __dirname, 'tpl' );
+        },
+
         assign: function( key, val ) {
             this.locals[ key ] = val;
         },
